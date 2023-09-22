@@ -51,3 +51,5 @@ rsconnect/
 /.quarto/
 .local
 .cache
+
+/memos/*.pdf
