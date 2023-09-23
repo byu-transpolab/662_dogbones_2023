@@ -20,28 +20,64 @@ make_net_graph <- function(nf, ef, legf){
       suffix = c(".o", ".d")) %>% 
     mutate(
       turn = case_when(
-        leg_num.o > 4 | leg_num.d > 4 ~ "o",
-        intersection.d != intersection.o ~ "i",
+        leg_num.d == leg_num.o ~ "u",
+        leg_num.o > 4 | leg_num.d > 4 ~ as.character(leg_num.d),
+        intersection.d != intersection.o ~ "internal",
         (leg_num.d - leg_num.o)%%4 == 1 ~ "l",
         (leg_num.d - leg_num.o)%%4 == 2 ~ "t",
-        (leg_num.d - leg_num.o)%%4 == 3 ~ "r",
-        (leg_num.d - leg_num.o)%%4 == 0 ~ "u"
-      ),
-      movement = case_when(
-        turn == "o" ~ paste(leg_num.o, leg_num.d, sep = "->"),
-        turn == "i" ~ "internal",
-        TRUE ~ paste0(leg_dir.o, turn)
+        (leg_num.d - leg_num.o)%%4 == 3 ~ "r"
       )) %>% 
     transmute(
       from,
       to,
       rel = NA,
+      link = paste(from, to, sep = "_"),
       intersection = intersection.o,
-      turn,
-      movement
+      leg = leg_dir.o,
+      turn
     )
   
   net <- create_graph(nodes, edges)
   
   net
+}
+
+get_turn_counts <- function(counts_file, net){
+  
+  counts <- read_csv(counts_file)
+  
+  counts %>%
+    left_join(net$edges_df, join_by(intersection, leg, turn)) %>% 
+    select(-c(id, rel)) %>% 
+    pivot_longer(
+      -c(intersection, leg, turn, from, to, link),
+      names_to = "time",
+      values_to = "count"
+    ) %>% 
+    group_by(intersection, leg, time) %>% 
+    mutate(frac = count / sum(count)) %>% 
+    ungroup() %>% 
+    transmute(
+      link = paste(from, to, sep = "_"),
+      time,
+      frac
+    ) %>% 
+    arrange(time, link)
+}
+
+get_od_routes <- function(counts, net){
+  
+  ex_nodes <- net$nodes_df %>% 
+    filter(type == "ex") %>% 
+    {.$id}
+  
+  routes <- perm(ex_nodes, 2) %>% 
+    as_tibble() %>% 
+    `colnames<-`(c("from", "to")) %>% 
+    head(6) %>%  ##### TESTING!!! #########################################
+    mutate(
+      route = get_shortest_path(net, from, to)
+    )
+  
+  routes
 }
