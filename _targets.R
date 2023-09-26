@@ -4,7 +4,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("tidyverse", "DiagrammeR"),
+  packages = c("tidyverse", "DiagrammeR", "gtools", "flextable"),
 )
 
 #Source R functions
