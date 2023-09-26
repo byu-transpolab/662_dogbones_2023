@@ -71,7 +71,6 @@ get_od_routes <- function(net){
   routes <- perm(ex_nodes, 2) %>% 
     as_tibble(.name_repair = "universal") %>% 
     `colnames<-`(c("from", "to")) %>% 
-    # head(8) %>%  ##### TESTING!!! ## ## ## ## ## ## ## ## ## ## ## ## ##
     mutate(
       route = pmap(
         .l = list(from = from, to = to),
