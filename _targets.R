@@ -27,7 +27,8 @@ network_ex_targets <- tar_plan(
   
   ex_graph = make_net_graph(ex_nodes_file, ex_edges_file, leg_translation_file),
   ex_turn_counts = get_turn_counts(random_counts_file, ex_graph), #change once real data exists
-  ex_od_routes = get_od_routes(ex_turn_counts, ex_graph),
+  ex_od_routes = get_od_routes(ex_graph),
+  ex_od_pcts = get_od_pcts(ex_turn_counts, ex_od_routes)
   
 )
 

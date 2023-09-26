@@ -1,5 +1,4 @@
 make_net_graph <- function(nf, ef, legf){
-  
   leg_translation <- read_csv(legf)
   
   nodes <- read_csv(nf, comment = "#") %>% 
@@ -43,7 +42,6 @@ make_net_graph <- function(nf, ef, legf){
 }
 
 get_turn_counts <- function(counts_file, net){
-  
   counts <- read_csv(counts_file)
   
   counts %>%
@@ -65,19 +63,38 @@ get_turn_counts <- function(counts_file, net){
     arrange(time, link)
 }
 
-get_od_routes <- function(counts, net){
-  
+get_od_routes <- function(net){
   ex_nodes <- net$nodes_df %>% 
     filter(type == "ex") %>% 
     {.$id}
   
   routes <- perm(ex_nodes, 2) %>% 
-    as_tibble() %>% 
+    as_tibble(.name_repair = "universal") %>% 
     `colnames<-`(c("from", "to")) %>% 
-    head(6) %>%  ##### TESTING!!! #########################################
+    # head(8) %>%  ##### TESTING!!! ## ## ## ## ## ## ## ## ## ## ## ## ##
     mutate(
-      route = get_shortest_path(net, from, to)
-    )
+      route = pmap(
+        .l = list(from = from, to = to),
+        .f = \(from, to) get_paths(net, from, to, shortest_path = TRUE)[[1]]
+      ))
   
   routes
+}
+
+get_od_pcts <- function(counts, routes){
+  wide_counts <- counts %>% 
+    pivot_wider(names_from = time, values_from = frac)
+  
+  od_pcts <- routes %>% 
+    filter(!is.na(route)) %>% 
+    mutate(
+      links = map(route, get_route_links)
+    ) %>% 
+    select(-route) %>% 
+    unnest(links) %>% 
+    left_join(wide_counts, join_by(links == link)) %>% 
+    group_by(from, to) %>% 
+    summarise(across(-c(links), \(x) prod(x, na.rm = TRUE)), .groups = "drop")
+  
+  od_pcts
 }
