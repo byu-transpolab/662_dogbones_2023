@@ -980,15 +980,15 @@
 		<convergence writeFile="false"/>
 		<dataColl collectData="false" fromTime="0" interval="99999" toTime="99999"/>
 		<dataCollRawData fromTime="0" toTime="99999" writeFile="false"/>
-		<delays collectData="false" fromTime="900" interval="900" toTime="4500"/>
+		<delays collectData="false" fromTime="900" interval="99999" toTime="4500"/>
 		<dischRec fromTime="0" toTime="99999" writeFile="false"/>
 		<greenTimeDistribution fromTime="0" toTime="99999" writeFile="false"/>
-		<linkResults collectData="false" fromTime="900" interval="900" perLane="true" toTime="4500"/>
+		<linkResults collectData="false" fromTime="900" interval="99999" perLane="true" toTime="4500"/>
 		<lnChgs filterType="ALL" fromTime="0" toTime="99999" writeFile="false"/>
 		<managedLanes writeFile="false"/>
 		<mesoEvaluationConfig collectData="false" fromTime="0" interval="99999" toTime="99999"/>
 		<nodeRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="true"/>
-		<nodeResults collectData="true" fromTime="900" interval="900" toTime="4500"/>
+		<nodeResults collectData="true" fromTime="900" interval="99999" toTime="4500"/>
 		<odPairs collectData="false" fromTime="900" interval="99999" toTime="99999"/>
 		<ptWaitingTimes writeFile="false"/>
 		<parkLotGrps collectData="false" fromTime="0" interval="99999" toTime="99999"/>
@@ -1013,13 +1013,13 @@
 		<pedTravTmODData fromTime="0" interval="99999" toTime="99999" writeFile="false"/>
 		<pedTravTmRawData fromTime="0" toTime="99999" writeFile="false"/>
 		<pedTravTms collectData="false" fromTime="0" interval="99999" toTime="99999"/>
-		<queues collectData="false" fromTime="900" interval="900" toTime="4500"/>
+		<queues collectData="false" fromTime="900" interval="99999" toTime="4500"/>
 		<scDetRec writeFile="true"/>
 		<ssam fromTime="0" toTime="99999" writeFile="false"/>
 		<sigChgs writeDatabase="false" writeFile="false"/>
 		<vehInpData writeFile="false"/>
 		<vehInps collectData="false" fromTime="0" interval="99999" toTime="99999"/>
-		<vehNetPerf collectData="true" fromTime="900" interval="900" toTime="4500"/>
+		<vehNetPerf collectData="true" fromTime="900" interval="99999" toTime="4500"/>
 		<vehRec filterType="BYCLASS" fromTime="900" inclParkVehs="false" resolution="120" toTime="4500" writeDatabase="false" writeFile="true">
 			<selectedAttributes>
 				<attributeSelection attributeID="SIMSEC" decimals="2" format="SECONDS" showUnits="false"/>
@@ -1037,7 +1037,7 @@
 			</vehClassFilt>
 		</vehRec>
 		<vehTravTmRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="false"/>
-		<vehTravTms aggrBySect="DESTINATION" collectData="false" fromTime="900" interval="900" toTime="4500"/>
+		<vehTravTms aggrBySect="DESTINATION" collectData="false" fromTime="900" interval="99999" toTime="4500"/>
 	</evaluation>
 	<laneMarkingTypes>
 		<laneMarkingType name="Default" no="1">
@@ -3831,9 +3831,9 @@
 		<node allowRecr="false" anmConnNodeNo="0" anmConnZoneNo="0" anmZoneNo="0" hasUserDefOrient="false" mesoPenalMerg="0" name="MainSt/900N" no="100" showClsfValues="true" showTurnValVisual="true" turnValVisualSize="70" useForDynAssign="true" useForEval="true" useForMeso="false">
 			<geometry>
 				<points>
-					<point x="-27.298592795737676" y="-14.852015254203998"/>
-					<point x="-24.179558561912753" y="-89.468911143509843"/>
-					<point x="89.931354180357985" y="-40.421238122709241"/>
+					<point x="-32.391394722748885" y="-16.738238190134076"/>
+					<point x="-20.385885114271375" y="-74.712843698635382"/>
+					<point x="87.572694493203983" y="-37.358500917001834"/>
 					<point x="58.590753912147264" y="0.27476521063900705"/>
 				</points>
 			</geometry>
@@ -3844,11 +3844,11 @@
 		<node allowRecr="false" anmConnNodeNo="0" anmConnZoneNo="0" anmZoneNo="0" hasUserDefOrient="false" mesoPenalMerg="0" name="Mainst/1_15SB" no="101" showClsfValues="true" showTurnValVisual="true" turnValVisualSize="70" useForDynAssign="true" useForEval="true" useForMeso="false">
 			<geometry>
 				<points>
-					<point x="2.0148260971394194" y="-85.170701595196562"/>
-					<point x="3.4181365569100564" y="-203.98432052244323"/>
-					<point x="77.793590924753417" y="-181.53135316611315"/>
+					<point x="5.5306949572782536" y="-100.86761345333105"/>
+					<point x="11.806976884379697" y="-194.8180299470304"/>
+					<point x="55.724782574371446" y="-185.30379903797331"/>
 					<point x="161.72530182486304" y="-33.764256510990599"/>
-					<point x="151.71341185248176" y="-10.495882593697125"/>
+					<point x="149.26132203577262" y="-9.3641488321390725"/>
 				</points>
 			</geometry>
 			<label showLabel="true">
@@ -3858,11 +3858,11 @@
 		<node allowRecr="false" anmConnNodeNo="0" anmConnZoneNo="0" anmZoneNo="0" hasUserDefOrient="false" mesoPenalMerg="0" name="MainSt/I-15NB" no="102" showClsfValues="true" showTurnValVisual="true" turnValVisualSize="70" useForDynAssign="true" useForEval="true" useForMeso="false">
 			<geometry>
 				<points>
-					<point x="7.4258554873319724" y="-278.72129940441135"/>
-					<point x="-29.083547233970336" y="-378.03775679072709"/>
+					<point x="-3.9126181562649904" y="-316.75671131192934"/>
+					<point x="-22.293144664622048" y="-378.41500137791309"/>
 					<point x="42.190689661194128" y="-471.47799736733901"/>
-					<point x="133.39629317089995" y="-360.76822984363366"/>
-					<point x="88.817862154028461" y="-257.67164250785191"/>
+					<point x="109.59384641551986" y="-389.66078957000047"/>
+					<point x="69.824729214307709" y="-297.68670768160905"/>
 				</points>
 			</geometry>
 			<label showLabel="true">
