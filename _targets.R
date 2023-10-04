@@ -26,12 +26,14 @@ counts_targets <- tar_plan(
   tar_target(int100_file, "data/turning_counts/int100.xlsx", format = "file"),
   tar_target(int101_file, "data/turning_counts/int101.xlsx", format = "file"),
   tar_target(int102_file, "data/turning_counts/int102.xlsx", format = "file"),
+  tar_target(int103_file, "data/turning_counts/int103.xlsx", format = "file"),
   
   int100 = format_counts(int100_file, peak),
   int101 = format_counts(int101_file, peak),
   int102 = format_counts(int102_file, peak),
+  int103 = format_counts(int103_file, peak),
   
-  counts_list = list(`100` = int100, `101` = int101, `102` = int102),
+  counts_list = list(`100` = int100, `101` = int101, `102` = int102, `103` = int103),
   counts = combine_counts(counts_list)
 )
 
@@ -46,7 +48,7 @@ network_ex_targets <- tar_plan(
   ex_turn_counts = get_turn_counts(counts, ex_graph), #change once real data exists
   ex_od_routes = get_od_routes(ex_graph),
   ex_od_pcts = get_od_pcts(ex_turn_counts, ex_od_routes),
-  ex_approach_vols = get_approach_vols(counts, ex_graph),
+  ex_approach_vols = get_approach_vols(counts, ex_graph, peak),
   
 )
 
