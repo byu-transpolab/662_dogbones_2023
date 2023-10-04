@@ -42,7 +42,7 @@ get_turn_counts <- function(counts, net){
   counts %>%
     group_by(intersection, Time, leg, turn) %>% 
     summarise(count = sum(count), .groups = "drop") %>% 
-    left_join(net$edges_df, join_by(intersection, leg, turn)) %>% 
+    full_join(net$edges_df, join_by(intersection, leg, turn)) %>% 
     select(-c(id, rel)) %>% 
     # pivot_longer(
     #   -c(intersection, leg, turn, from, to, link),
@@ -70,7 +70,7 @@ get_approach_vols <- function(counts, net, peak) {
   counts %>% 
     group_by(bank, intersection, Time, leg) %>% 
     summarise(volume = sum(count), .groups = "drop") %>% 
-    left_join(net$nodes_df, join_by(intersection, leg == leg_dir)) %>% 
+    full_join(net$nodes_df, join_by(intersection, leg == leg_dir)) %>% 
     filter(type == "ex") %>% 
     select(bank, label, Time, volume) %>% 
     pivot_wider(names_from = "bank", values_from = "volume") %>% 
