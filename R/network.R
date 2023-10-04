@@ -41,26 +41,27 @@ make_net_graph <- function(nf, ef, legf){
   net
 }
 
-get_turn_counts <- function(counts_file, net){
-  counts <- read_csv(counts_file)
+get_turn_counts <- function(counts, net){
   
   counts %>%
+    group_by(intersection, Time, leg, turn) %>% 
+    summarise(count = sum(count), .groups = "drop") %>% 
     left_join(net$edges_df, join_by(intersection, leg, turn)) %>% 
     select(-c(id, rel)) %>% 
-    pivot_longer(
-      -c(intersection, leg, turn, from, to, link),
-      names_to = "time",
-      values_to = "count"
-    ) %>% 
-    group_by(intersection, leg, time) %>% 
+    # pivot_longer(
+    #   -c(intersection, leg, turn, from, to, link),
+    #   names_to = "time",
+    #   values_to = "count"
+    # ) %>% 
+    group_by(intersection, leg, Time) %>% 
     mutate(frac = count / sum(count)) %>% 
     ungroup() %>% 
     transmute(
-      link = paste(from, to, sep = "_"),
-      time,
+      link,
+      Time,
       frac
-    ) %>% 
-    arrange(time, link)
+    ) %>%
+    arrange(Time, link)
 }
 
 get_od_routes <- function(net){
@@ -81,9 +82,12 @@ get_od_routes <- function(net){
 }
 
 get_od_pcts <- function(counts, routes){
-  wide_counts <- counts %>% 
-    pivot_wider(names_from = time, values_from = frac)
-  
+  wide_counts <- counts %>%
+    filter(!is.na(link)) %>% #### TEMP, FOR TESTING!!!!
+    mutate(Time = format(Time, "%H:%M")) %>% 
+    pivot_wider(names_from = Time, values_from = frac) %>% 
+    mutate(across(-link, \(x) replace_na(x,0)))
+    
   od_pcts <- routes %>% 
     filter(!is.na(route)) %>% 
     mutate(
