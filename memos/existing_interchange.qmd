@@ -5,22 +5,27 @@ metadata-files:
 format: pdf
 ---
 
-## Introduction
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+```
 
 The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign.
 As such, the existing traffic conditions will be modeled to evaluate the performance of this interchange.
 This document outlines the study area, data collection, analysis, and conclusions from this study.
 
-## Study Area
-
 The study area is the I-15 interchange at Main Street in Payson, Utah. 
 @fig-study-area shows imagery of the study area.
+We are modeling both intersections of the interchange, as well as the intersections immediately north and south of the interchange.
 
 ![I-15 interchange at Main Street in Payson, Utah. @Google](figures/study_area.png){#fig-study-area fig-pos=H height="2.5in"}
 
-## Data Collection
+# Model Setup
 
-Traffic cameras were set up at the North end of the interchange and turning movements were counted using CountPRO software [@CountPro].
+Traffic cameras were set up at the North end of the interchange and turning movements were counted using the CountPRO software [@CountPro].
 For the South end of the interchange, ATSPM data were used [@ATSPM].
 The turning movement counts are shown in @tbl-tmc.
 
@@ -28,24 +33,20 @@ The turning movement counts are shown in @tbl-tmc.
 #| label: tbl-tmc
 #| tbl-cap: "Turning Movement Counts at the Study Area"
 #| echo: false
-#| eval: false
 
-library(knitr)
-library(tidyverse)
+targets::tar_load(ex_approach_vols)
 
-# this table still needs to be created. We may need to make several tables.
-df <- read_csv("data/counts/tmc.csv")
-
-kable(df)
+kbl(ex_approach_vols)
 ```
 
-## Analysis
+
+# Results
 
 The analysis was performed using PTV Vissim [@Vissim].
 
-## Conclusion
+{{< pagebreak >}}
 
-## References
+# References
 
 ::: {#refs}
 :::
