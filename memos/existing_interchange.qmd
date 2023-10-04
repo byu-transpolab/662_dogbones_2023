@@ -1,5 +1,5 @@
 ---
-title: "Traffic Conditions at the Existing I-15 Interchange at 3200 West in Payson, Utah"
+title: "Traffic Conditions at the Existing I-15 Interchange at Main Street in Payson, Utah"
 metadata-files:
   - _info.yml
 format: pdf
@@ -7,13 +7,15 @@ format: pdf
 
 ## Introduction
 
-The existing I-15 interchange at 3200 West in Payson, Utah is under investigation for a potential redesign.
+The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign.
 As such, the existing traffic conditions will be modeled to evaluate the performance of this interchange.
 This document outlines the study area, data collection, analysis, and conclusions from this study.
 
 ## Study Area
 
+The study area is the I-15 interchange at Main Street in Payson, Utah. 
 
+![I-15 interchange at Main Street in Payson, Utah.](data/study_area.png)
 
 ## Data Collection
 
