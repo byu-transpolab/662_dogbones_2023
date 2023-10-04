@@ -4170,6 +4170,10 @@
 		<timeIntervalSet no="VEHICLEROUTESTATIC">
 			<timeInts>
 				<timeInterval start="0"/>
+				<timeInterval start="900"/>
+				<timeInterval start="1800"/>
+				<timeInterval start="2700"/>
+				<timeInterval start="3600"/>
 			</timeInts>
 		</timeIntervalSet>
 		<timeIntervalSet no="VEHICLEROUTEPARTIAL">
@@ -4214,6 +4218,10 @@
 		<timeIntervalSet no="PEDESTRIANROUTESTATIC">
 			<timeInts>
 				<timeInterval start="0"/>
+				<timeInterval start="900"/>
+				<timeInterval start="1800"/>
+				<timeInterval start="2700"/>
+				<timeInterval start="3600"/>
 			</timeInts>
 		</timeIntervalSet>
 	</timeIntervalSets>
@@ -4727,7 +4735,7 @@
 		</vehicleRoutingDecisionStatic>
 		<vehicleRoutingDecisionStatic allVehTypes="true" anmFlag="false" combineStaRoutDec="false" link="10221" name="" no="1022" pos="31.17080672136542" routeChoiceMeth="STATIC">
 			<vehRoutSta>
-				<vehicleRouteStatic destLink="10022" destPos="68.206505694833538" formula="" name="" no="10221002" relFlow="2 0:0.45">
+				<vehicleRouteStatic destLink="10022" destPos="68.206505694833538" formula="" name="" no="10221002" relFlow="2 0:0.45, 2 900000:0.45, 2 1800000:0.45, 2 2700000:0.45, 2 3600000:0.45">
 					<linkSeq>
 						<intObjectRef key="3"/>
 						<intObjectRef key="18"/>
@@ -4742,7 +4750,7 @@
 						<intObjectRef key="39"/>
 					</linkSeq>
 				</vehicleRouteStatic>
-				<vehicleRouteStatic destLink="10032" destPos="50.418620145636332" formula="" name="" no="10221003" relFlow="2 0:0.25">
+				<vehicleRouteStatic destLink="10032" destPos="50.418620145636332" formula="" name="" no="10221003" relFlow="2 0:0.25, 2 900000:0.25, 2 1800000:0.25, 2 2700000:0.25, 2 3600000:0.25">
 					<linkSeq>
 						<intObjectRef key="3"/>
 						<intObjectRef key="18"/>
@@ -4757,7 +4765,7 @@
 						<intObjectRef key="38"/>
 					</linkSeq>
 				</vehicleRouteStatic>
-				<vehicleRouteStatic destLink="10122" destPos="39.491854115120255" formula="" name="" no="10221012" relFlow="2 0:0.3">
+				<vehicleRouteStatic destLink="10122" destPos="39.491854115120255" formula="" name="" no="10221012" relFlow="2 0:0.3, 2 900000:0.3, 2 1800000:0.3, 2 2700000:0.3, 2 3600000:0.3">
 					<linkSeq>
 						<intObjectRef key="3"/>
 						<intObjectRef key="18"/>
@@ -4770,7 +4778,7 @@
 						<intObjectRef key="44"/>
 					</linkSeq>
 				</vehicleRouteStatic>
-				<vehicleRouteStatic destLink="10242" destPos="62.935210165613988" formula="" name="" no="10221024" relFlow="2 0:0.25">
+				<vehicleRouteStatic destLink="10242" destPos="62.935210165613988" formula="" name="" no="10221024" relFlow="2 0:0.25, 2 900000:0.25, 2 1800000:0.25, 2 2700000:0.25, 2 3600000:0.25">
 					<linkSeq>
 						<intObjectRef key="3"/>
 						<intObjectRef key="18"/>
@@ -4779,7 +4787,7 @@
 						<intObjectRef key="1000"/>
 					</linkSeq>
 				</vehicleRouteStatic>
-				<vehicleRouteStatic destLink="10252" destPos="88.677186812243022" formula="" name="" no="10221025" relFlow="2 0:0.05">
+				<vehicleRouteStatic destLink="10252" destPos="88.677186812243022" formula="" name="" no="10221025" relFlow="2 0:0.05, 2 900000:0.05, 2 1800000:0.05, 2 2700000:0.05, 2 3600000:0.05">
 					<linkSeq>
 						<intObjectRef key="1100"/>
 						<intObjectRef key="15"/>
