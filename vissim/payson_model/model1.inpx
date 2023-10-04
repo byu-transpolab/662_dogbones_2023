@@ -987,7 +987,7 @@
 		<lnChgs filterType="ALL" fromTime="0" toTime="99999" writeFile="false"/>
 		<managedLanes writeFile="false"/>
 		<mesoEvaluationConfig collectData="false" fromTime="0" interval="99999" toTime="99999"/>
-		<nodeRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="false"/>
+		<nodeRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="true"/>
 		<nodeResults collectData="true" fromTime="900" interval="90" toTime="4500"/>
 		<odPairs collectData="false" fromTime="900" interval="99999" toTime="99999"/>
 		<ptWaitingTimes writeFile="false"/>
@@ -1014,13 +1014,13 @@
 		<pedTravTmRawData fromTime="0" toTime="99999" writeFile="false"/>
 		<pedTravTms collectData="false" fromTime="0" interval="99999" toTime="99999"/>
 		<queues collectData="false" fromTime="900" interval="900" toTime="4500"/>
-		<scDetRec writeFile="false"/>
+		<scDetRec writeFile="true"/>
 		<ssam fromTime="0" toTime="99999" writeFile="false"/>
 		<sigChgs writeDatabase="false" writeFile="false"/>
 		<vehInpData writeFile="false"/>
 		<vehInps collectData="false" fromTime="0" interval="99999" toTime="99999"/>
 		<vehNetPerf collectData="true" fromTime="900" interval="900" toTime="4500"/>
-		<vehRec filterType="BYCLASS" fromTime="900" inclParkVehs="false" resolution="120" toTime="4500" writeDatabase="false" writeFile="false">
+		<vehRec filterType="BYCLASS" fromTime="900" inclParkVehs="false" resolution="120" toTime="4500" writeDatabase="false" writeFile="true">
 			<selectedAttributes>
 				<attributeSelection attributeID="SIMSEC" decimals="2" format="SECONDS" showUnits="false"/>
 				<attributeSelection attributeID="NO" decimals="0" format="DEFAULT" showUnits="false"/>
@@ -3968,7 +3968,7 @@
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="55 1" name="" no="6" pos="0.7697101456608223" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="7 1" lookBeyRedSig="false" maxSpeed="180" minClear="7.74192" minGapTime="560" pos="13.14288134572041"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="7 1" lookBeyRedSig="false" maxSpeed="180" minClear="7.74192" minGapTime="9" pos="13.14288134572041"/>
 				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="7 1" lookBeyRedSig="false" maxSpeed="0" minClear="5" minGapTime="3" pos="16.121812374566609"/>
 				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" intLink="11" lookBeyRedSig="false" maxSpeed="180" minClear="13.716000000000001" minGapTime="3" pos="41.62895956311074"/>
 			</conflictMarkers>
