@@ -7,13 +7,24 @@ format: pdf
 
 ## Introduction
 
+The existing I-15 interchange at 3200 West in Payson, Utah is under investigation for a potential redesign.
+As such, the existing traffic conditions will be modeled to evaluate the performance of this interchange.
+This document outlines the study area, data collection, analysis, and conclusions from this study.
+
 ## Study Area
+
+
 
 ## Data Collection
 
 ## Analysis
 
 ## Conclusion
+
+## References
+
+::: {#refs}
+:::
 
 
 
