@@ -34,7 +34,7 @@ library(knitr)
 library(tidyverse)
 
 # this table still needs to be created. We may need to make several tables.
-df <- read_csv("data/tmc.csv")
+df <- read_csv("data/counts/tmc.csv")
 
 kable(df)
 ```
