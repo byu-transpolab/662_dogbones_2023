@@ -75,7 +75,8 @@ get_od_pcts <- function(counts, routes, out_file){
     # mutate(across(-c(from,to,links), \(x) replace_na(x,1))) %>% 
     group_by(from, to) %>% 
     summarise(across(-c(links), \(x) prod(x, na.rm = TRUE)), .groups = "drop") %>% 
-    mutate(vissim_route = paste0(from,to), .after = to)
+    mutate(vissim_route = paste0(from,to), .after = to) %>% 
+    arrange(vissim_route)
   
   write_csv(od_pcts, out_file)
   
