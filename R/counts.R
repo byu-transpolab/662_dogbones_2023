@@ -94,7 +94,8 @@ get_approach_vols <- function(counts, net, peak, bin, out_file) {
     select(-load) %>% 
     ungroup() %>% 
     pivot_wider(names_from = "Time", values_from = c("volume", "truck_pct")) %>% 
-    mutate(across(contains("volume"), \(x) x*60/bin)) #Gets hourly volumes
+    mutate(across(contains("volume"), \(x) x*60/bin)) %>% #Gets hourly volumes
+    arrange(label)
   
   write_csv(vols, out_file)
   
