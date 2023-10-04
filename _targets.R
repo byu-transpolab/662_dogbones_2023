@@ -15,6 +15,7 @@ sapply(r_files, source)
 #### List targets ##############################################################
 
 misc_targets <- tar_plan(
+  count_bin_length <- 15, #minutes
   tar_target(leg_translation_file, "data/leg_translation.csv", format = "file"),
   # tar_target(random_counts_file, "data/random_counts.csv", format = "file"),
   
@@ -47,8 +48,8 @@ network_ex_targets <- tar_plan(
   ex_graph = make_net_graph(ex_nodes_file, ex_edges_file, leg_translation_file),
   ex_turn_counts = get_turn_counts(counts, ex_graph), #change once real data exists
   ex_od_routes = get_od_routes(ex_graph),
-  ex_od_pcts = get_od_pcts(ex_turn_counts, ex_od_routes),
-  ex_approach_vols = get_approach_vols(counts, ex_graph, peak),
+  ex_od_pcts = get_od_pcts(ex_turn_counts, ex_od_routes, "data/vissim_inputs/ex_od_pcts.csv"),
+  ex_approach_vols = get_approach_vols(counts, ex_graph, peak, count_bin_length, "data/vissim_inputs/ex_vols.csv"),
   
 )
 
