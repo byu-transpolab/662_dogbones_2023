@@ -16,7 +16,7 @@ This document outlines the study area, data collection, analysis, and conclusion
 The study area is the I-15 interchange at Main Street in Payson, Utah. 
 @fig-study-area shows imagery of the study area.
 
-![I-15 interchange at Main Street in Payson, Utah. @Google](figures/study_area.png){#fig-study-area}
+![I-15 interchange at Main Street in Payson, Utah. @Google](figures/study_area.png){#fig-study-area fig-pos=H height="2.5in"}
 
 ## Data Collection
 
@@ -27,6 +27,8 @@ The turning movement counts are shown in @tbl-tmc.
 ```{r}
 #| label: tbl-tmc
 #| tbl-cap: "Turning Movement Counts at the Study Area"
+#| echo: false
+#| eval: false
 
 library(knitr)
 library(tidyverse)
