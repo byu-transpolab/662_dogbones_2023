@@ -96,8 +96,9 @@ get_od_pcts <- function(counts, routes){
     select(-route) %>% 
     unnest(links) %>% 
     left_join(wide_counts, join_by(links == link)) %>% 
+    mutate(across(-c(from,to,links), \(x) replace_na(x,1))) %>% 
     group_by(from, to) %>% 
-    summarise(across(-c(links), \(x) prod(x, na.rm = TRUE)), .groups = "drop")
+    summarise(across(-c(links), prod), .groups = "drop")
   
   od_pcts
 }
