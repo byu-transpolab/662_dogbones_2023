@@ -37,6 +37,29 @@ combine_counts <- function(counts_list) {
       )
 }
 
+get_turn_counts <- function(counts, net){
+  
+  counts %>%
+    group_by(intersection, Time, leg, turn) %>% 
+    summarise(count = sum(count), .groups = "drop") %>% 
+    left_join(net$edges_df, join_by(intersection, leg, turn)) %>% 
+    select(-c(id, rel)) %>% 
+    # pivot_longer(
+    #   -c(intersection, leg, turn, from, to, link),
+    #   names_to = "time",
+    #   values_to = "count"
+    # ) %>% 
+    group_by(intersection, leg, Time) %>% 
+    mutate(frac = count / sum(count)) %>% 
+    ungroup() %>% 
+    transmute(
+      link,
+      Time,
+      frac
+    ) %>%
+    arrange(Time, link)
+}
+
 #' Get approach vols
 get_approach_vols <- function(counts, net, peak) {
   
