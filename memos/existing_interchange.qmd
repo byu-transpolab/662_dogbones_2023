@@ -14,12 +14,32 @@ This document outlines the study area, data collection, analysis, and conclusion
 ## Study Area
 
 The study area is the I-15 interchange at Main Street in Payson, Utah. 
+@fig-study-area shows imagery of the study area.
 
-![I-15 interchange at Main Street in Payson, Utah.](data/study_area.png)
+![I-15 interchange at Main Street in Payson, Utah. @Google](figures/study_area.png){#fig-study-area}
 
 ## Data Collection
 
+Traffic cameras were set up at the North end of the interchange and turning movements were counted using CountPRO software [@CountPro].
+For the South end of the interchange, ATSPM data were used [@ATSPM].
+The turning movement counts are shown in @tbl-tmc.
+
+```{r}
+#| label: tbl-tmc
+#| tbl-cap: "Turning Movement Counts at the Study Area"
+
+library(knitr)
+library(tidyverse)
+
+# this table still needs to be created. We may need to make several tables.
+df <- read_csv("data/tmc.csv")
+
+kable(df)
+```
+
 ## Analysis
+
+The analysis was performed using PTV Vissim [@Vissim].
 
 ## Conclusion
 
