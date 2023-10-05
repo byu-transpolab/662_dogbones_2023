@@ -58,7 +58,15 @@ Travel time data was not collected for this network, nor was any Bluetooth or ra
 
 # Results
 
-The analysis was performed using PTV Vissim [@Vissim].
+@tbl-los displays the results of the analysis performed in the Vissim model. Each of the approaches are performing relatively well under the existing conditions.  
+
+``` 
+
+# LOS table here 
+
+``` 
+
+These results will be valuable for further analysis at the study location. However, there is not an apparent need for the interchange to be modified based on this analysis alone.  
 
 {{< pagebreak >}}
 
