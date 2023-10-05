@@ -21,7 +21,7 @@
 								<objectRef key="1 1 7"/>
 							</dockableChildPanes>
 						</dockableChildPane>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="true" keyText="Quick View1" no="6" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="291" sizeWidth="242" subType="" tag="" text="Quick View (Vehicle Inputs)" textTabResolved="Quick View (Vehicle Inputs)" type="PTV.Vision.Controls.ObjectPropertiesWindow, Controls, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="true" keyText="Quick View1" no="6" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="291" sizeWidth="242" subType="" tag="" text="Quick View" textTabResolved="Quick View" type="PTV.Vision.Controls.ObjectPropertiesWindow, Controls, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Smart Map1" no="7" paneLayoutNo="2" paneType="CONTROL" pinned="true" sizeHeight="0" sizeWidth="0" subType="" tag="" text="Smart Map" textTabResolved="Smart Map" type="PTV.Vision.Controls.SmartMapControl, ControlUtils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 					</dockChildPanes>
 				</dockableAreaPane>
@@ -81,7 +81,7 @@
 		<windowLayoutDefault floating="false" height="310" no="20" positionX="-2883" positionY="2164" subType="Parent MOVEMENTEVALUATION" type="CoupledListWindow" width="2307"/>
 		<windowLayoutDefault floating="false" height="310" no="21" positionX="-2883" positionY="2164" subType="Parent LINKEVALSEGMENTEVALUATION" type="CoupledListWindow" width="2307"/>
 		<windowLayoutDefault floating="false" height="279" no="22" positionX="2099" positionY="1445" subType="Parent LINK" type="CoupledListWindow" width="1741"/>
-		<windowLayoutDefault floating="true" height="428" no="23" positionX="-2426" positionY="127" subType="" type="MessageWindow" width="1426"/>
+		<windowLayoutDefault floating="true" height="494" no="23" positionX="82" positionY="117" subType="" type="MessageWindow" width="1426"/>
 		<windowLayoutDefault floating="false" height="310" no="24" positionX="-2883" positionY="2164" subType="Parent MESOLANEEVALUATION" type="CoupledListWindow" width="2307"/>
 		<windowLayoutDefault floating="false" height="310" no="25" positionX="-2883" positionY="2164" subType="Parent PATH" type="CoupledListWindow" width="2307"/>
 		<windowLayoutDefault floating="false" height="310" no="26" positionX="-2883" positionY="2164" subType="Parent LEVEL" type="CoupledListWindow" width="2307"/>
@@ -1250,7 +1250,7 @@
 			</unselectableTypes>
 		</networkEditorLayout>
 		<networkEditorLayout name="" no="3" synchronization="NONE">
-			<camera coord2DX="-234.43282843025926" coord2DY="-846.4902838833774" coord3DX="0" coord3DY="0" coord3DZ="1000" foV="45" pitchAngle="1.5707963267948966" rollAngle="0" yawAngle="1.5707963267948966" zoom2D="1.1139111826358759"/>
+			<camera coord2DX="-311.76796880339259" coord2DY="-213.42671101184311" coord3DX="0" coord3DY="0" coord3DZ="1000" foV="45" pitchAngle="1.5707963267948966" rollAngle="0" yawAngle="1.5707963267948966" zoom2D="1.1139111826358759"/>
 			<gParSet>
 				<backgroundGPars borderColor="ff000000" borderLineStyle="NOLINE" labelAttribute="NO" labelBackgrColor="00000000" labelColor="ff000000" labelDecimals="3" labelFontSize="3" labelVisibility="false" legdInclLabColor="false" objectVisibility="true" useLabelColorScheme="false"/>
 				<baseGPars autoLvlTransp="true" backgroundColor="ffc0c0c0" compassPos="BOTTOMRIGHT" legdOffset="10 10" legdPos="BOTTOMRIGHT" legdScale="1" logoFilename="" logoOffset="20 20" logoPos="TOPLEFT" mapGrayScale="false" mapIntensity="100" mapProviderName="" mapType="DEFAULTMAPPROVIDER" mode3D="false" rubberbandColor="fff0f000" selectionColor="fff0f000" showCompass="false" showGrid="true" showLegd="false" showLogo="false" showMap="false" showScale="true" showSimTmLabel="false" simTmLabelColor="ff000000" simTmLabelFontSize="20" simTmLabelOffset="15 30" simTmLabelPos="BOTTOMLEFT" wireframeMode="false">

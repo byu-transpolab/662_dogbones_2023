@@ -13,21 +13,15 @@ library(tidyverse)
 library(kableExtra)
 ```
 
-The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign.
-As such, the existing traffic conditions will be modeled to evaluate the performance of this interchange.
-This document outlines the study area, data collection, analysis, and conclusions from this study.
+The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign. As such, the existing traffic conditions will be modeled to evaluate the current performance of the interchange. This document outlines the study parameters, model setup and results from the existing interchange analysis.
 
-The study area is the I-15 interchange at Main Street in Payson, Utah. 
-@fig-study-area shows imagery of the study area.
-We are modeling both intersections of the interchange, as well as the intersections immediately north and south of the interchange.
+The Main Street interchange is one of two interchanges serving the city of Payson. It connects to Main Street, which is classified as a minor arterial [@FuncClass] and carries an Annual Average Daily Traffic of 15,000 veh per day [@AADT]. Due to growth and increased travel in the area, the interchange is being investigated for a potential redesign to better serve the Payson and nearby Benjamin, Utah communities. UDOT prepared an Environmental Impact Statement in 2019 for the interchange and proposed a series of braided ramps to connect the existing interchange to the proposed Nebo Beltway, just northeast of Main Street [@UDOTStudy]. This study will provide a second evaluation of the existing conditions and potential redesign options for the interchange. @fig-study-area shows imagery of the study area.
 
 ![I-15 interchange at Main Street in Payson, Utah. @Google](figures/study_area.png){#fig-study-area fig-pos=H height="2.5in"}
 
 # Model Setup
 
-Traffic cameras were set up at the North end of the interchange and turning movements were counted using the CountPRO software [@CountPro].
-For the South end of the interchange, ATSPM data were used [@ATSPM].
-The turning movement counts are shown in @tbl-tmc.
+To model the interchange accurately, turning movement counts were collected for the intersections in the study area. Traffic counting cameras were set up at the north end of the interchange to capture volumes for the north intersection and interchange. Volumes were then counted via the footage using CountPRO software [@CountPro]. Automated Traffic Signal Performance Measure (ATSPM) data [@ATSPM] were used for the volumes for the south intersection. The turning movement counts are shown in @tbl-tmc.
 
 ```{r}
 #| label: tbl-tmc
