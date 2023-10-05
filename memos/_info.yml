@@ -38,3 +38,6 @@ bibliography:
 lof: false
 lot: false
 fig-align: center
+
+execute:
+  echo: false
