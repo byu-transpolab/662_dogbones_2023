@@ -37,7 +37,7 @@ combine_counts <- function(counts_list) {
       )
 }
 
-get_turn_counts <- function(counts, net){
+get_turn_pcts <- function(counts, net){
   
   counts %>%
     group_by(intersection, Time, leg, turn) %>% 
@@ -100,4 +100,12 @@ get_approach_vols <- function(counts, net, peak, bin, out_file) {
   write_csv(vols, out_file)
   
   vols
+}
+
+#' Get hourly turn counts
+get_hourly_turn_counts <- function(counts, hour) {
+  counts %>% 
+    filter(Time %within% hour) %>% 
+    group_by(intersection, leg, turn) %>% 
+    summarise(hour_count = sum(count), .groups = "drop")
 }

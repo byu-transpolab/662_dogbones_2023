@@ -1,0 +1,13 @@
+LOS,Type,Lower,Upper
+A,Signalized,-Inf,10
+A,Unsignalized,-Inf,10
+B,Signalized,10,20
+B,Unsignalized,10,15
+C,Signalized,20,35
+C,Unsignalized,15,25
+D,Signalized,35,55
+D,Unsignalized,25,35
+E,Signalized,55,80
+E,Unsignalized,35,50
+F,Signalized,80,Inf
+F,Unsignalized,50,Inf
