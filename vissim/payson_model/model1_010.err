@@ -1,2 +1,0 @@
-﻿                  Warning	Simulation second 2466.10: After 60.00 seconds of waiting for lane change the vehicle 7027 (on Static Vehicle Route "1014 - 10141012") was removed from link "13: I-15 SB Off" at position 165.473 ft.	Network object type: Vehicle	Network object keys: 7027
-                  Warning	Vehicle input 1022 could not be finished completely (remain: 1159 vehicles).	Network object type: Vehicle Input	Network object keys: 1022

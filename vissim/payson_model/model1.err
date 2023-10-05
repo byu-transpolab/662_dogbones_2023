@@ -1,4 +1,0 @@
-﻿                     Note	Do you want to save the changes? : &Yes
-                  Warning	Conflict marker 6 - 7 - 1 - 43.120: The minimum gap time 560.0 s is greater than 10.0 s.	Network object type: Priority Rule	Network object keys: 6
-                  Warning	At least one of the priority rules has a large gap time. This can make execution during simulation extremely slow. The respective priority rules are listed in the window "Messages".	Network object type: Priority Rule	Network object keys: 6
-                  Warning	The link gradient experienced by vehicles depends on the link attribute "Gradient" according to the network settings. This attribute has the value zero for all links but some links have a Z-offset. These Z-coordinates are ignored for the vehicle behavior. If the Z-coordinates are meant to affect the vehicles, please select that option in the network settings.

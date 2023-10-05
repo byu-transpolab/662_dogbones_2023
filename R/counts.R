@@ -61,13 +61,13 @@ get_turn_counts <- function(counts, net){
 }
 
 #' Get approach vols
-get_approach_vols <- function(counts, net, peak) {
+get_approach_vols <- function(counts, net, peak, bin, out_file) {
   
   peak_starts <- peak %>% 
     map(\(x) int_start(x) %>% format("%H:%M")) %>% 
     unlist()
   
-  counts %>% 
+  vols <- counts %>% 
     group_by(bank, intersection, Time, leg) %>% 
     summarise(volume = sum(count), .groups = "drop") %>% 
     full_join(net$nodes_df, join_by(intersection, leg == leg_dir)) %>% 
@@ -93,5 +93,11 @@ get_approach_vols <- function(counts, net, peak) {
       Time = if_else(is.na(load), Time, paste("load", load, sep = "_"))) %>% 
     select(-load) %>% 
     ungroup() %>% 
-    pivot_wider(names_from = "Time", values_from = c("volume", "truck_pct"))
+    pivot_wider(names_from = "Time", values_from = c("volume", "truck_pct")) %>% 
+    mutate(across(contains("volume"), \(x) x*60/bin)) %>% #Gets hourly volumes
+    arrange(label)
+  
+  write_csv(vols, out_file)
+  
+  vols
 }
