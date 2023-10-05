@@ -49,6 +49,40 @@ format_turning_counts <- function(counts){
     kable_styling() %>% 
     collapse_rows(columns = 1, valign = "middle")
 }
+
+format_los <- function(results) {
+  results %>% 
+    format_turns() %>% 
+    filter(!is.na(avgdelay)) %>% 
+    left_join(
+      filter(., type == "Intersection") %>% 
+        select(Intersection, avgdelay, LOS),
+      join_by(Intersection),
+      suffix = c("_m", "_i")) %>% 
+    filter(type != "Intersection") %>% 
+    select(-type, -maxqlen) %>% 
+    relocate(Intersection, leg, turn) %>% 
+    mutate(turn = case_when(
+      turn == "l" ~ "Left",
+      turn == "t" ~ "Thru",
+      turn == "r" ~ "Right",
+      TRUE ~ turn
+    )) %>% 
+    kbl(align = "c", booktabs = TRUE, linesep = "", col.names = c(
+      "Intersection",
+      "Approach",
+      "Movement",
+      "Avg. Queue Length (ft)",
+      # "Max Queue Length (ft)",
+      "Avg. Vehicle Delay",
+      "Level of Service",
+      "Avg. Vehicle Delay",
+      "Level of Service"
+    )) %>% 
+    kable_styling(latex_options = "scale_down") %>%
+    column_spec(4:8,"2cm") %>% 
+    collapse_rows(columns = c(1,2,7,8), valign = "middle", target = 1)
+}
 ```
 
 The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign. As such, the existing traffic conditions will be modeled to evaluate the current performance of the interchange. This document outlines the study parameters, model setup and results from the existing interchange analysis.
@@ -84,37 +118,7 @@ am_peak_turn_counts %>% format_turning_counts()
 
 targets::tar_load(am_results)
 
-am_results %>% 
-  format_turns() %>% 
-  filter(!is.na(avgdelay)) %>% 
-  left_join(
-    filter(., type == "Intersection") %>% 
-      select(Intersection, avgdelay, LOS),
-    join_by(Intersection),
-    suffix = c("_m", "_i")) %>% 
-  filter(type != "Intersection") %>% 
-  select(-type, -maxqlen) %>% 
-  relocate(Intersection, leg, turn) %>% 
-  mutate(turn = case_when(
-    turn == "l" ~ "Left",
-    turn == "t" ~ "Thru",
-    turn == "r" ~ "Right",
-    TRUE ~ turn
-  )) %>% 
-  kbl(align = "c", booktabs = TRUE, linesep = "", col.names = c(
-    "Intersection",
-    "Approach",
-    "Movement",
-    "Avg. Queue Length (ft)",
-    # "Max Queue Length (ft)",
-    "Avg. Vehicle Delay",
-    "Level of Service",
-    "Avg. Vehicle Delay",
-    "Level of Service"
-  )) %>% 
-  kable_styling(latex_options = "scale_down") %>%
-  column_spec(4:8,"2cm") %>% 
-  collapse_rows(columns = c(1,2,7,8), valign = "middle", target = 1)
+am_results %>% format_los()
 ```
 
 # Results
