@@ -1,0 +1,64 @@
+﻿$VISION
+* File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2023_AM\existing_AM.inpx
+* Comment:	Random Seed = 42
+* Date:		10/4/2023 8:15:57 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Node Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* MOVEMENT\DIRECTION: Movement\Direction, Movement\Direction (Returns the movement in cardinal direction.  From cardinal direction – to cardinal direction.)
+* QLEN: QLen, Queue length (Average queue length: In each time step, the current queue length is measured and the arithmetic mean is thus calculated per time interval.) [ft]
+* QLENMAX: QLenMax, Queue length (maximum) (Queue length (maximum): In each time step, the current queue length is measured and the maximum is thus calculated per time interval.) [ft]
+* VEHS(ALL): Vehs(All), Vehicles (All) (Number of vehicles)
+* LOS(ALL): LOS(All), Level of service (All) (Level-of-service (A..F) as computed by the associated LOS scheme)
+* VEHDELAY(ALL): VehDelay(All), Vehicle delay (average) (All) (Delay of all vehicles.  The delay of a vehicle in leaving a travel time measurement is obtained by subtracting the theoretical (ideal) travel time from the actual travel time.  The theoretical travel time is the travel time which could be achieved if there were no other vehicles and/or no signal controls or other reasons for stops.  Reduced speed areas are taken into account.  The actual travel time does not include any passenger service times of PT vehicles at line stops and no parking time in real parking lots.  The delay due to braking before a PT stop and/or the subsequent acceleration after a PT stop are part of the delay.) [s]
+* STOPDELAY(ALL): StopDelay(All), Stopped delay (average) (All) (Stopped delay per vehicle in seconds without stops at PT stops and in parking lots) [s]
+* STOPS(ALL): Stops(All), Stops (All) (Number of vehicle stops per vehicle without stops at PT stops and in parking lots)
+* MOVEMENT\NODE: Movement\Node, Movement\Node (Node in which this movement is located)
+* MOVEMENT\TOLINK: Movement\ToLink, Movement\To-link (Link where the movement ends)
+* MOVEMENT\FROMLINK: Movement\FromLink, Movement\From-link (Link where the movement starts)
+* 
+* SimRun;TimeInt;Movement\Direction;QLen;QLenMax;Vehs(All);LOS(All);VehDelay(All);StopDelay(All);Stops(All);Movement\Node;Movement\ToLink;Movement\FromLink
+* Simulation run;Time interval;Movement\Direction;Queue length;Queue length (maximum);Vehicles (All);Level of service (All);Vehicle delay (average) (All);Stopped delay (average) (All);Stops (All);Movement\Node;Movement\To-link;Movement\From-link
+*
+$MOVEMENTEVALUATION:SIMRUN;TIMEINT;MOVEMENT\DIRECTION;QLEN;QLENMAX;VEHS(ALL);LOS(ALL);VEHDELAY(ALL);STOPDELAY(ALL);STOPS(ALL);MOVEMENT\NODE;MOVEMENT\TOLINK;MOVEMENT\FROMLINK
+AVG;900-4500;S-SW;0.10;38.64;158;;1.06;0.04;0.01;100;10022;10011
+AVG;900-4500;S-N;0.00;8.18;97;;0.32;0.00;0.00;100;10032;10011
+AVG;900-4500;SW-S;22.37;179.53;227;;15.07;1.29;1.36;100;10012;10021
+AVG;900-4500;SW-N;0.67;63.69;19;;11.55;0.54;1.19;100;10032;10021
+AVG;900-4500;N-S;0.00;0.00;91;;1.66;0.60;0.04;100;10012;10031
+AVG;900-4500;N-SW;0.05;18.07;11;;2.05;0.40;0.13;100;10022;10031
+AVG;900-4500;Total;3.86;179.53;603;;6.64;0.62;0.56;100;;
+AVG;900-4500;S-SW;8.71;128.97;64;;13.52;5.61;0.99;101;44;10111
+AVG;900-4500;S-N;8.71;128.97;128;;12.00;4.22;0.66;101;10132;10111
+AVG;900-4500;N-SW;7.94;162.22;26;;14.13;6.02;0.88;101;44;10131
+AVG;900-4500;N-S;28.14;305.12;294;;26.00;17.55;0.84;101;10112;10131
+AVG;900-4500;NE-SW;8.02;113.59;6;;9.33;2.10;0.37;101;44;10141
+AVG;900-4500;NE-S;8.02;113.59;327;;9.06;3.52;0.45;101;10112;10141
+AVG;900-4500;NE-N;0.23;42.09;128;;1.13;0.08;0.04;101;10132;10141
+AVG;900-4500;Total;14.65;305.12;973;;14.02;7.64;0.59;101;;
+AVG;900-4500;SW-NE;0.00;0.00;0;;;;;102;54;54
+AVG;900-4500;S-N;0.00;0.00;163;;0.79;0.06;0.01;102;10232;10211
+AVG;900-4500;S-NE;0.56;100.11;717;;1.29;0.00;0.00;102;10242;10211
+AVG;900-4500;S-NE;0.00;0.00;4;;1.26;0.00;0.00;102;10252;10211
+AVG;900-4500;SW-S;0.64;77.15;111;;2.77;0.51;0.17;102;10212;10221
+AVG;900-4500;SW-N;0.52;52.87;23;;6.81;3.18;0.46;102;10232;10221
+AVG;900-4500;SW-NE;0.20;44.75;3;;3.71;0.00;0.00;102;10242;10221
+AVG;900-4500;SW-NE;0.64;77.15;5;;5.38;1.42;0.30;102;10252;10221
+AVG;900-4500;N-S;0.78;75.75;442;;1.19;0.00;0.00;102;10212;10231
+AVG;900-4500;N-NE;1.62;89.19;168;;7.66;2.67;0.49;102;10242;10231
+AVG;900-4500;N-NE;0.78;75.75;10;;6.66;2.72;0.45;102;10252;10231
+AVG;900-4500;NE-S;1.00;76.09;4;;15.39;1.93;1.45;102;10212;10251
+AVG;900-4500;NE-N;1.36;75.76;7;;16.61;4.60;1.56;102;10232;10251
+AVG;900-4500;NE-NE;1.10;74.87;8;;11.57;1.74;1.25;102;10242;10251
+AVG;900-4500;Total;0.65;108.00;1666;;2.24;0.41;0.09;102;;
+AVG;900-4500;S-N;15.36;287.45;745;;6.02;1.16;0.26;103;10332;10311
+AVG;900-4500;S-E;1.10;75.88;94;;4.21;0.11;0.22;103;10342;10311
+AVG;900-4500;N-S;8.14;193.08;476;;5.07;1.21;0.27;103;10312;10331
+AVG;900-4500;N-E;2.65;98.27;81;;14.94;6.48;0.91;103;10342;10331
+AVG;900-4500;E-S;1.58;58.95;28;;14.99;7.27;0.80;103;10312;10341
+AVG;900-4500;E-N;8.34;113.22;140;;12.58;2.37;1.13;103;10332;10341
+AVG;900-4500;Total;6.20;287.45;1563;;6.83;1.61;0.38;103;;
+
