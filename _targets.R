@@ -4,7 +4,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("tidyverse", "DiagrammeR", "gtools", "flextable", "readxl"),
+  packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
 )
 
 #Source R functions
@@ -68,10 +68,21 @@ memo_targets <- tar_plan(
   am_peak_turn_counts = get_hourly_turn_counts(counts, peak$AM),
   pm_peak_turn_counts = get_hourly_turn_counts(counts, peak$PM),
   
-  tar_target(am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att", format = "file"),
-  am_results = get_vissim_results(am_results_file, signalized_intersections, ex_graph, hcm_los),
-  tar_target(pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
-  pm_results = get_vissim_results(pm_results_file, signalized_intersections, ex_graph, hcm_los),
+  tar_target(ex_am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att", format = "file"),
+  ex_am_results = read_att(ex_am_results_file, lineskip = 25),
+  ex_am_los = get_vissim_results(ex_am_results, signalized_intersections, ex_graph, hcm_los),
+  tar_target(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
+  ex_pm_results = read_att(ex_pm_results_file, lineskip = 25),
+  ex_pm_los = get_vissim_results(ex_pm_results, signalized_intersections, ex_graph, hcm_los),
+  
+  #### Memo 2: New Interchange ####
+  tar_target(new_am_results_file, "vissim/new_2023_AM/new_AM_Node Results.att", format = "file"),
+  new_am_results = read_att(new_am_results_file, lineskip = 25),
+  new_am_los = get_vissim_results(new_am_results, signalized_intersections, new_graph, hcm_los),
+  tar_target(new_pm_results_file, "vissim/new_2023_PM/new_PM_Node Results.att", format = "file"),
+  new_pm_results = read_att(new_pm_results_file, lineskip = 25),
+  new_pm_los = get_vissim_results(new_pm_results, signalized_intersections, new_graph, hcm_los),
+  
 )
 
 #### Run all targets ###########################################################

@@ -37,14 +37,17 @@ make_hcm_los <- function(file){
     select(-Type)
 }
 
-get_vissim_results <- function(results_file, signalized, net, hcm){
+read_att <- function(file, lineskip) {
+  read_delim(file, delim = ":", skip = lineskip)
+}
+
+get_vissim_los <- function(results, signalized, net, hcm){
   
   turns <- net$edges_df %>% 
     select(from, to, leg, turn) %>% 
     filter(turn != "internal")
   
-  results <- results_file %>% 
-    read_delim(delim = ";", skip = 25) %>% 
+  los <- results %>%
     transmute(
       iter = `$MOVEMENTEVALUATION:SIMRUN`,
       # time = TIMEINT,
@@ -70,5 +73,4 @@ get_vissim_results <- function(results_file, signalized, net, hcm){
     select(-c(signalized, Lower, Upper))
   
   results
-  
 }
