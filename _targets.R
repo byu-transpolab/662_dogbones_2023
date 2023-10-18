@@ -88,7 +88,17 @@ memo_targets <- tar_plan(
   build_pm_results = read_att(build_pm_results_file, lineskip = 28),
   build_pm_los = get_vissim_los(build_pm_results, signalized_intersections, ex_graph, hcm_los),
   build_pm_los_formatted = format_los(build_pm_los, intersection_translation),
+  
+  tar_target(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att", format = "file"),
+  build_am_traveltimes = read_att(build_am_traveltimes_file, lineskip = 20),
+  build_am_traveltimes_formatted = format_traveltimes(build_am_traveltimes),
+  
+  tar_target(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att", format = "file"),
+  build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 20),
+  build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
 )
+
+  
 
 #### Run all targets ###########################################################
 
