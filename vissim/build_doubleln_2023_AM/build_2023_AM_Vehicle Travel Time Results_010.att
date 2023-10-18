@@ -1,0 +1,106 @@
+﻿$VISION
+* File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\build_doubleln_2023_AM\build_2023_AM.inpx
+* Comment:	Random Seed = 42
+* Date:		10/18/2023 10:16:32 AM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Vehicle Travel Time Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* VEHICLETRAVELTIMEMEASUREMENT: VehicleTravelTimeMeasurement, Vehicle travel time evaluation (Vehicle Travel Time Measurement)
+* VEHICLETRAVELTIMEMEASUREMENT\NO: VehicleTravelTimeMeasurement\No, Vehicle travel time evaluation\Number (Unique number of the vehicle travel time measurement)
+* VEHICLETRAVELTIMEMEASUREMENT\NAME: VehicleTravelTimeMeasurement\Name, Vehicle travel time evaluation\Name (Name of travel time measurement)
+* VEHS(ALL): Vehs(All), Vehicles (All) (Number of vehicles recorded)
+* TRAVTM(ALL): TravTm(All), Travel time (All) (Average travel time [s] of vehicles in the network) [s]
+* DISTTRAV(ALL): DistTrav(All), Distance traveled (All) [ft]
+* 
+* SimRun;TimeInt;VehicleTravelTimeMeasurement;VehicleTravelTimeMeasurement\No;VehicleTravelTimeMeasurement\Name;Vehs(All);TravTm(All);DistTrav(All)
+* Simulation run;Time interval;Vehicle travel time evaluation;Vehicle travel time evaluation\Number;Vehicle travel time evaluation\Name;Vehicles (All);Travel time (All);Distance traveled (All)
+*
+$VEHICLETRAVELTIMEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;VEHICLETRAVELTIMEMEASUREMENT;VEHICLETRAVELTIMEMEASUREMENT\NO;VEHICLETRAVELTIMEMEASUREMENT\NAME;VEHS(ALL);TRAVTM(ALL);DISTTRAV(ALL)
+1;900-4500;1;1;nbt;108;77.83;1870.43
+1;900-4500;2;2;nbn;691;38.42;1059.95
+1;900-4500;3;3;nbs;48;97.66;2309.64
+1;900-4500;4;4;sbt;223;74.32;1718.79
+1;900-4500;5;5;sbn;78;83.15;1754.40
+1;900-4500;6;6;sbs;26;26.96;610.49
+2;900-4500;1;1;nbt;110;77.40;1870.43
+2;900-4500;2;2;nbn;743;38.37;1059.95
+2;900-4500;3;3;nbs;67;97.67;2309.64
+2;900-4500;4;4;sbt;220;75.30;1718.79
+2;900-4500;5;5;sbn;88;85.29;1754.40
+2;900-4500;6;6;sbs;25;29.88;610.49
+3;900-4500;1;1;nbt;100;77.08;1870.43
+3;900-4500;2;2;nbn;736;38.37;1059.95
+3;900-4500;3;3;nbs;59;100.36;2309.64
+3;900-4500;4;4;sbt;179;75.03;1718.79
+3;900-4500;5;5;sbn;92;84.09;1754.40
+3;900-4500;6;6;sbs;22;26.99;610.49
+4;900-4500;1;1;nbt;112;78.15;1870.43
+4;900-4500;2;2;nbn;695;37.92;1059.95
+4;900-4500;3;3;nbs;64;99.06;2309.64
+4;900-4500;4;4;sbt;186;74.13;1718.79
+4;900-4500;5;5;sbn;63;83.21;1754.40
+4;900-4500;6;6;sbs;26;27.89;610.49
+5;900-4500;1;1;nbt;126;78.60;1870.43
+5;900-4500;2;2;nbn;694;38.33;1059.95
+5;900-4500;3;3;nbs;45;99.15;2309.64
+5;900-4500;4;4;sbt;219;75.32;1718.79
+5;900-4500;5;5;sbn;82;85.32;1754.40
+5;900-4500;6;6;sbs;21;27.80;610.49
+6;900-4500;1;1;nbt;117;78.94;1870.43
+6;900-4500;2;2;nbn;713;38.51;1059.95
+6;900-4500;3;3;nbs;51;100.99;2309.64
+6;900-4500;4;4;sbt;205;75.85;1718.79
+6;900-4500;5;5;sbn;93;85.73;1754.40
+6;900-4500;6;6;sbs;29;28.94;610.49
+7;900-4500;1;1;nbt;97;78.94;1870.43
+7;900-4500;2;2;nbn;727;38.60;1059.95
+7;900-4500;3;3;nbs;51;101.49;2309.64
+7;900-4500;4;4;sbt;204;74.55;1718.79
+7;900-4500;5;5;sbn;76;85.84;1754.40
+7;900-4500;6;6;sbs;28;28.32;610.49
+8;900-4500;1;1;nbt;118;77.84;1870.43
+8;900-4500;2;2;nbn;733;38.82;1059.95
+8;900-4500;3;3;nbs;42;98.38;2309.64
+8;900-4500;4;4;sbt;209;75.07;1718.79
+8;900-4500;5;5;sbn;73;86.09;1754.40
+8;900-4500;6;6;sbs;30;28.52;610.49
+9;900-4500;1;1;nbt;100;77.16;1870.43
+9;900-4500;2;2;nbn;735;38.72;1059.95
+9;900-4500;3;3;nbs;53;100.90;2309.64
+9;900-4500;4;4;sbt;200;75.03;1718.79
+9;900-4500;5;5;sbn;72;86.62;1754.40
+9;900-4500;6;6;sbs;27;27.43;610.49
+10;900-4500;1;1;nbt;97;78.35;1870.43
+10;900-4500;2;2;nbn;697;38.04;1059.95
+10;900-4500;3;3;nbs;54;100.98;2309.64
+10;900-4500;4;4;sbt;208;75.67;1718.79
+10;900-4500;5;5;sbn;81;84.99;1754.40
+10;900-4500;6;6;sbs;25;28.39;610.49
+AVG;900-4500;1;1;nbt;109;78.03;1870.43
+AVG;900-4500;2;2;nbn;716;38.41;1059.95
+AVG;900-4500;3;3;nbs;53;99.66;2309.64
+AVG;900-4500;4;4;sbt;205;75.03;1718.79
+AVG;900-4500;5;5;sbn;80;85.03;1754.40
+AVG;900-4500;6;6;sbs;26;28.11;610.49
+STDDEV;900-4500;1;1;nbt;10;0.69;0.00
+STDDEV;900-4500;2;2;nbn;21;0.28;0.00
+STDDEV;900-4500;3;3;nbs;8;1.46;0.00
+STDDEV;900-4500;4;4;sbt;14;0.56;0.00
+STDDEV;900-4500;5;5;sbn;9;1.19;0.00
+STDDEV;900-4500;6;6;sbs;3;0.90;0.00
+MIN;900-4500;1;1;nbt;97;77.08;1870.43
+MIN;900-4500;2;2;nbn;691;37.92;1059.95
+MIN;900-4500;3;3;nbs;42;97.66;2309.64
+MIN;900-4500;4;4;sbt;179;74.13;1718.79
+MIN;900-4500;5;5;sbn;63;83.15;1754.40
+MIN;900-4500;6;6;sbs;21;26.96;610.49
+MAX;900-4500;1;1;nbt;126;78.94;1870.43
+MAX;900-4500;2;2;nbn;743;38.82;1059.95
+MAX;900-4500;3;3;nbs;67;101.49;2309.64
+MAX;900-4500;4;4;sbt;223;75.85;1718.79
+MAX;900-4500;5;5;sbn;93;86.62;1754.40
+MAX;900-4500;6;6;sbs;30;29.88;610.49
+
