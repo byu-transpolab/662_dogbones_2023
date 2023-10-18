@@ -653,167 +653,290 @@
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10021 1" name="" no="2" pos="4.6711900652553631" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10112 1" name="" no="3" pos="34.994457287798795" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10031 1" name="" no="4" pos="8.4051809407332918" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10112 2" name="" no="5" pos="34.998918983321317" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10132 1" name="" no="6" pos="27.325169950454121" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10032 1" name="" no="7" pos="5.9605512809020835" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10141 2" name="" no="8" pos="2.482794543862286" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10141 1" name="" no="9" pos="2.3998801701207588" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10242 1" name="" no="10" pos="11.739916138757653" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10332 1" name="" no="11" pos="10.006825481122329" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10232 1" name="" no="13" pos="30.47102101767868" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10221 1" name="" no="14" pos="12.536646511879749" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="60" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="19 1" name="" no="15" pos="24.208900027120443" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="19 2" name="" no="16" pos="15.173018774281966" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10252 1" name="" no="17" pos="29.777584388627233" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10251 1" name="" no="18" pos="5.2556880927327132" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10342 1" name="" no="20" pos="14.40539778905039" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10312 1" name="" no="21" pos="15.536244193496106" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10311 1" name="" no="22" pos="7.1082216115273251" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10341 1" name="" no="23" pos="4.0094705994285569" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="54 2" name="" no="24" pos="8.7665856063957222" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="54 3" name="" no="25" pos="7.384632943155836" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="54 1" name="" no="26" pos="6.1559802487843243" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="35 2" name="" no="27" pos="9.5511784327479567" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="35 1" name="" no="28" pos="11.038432556127672" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="35 3" name="" no="29" pos="9.4143604107077028" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="35 2" name="" no="30" pos="10.901614534087418" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 		<desSpeedDecision anmFlag="false" lane="10122 1" name="" no="31" pos="30.847557106721876" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="2"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="3"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="7"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="8"/>
+				<vehClassDesSpeedDistribution desSpeedDistr="70" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
 	</desSpeedDecisions>
@@ -983,7 +1106,7 @@
 		<delays collectData="false" fromTime="900" interval="99999" toTime="4500"/>
 		<dischRec fromTime="0" toTime="99999" writeFile="false"/>
 		<greenTimeDistribution fromTime="0" toTime="99999" writeFile="false"/>
-		<linkResults collectData="false" fromTime="900" interval="99999" perLane="true" toTime="4500"/>
+		<linkResults collectData="true" fromTime="900" interval="99999" perLane="true" toTime="4500"/>
 		<lnChgs filterType="ALL" fromTime="0" toTime="99999" writeFile="false"/>
 		<managedLanes writeFile="false"/>
 		<mesoEvaluationConfig collectData="false" fromTime="0" interval="99999" toTime="99999"/>
@@ -1014,7 +1137,7 @@
 		<pedTravTmRawData fromTime="0" toTime="99999" writeFile="false"/>
 		<pedTravTms collectData="false" fromTime="0" interval="99999" toTime="99999"/>
 		<queues collectData="false" fromTime="900" interval="99999" toTime="4500"/>
-		<scDetRec writeFile="true"/>
+		<scDetRec writeFile="false"/>
 		<ssam fromTime="0" toTime="99999" writeFile="false"/>
 		<sigChgs writeDatabase="false" writeFile="false"/>
 		<vehInpData writeFile="false"/>
@@ -1036,8 +1159,8 @@
 				<intObjectRef key="2"/>
 			</vehClassFilt>
 		</vehRec>
-		<vehTravTmRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="false"/>
-		<vehTravTms aggrBySect="DESTINATION" collectData="false" fromTime="900" interval="99999" toTime="4500"/>
+		<vehTravTmRawData fromTime="900" toTime="4500" writeDatabase="false" writeFile="true"/>
+		<vehTravTms aggrBySect="DESTINATION" collectData="true" fromTime="900" interval="99999" toTime="4500"/>
 	</evaluation>
 	<laneMarkingTypes>
 		<laneMarkingType name="Default" no="1">
@@ -4004,72 +4127,120 @@
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="39 1" length="4.2535636851306506" name="" no="3" pos="14.197323610635983" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="9" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="53 1" length="10.723730499631497" name="" no="4" pos="15.160964209116376" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="53 2" length="10.723730499631497" name="" no="5" pos="14.826903596254741" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="25" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="36 1" length="2.1358675474307542" name="" no="6" pos="7.8863837253194582" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="12" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="2 1" length="6.5008555508546628" name="" no="7" pos="15.882651590100778" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="100 1" length="3.0291850099781534" name="" no="8" pos="2.3417550217585728" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="16 1" length="6.5008555508546628" name="" no="9" pos="2.1172586639585784" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="60 1" length="6.5008555508546628" name="" no="10" pos="2.6870507606271685" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="58 1" length="6.5008555508546628" name="" no="11" pos="5.5728859870820351" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="55 1" length="6.5008555508546628" name="" no="12" pos="10.168762372622592" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 		<reducedSpeedArea anmFlag="false" lane="46 1" length="6.3340604011377586" name="" no="13" pos="15.923705447036117" timeFrom="0" timeTo="2147483647">
 			<vehClassSpeedRed>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="1"/>
 				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="2"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="3"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="7"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="8"/>
+				<vehClassSpeedReduction decel="2" desSpeedDistr="15" vehClass="9"/>
 			</vehClassSpeedRed>
 		</reducedSpeedArea>
 	</reducedSpeedAreas>
@@ -5076,6 +5247,32 @@
 			</vehRoutSta>
 		</vehicleRoutingDecisionStatic>
 	</vehicleRoutingDecisionsStatic>
+	<vehicleTravelTimeMeasurements>
+		<vehicleTravelTimeMeasurement name="nbt" no="1">
+			<end link="10132" pos="1.7723044056000001"/>
+			<start link="10211" pos="17.037629702182734"/>
+		</vehicleTravelTimeMeasurement>
+		<vehicleTravelTimeMeasurement name="nbn" no="2">
+			<end link="10242" pos="44.377620871200001"/>
+			<start link="10211" pos="13.005350098495724"/>
+		</vehicleTravelTimeMeasurement>
+		<vehicleTravelTimeMeasurement name="nbs" no="3">
+			<end link="10122" pos="32.9415135936"/>
+			<start link="10211" pos="13.012563478824283"/>
+		</vehicleTravelTimeMeasurement>
+		<vehicleTravelTimeMeasurement name="sbt" no="4">
+			<end link="10212" pos="86.133002536800007"/>
+			<start link="10131" pos="12.938593384335455"/>
+		</vehicleTravelTimeMeasurement>
+		<vehicleTravelTimeMeasurement name="sbn" no="5">
+			<end link="10242" pos="45.743482401600005"/>
+			<start link="10131" pos="11.778360958467847"/>
+		</vehicleTravelTimeMeasurement>
+		<vehicleTravelTimeMeasurement name="sbs" no="6">
+			<end link="10122" pos="30.194744995200004"/>
+			<start link="10131" pos="14.089708070117664"/>
+		</vehicleTravelTimeMeasurement>
+	</vehicleTravelTimeMeasurements>
 	<vehicleTypes>
 		<vehicleType alightTm="0" anmFlag="false" boardTm="0" capExact="false" capacity="8" category="CAR" clearTmPT="0" colorDistr1="1" desAccelFunc="1" desDecelFunc="1" distCoeffPerMeter="0" doorClosDur="2" dwellTmIsAdd="true" equip="" extDriver="false" extDriverDLLFile="" extDriverParFile="" extEmissionDLLFile="" linkCostCoeff="1" maxAccelFunc="1" maxDecelFunc="1" model2D3DDistr="1" name="Cars" no="1" occupDistr="1" powerDistr="6" travTmCoeff="1" weightDistr="1">
 			<parkLotSelPars>
