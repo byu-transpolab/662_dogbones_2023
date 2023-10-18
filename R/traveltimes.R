@@ -1,11 +1,22 @@
 format_traveltimes <- function(traveltimes) {
-  # simplify data
+  # simplify data and format
   df <- traveltimes %>%
     filter(`$VEHICLETRAVELTIMEMEASUREMENTEVALUATION:SIMRUN` == "AVG") %>%
     select(
-      movement = `VEHICLETRAVELTIMEMEASUREMENT\\NAME`,
-      vehicles = `VEHS(ALL)`,
-      avg_travel_time_sec = `TRAVTM(ALL)`,
-      avg_distance_traveled_ft = `DISTTRAV(ALL)`
+      Movement = `VEHICLETRAVELTIMEMEASUREMENT\\NAME`,
+      Vehicles = `VEHS(ALL)`,
+      tt = `TRAVTM(ALL)`,
+      dist = `DISTTRAV(ALL)`
+    ) %>%
+    mutate(
+      Movement = toupper(Movement),
+      tt = round(tt, 0),
+      dist = round(dist, 0)
+    ) %>%
+    rename(
+      `Average Travel Time (sec)` = tt,
+      `Average Distance Traveled (ft)` = dist
     )
+  # return dataframe
+  return(df)
 }
