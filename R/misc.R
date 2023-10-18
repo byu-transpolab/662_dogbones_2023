@@ -27,7 +27,7 @@ make_peak <- function(peak_hour) {
   })
 }
 
-make_hcm_los <- function(file){
+make_hcm_los <- function(file) {
   file %>%
     read_csv() %>%
     mutate(signalized = case_when(
@@ -38,39 +38,5 @@ make_hcm_los <- function(file){
 }
 
 read_att <- function(file, lineskip) {
-  read_delim(file, delim = ":", skip = lineskip)
-}
-
-get_vissim_los <- function(results, signalized, net, hcm){
-  
-  turns <- net$edges_df %>% 
-    select(from, to, leg, turn) %>% 
-    filter(turn != "internal")
-  
-  los <- results %>%
-    transmute(
-      iter = `$MOVEMENTEVALUATION:SIMRUN`,
-      # time = TIMEINT,
-      movement = `MOVEMENT\\DIRECTION`,
-      qlen = QLEN,
-      maxqlen = QLENMAX,
-      avgdelay = `VEHDELAY(ALL)`,
-      intersection = `MOVEMENT\\NODE`,
-      to = `MOVEMENT\\TOLINK`,
-      to = replace(to, to == 44, 10122),
-      from = `MOVEMENT\\FROMLINK`,
-    ) %>% 
-    filter(iter == "AVG") %>% 
-    select(-iter) %>% 
-    mutate(across(c(to, from), \(x) str_sub(x,1,4) %>% as.numeric())) %>% 
-    left_join(turns, join_by(from, to)) %>% 
-    left_join(signalized, join_by(intersection)) %>% 
-    select(-c(from, to)) %>% 
-    relocate(intersection) %>% 
-    mutate(type = if_else(movement == "Total", "Intersection", "Movement")) %>% 
-    select(-movement) %>% 
-    left_join(hcm, join_by(signalized, between(avgdelay, Lower, Upper, bounds = "(]"))) %>% 
-    select(-c(signalized, Lower, Upper))
-  
-  results
+  read_delim(file, delim = ";", skip = lineskip)
 }
