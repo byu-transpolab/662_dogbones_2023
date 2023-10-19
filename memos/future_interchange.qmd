@@ -173,12 +173,49 @@ targets::tar_load(build_am_traveltimes_formatted)
 targets::tar_load(build_pm_traveltimes_formatted)
 ```
 
+
 ```{r}
-#| label: fig-am-tt
-#| tbl-cap: Travel Time Comparison (AM Peak)
+#| label: fig-tt
+#| fig-cap: Travel Time Comparison
 
 targets::tar_load(ex_am_traveltimes_formatted)
 targets::tar_load(build_am_traveltimes_formatted)
+targets::tar_load(ex_pm_traveltimes_formatted)
+targets::tar_load(build_pm_traveltimes_formatted)
+
+ex_am_traveltimes_formatted <- ex_am_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (AM)"))
+build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Rebuild", Label = paste0(Movement," (AM)"))
+ex_pm_traveltimes_formatted <- ex_pm_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (PM)"))
+build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Rebuild", Label = paste0(Movement," (PM)"))
+
+tt <- rbind(ex_am_traveltimes_formatted, build_am_traveltimes_formatted, ex_pm_traveltimes_formatted, build_pm_traveltimes_formatted) %>%
+  select(Model, Movement, Label, TT = `Average Travel Time (sec)`, Distance = `Average Distance Traveled (ft)`) %>%
+  arrange(Label)
+
+tt$cont_y <- c(1, 1, 2, 2, 4, 4, 5, 5, 7, 7, 8, 8, 10, 10, 11, 11, 13, 13, 14, 14, 16, 16, 17, 17)
+
+ggplot(tt) +
+  geom_line(data = tt %>% filter(cont_y == 1), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 2), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 4), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 5), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 7), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 8), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 10), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 11), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 13), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 14), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 16), aes(x = TT, y = cont_y), color = "red") +
+  geom_line(data = tt %>% filter(cont_y == 17), aes(x = TT, y = cont_y), color = "red") +
+  geom_point(aes(x = TT, y = cont_y, color = Model), size = 3.5) +
+  theme_bw() +
+  labs(x = "Travel Time (Seconds)",
+       y = "Movement (Time of Day)") +
+   scale_y_continuous(breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17), 
+                      labels = unique(tt$Label)) +
+  theme(panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
 ```
 
 
