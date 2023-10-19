@@ -4432,14 +4432,14 @@
 				</points>
 			</geometry>
 			<label showLabel="true">
-				<labPosRel x="19.985235478781988" y="10.706376149347534"/>
+				<labPosRel x="-4.3960063283362558" y="17.925403053131134"/>
 			</label>
 		</node>
 		<node allowRecr="false" anmConnNodeNo="0" anmConnZoneNo="0" anmZoneNo="0" hasUserDefOrient="false" mesoPenalMerg="0" name="Mainst/1_15SB" no="101" showClsfValues="true" showTurnValVisual="true" turnValVisualSize="70" useForDynAssign="true" useForEval="true" useForMeso="false">
 			<geometry>
 				<points>
-					<point x="70.49853270112699" y="-55.235630219903463"/>
-					<point x="0.1122437274367627" y="-56.01338532721789"/>
+					<point x="52.408400424546599" y="-63.961458729783459"/>
+					<point x="7.3482966380689305" y="-82.616521028071446"/>
 					<point x="-29.547729248108695" y="-92.311746831101885"/>
 					<point x="-22.077638769517186" y="-182.15903297782836"/>
 					<point x="15.736329329230401" y="-212.75643828236338"/>
