@@ -90,11 +90,27 @@ compare_los <- function(ref_los, comp_los, los_names = c("ref", "comp")) {
     full_join(
       comp_los,
       join_by(intersection, leg, turn, type),
-      suffix = paste0("_", los_names)) %>% 
+      suffix = paste0(" (", los_names, ")")) %>% 
     filter(
       type == "Movement",
            ) %>% 
     select(-contains("qlen"), -type) %>% 
-    relocate(intersection, leg, turn, contains("avgdelay"), contains("LOS"))
+    relocate(intersection, leg, turn, contains("avgdelay"), contains("LOS")) %>% 
+    filter(!is.na(leg), !is.na(turn))
   
+}
+
+format_los_comp <- function(los_comp, intersection_translation) {
+  los_comp %>% 
+    format_turns(intersection_translation) %>% 
+    mutate(turn = case_when(
+      turn == "l" ~ "Left",
+      turn == "t" ~ "Thru",
+      turn == "r" ~ "Right",
+      TRUE ~ turn
+    )) %>% 
+    rename_with(
+      \(x) str_replace_all(x, c("avgdelay" = "Avg. Vehicle Delay", "LOS" = "Level of Service")),
+      .cols = -c(Intersection, leg, turn)
+    )
 }
