@@ -35,10 +35,19 @@ This memorandum outlines justification for pursuing a redesign of the intersecti
 # Build Justifications
 
 In the existing conditions memo [@existing], traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
-With these results, a redesign is not warranted.
+Based on performance alone, a redesign is not warranted.
+However, performance is not the only criterion that can warrant a redesign, and safety concerns were evident when conducting the existing study.
 
-Crash data was collected for the I-15/Main St Interchange from [@aashto] for between the years 2018 and 2022.
+Crash data was collected for the I-15/Main St Interchange from @aashto for between the years 2018 and 2022.
 @fig-crashes shows the crash locations as detailed in Tables [-@tbl-kabco]--[-@tbl-movement].
+
+An important aspect in considering the redesign of this interchange is the type and manner of crashes occurring at the site.
+From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWARE database.
+Of these none were fatal, and the majority were no injury/property damage only.
+The collisions were primarily angled, front to rear, and sideswipe, with a single head on collision.
+
+These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
+This location is an opportunity to reduce crash risk in Utah as the Utah Department of Transportation strives to reach "Zero Fatalities" [@fatalities].
 
 ![Crash site data for study area.](figures/crash2e.png){#fig-crashes}
 
@@ -56,7 +65,7 @@ Crash data was collected for the I-15/Main St Interchange from [@aashto] for bet
 |:-------------------------|:---------:|
 | Angle                    |    14     |
 | Front to Rear            |    18     |
-| Head On (front-to-front) |     1     |
+| Head-On (front-to-front) |     1     |
 | NA/Single Vehicle        |     5     |
 | Sideswipe                |    13     |
 
@@ -72,71 +81,66 @@ Crash data was collected for the I-15/Main St Interchange from [@aashto] for bet
 
 : Crash Movement Type Distribution {#tbl-movement}
 
-An important aspect in considering the redesign of this interchange is the type and manner of crashes occurring at the site.
-From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWARE database.
-Of these none were fatal, and the majority were no injury/property damage only (PDO).
-The collisions were primarily angled, front to rear and sideswipe the same direction with a single head on collision.
-
-These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
-This location is an opportunity to reduce crash risk in Utah as the Utah Department of Transportation strives to reach "Zero Fatalities." [@fatalities]
-
 This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections would increase crash likelihood.
-Additionally, with growth in volume, these intersections would soon reach capacity resulting in unacceptable levels of delay.
+Additionally, with growth in volume, these intersections could soon reach capacity resulting in unacceptable levels of delay.
 
-A modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main St interchange.
+In order to address these safety concerns, a modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main St interchange.
+Of the crashes indicated in Tables 1-3, approximately 30% of crashes (angle and head-on) are eliminated with this design, as movements across opposing traffic are not possible.
+Additionally, vehicle speed is significantly reduced with this design, and so could reduce the frequency of sideswipe and rear-end collisions.
 
-Of the crashes indicated in Tables 1-3, approximately 30% of crashes (Angle and Head On) could be eliminated using left turns are eliminated.
-An additional 30% reduction could also be eliminated (Sideswipe) as vehicles reduce speeds in entering the intersection.
-The new interchange design can reduce dangerous types of crashes and their intensity, creating a safer environment for drivers.
-
-The double lane feature of the proposed model also allows for a greater volume to accommodate future growth.
+The double lane feature of the proposed model also allows for increased capacity to accommodate future growth.
 
 # Model Description
 
-The signalized intersection at Main St/SB I-15 was eliminated and replaced with a double lane roundabout.
-The two-way stop-controlled intersection was replaced with a double lane roundabout.
-Modeling was conducted in VISSIM based on the existing model.
+Both the signalized SB I-15 interchange and the two-way stop-controlled NB I-15 interchange were eliminated and replaced with double lane roundabouts.
+This configuration was modified from the existing model in VISSIM.
 Key elements of the design are listed below:
 
 #### General
-
--   Speeds in the roundabout was reduced to 15 MPH
--   Curvature on entering movements were designed to slow down vehicles entering the intersection
--   Curvature on the exiting movements were designed to allow for easy flow out of the intersection where practical.
+- Speeds in the roundabout were reduced to 15 MPH
+- Curvature on entering movements were designed to slow down vehicles entering the intersection
+- Curvature on the exiting movements were designed to allow for easy flow out of the intersection where practical.
 Accommodations were made in areas with minimal merge areas and topography constraints
--   Minimal driver behavior constraints were needed for this model due to the lack of direct vehicle conflict.
-The only constraints added was priority - rules were on merges onto the roundabouts
--   Lane changes were restricted in a few areas to reduce merge conflicts
--   The second lane was removed between the NB exit and the SB entrance
+- Minimal driver behavior constraints were needed for this model due to the lack of direct vehicle conflict.
+The only constraints added were priority rules on merges onto the roundabouts
+- Lane changes were restricted in a few areas to reduce merge conflicts
 
-#### Main St/ SB I-15 Interchange
-
--   The south bound (SB) I-15 Off-Ramp double lane was continued as a double lane entry to the roundabout
--   A channelized right turn from the SB I-15 Off-Ramp was added to reduce conflicts in the roundabout
--   A double lane exit SB was continued with a single lane continuation of the roundabout to allow for potential U-turns
--   A double lane entry on the north bound (NB) approach was added to add capacity and to provide the needed second lane for the off-ramp
-
-#### Main St/ NB I-15 Interchange
-
--   A double lane SB entry was added to continue the previous changes
--   A channelized right turn from the NB I-15 Off-Ramp was added to reduce conflicts in the roundabout
--   A double lane SB exit was continued with a 150' merge section with the channelized right turn.
+#### Main St / NB I-15 Interchange
+- A channelized right turn from the NB I-15 Off-Ramp was added to reduce conflicts in the roundabout
+- A double lane SB exit was continued with a 150' merge section with the channelized right turn.
 The double lane continues to the intersection with 600 N
--   A double entry was added to the NB approach starting about 150' before the intersection
--   800 N was rerouted to enter the southeastern end of the roundabout, not the northeastern end.
+- A double entry was added to the NB approach starting about 150' before the intersection
+- 800 N was rerouted to enter the southeastern end of the roundabout, not the northeastern end.
 However, a channelized right turn to the I-15 NB On-Ramp was added to reduce roundabout conflicts
--   A double lane exit to the NB I-15 On-Ramp was added to accommodate the double lane roundabout.
-This removes one lane from the roundabout following the On-Ramp to be added with the SB approach
--   A single lane NB exit was preserved but the NB movement adds a lane shortly after the intersection to allow for easier accommodation of the north double lane roundabout
+- A double lane exit to the NB I-15 On-Ramp was added to accommodate the double lane roundabout.
+This removes one lane from the roundabout following the on-ramp to be added with the SB approach
+- A single lane NB exit was preserved but the NB movement adds a lane shortly after the intersection to allow for easier accommodation of the north double lane roundabout
 
-The Appendix includes various figures to illustrate these changes.
+{{< pagebreak >}}
+
+#### Main St / SB I-15 Interchange
+- The south bound (SB) I-15 off-ramp double lane was continued as a double lane entry to the roundabout
+- A channelized right turn from the SB I-15 off-ramp was added to reduce conflicts in the roundabout
+- A  single lane continuation of the southern end of the roundabout was kept to allow for potential U-turns
+- A double lane entry on the north bound (NB) approach was added to add capacity and to provide the needed second lane for the off-ramp
+- The second lane was removed between the NB exit and the SB entrance to allow SB vehicles to enter the roundabout freely
+
+Figures [-@fig-102e]--[-@fig-everythinge] show these changes.
 These changes to the roadway geometry will necessitate an expansion of the Main St underpass to accommodate the two additional lanes.
-The earthen slopes on the SB Off-Ramp and NB On/Off-Ramps will also need to be reconstructed to allow for space for the new construction.
+The earthen slopes on the SB off-ramp and NB on/off-ramps will also need to be reconstructed to allow for space for the new construction.
 
 To allow for future growth, the model was stress tested to 1.25 and 1.75 times the existing volumes for both AM and PM conditions.
-Queues were present one the 1.75 iterations on the Off-Ramps and the 900 N and 600 N intersections.
+Queues were present one the 1.75 iterations on the off-ramps and the 900 N and 600 N intersections.
 However, the interchange appeared to perform adequately.
-A future memo will detail how the model performs under detailed growth.
+A future memorandum will detail how the model performs under detailed growth.
+
+![Build model at I-15 NB Interchange.](figures/build/102e.png){#fig-102e}
+
+![Build model at I-15 SB Interchange.](figures/build/northe.png){#fig-northe}
+
+![Build model (overview).](figures/build/everythinge.png){#fig-everythinge}
+
+{{< pagebreak >}}
 
 # Results
 
@@ -164,15 +168,14 @@ ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
 
 LOS results are generally A or B.
 There are a few movements that reached LOS C but those were minimal.
+During the PM model on the I-15 SB interchange the WB through and left movements both showed LOS C, but that is to be expected with the dramatic changes in volumes during the PM peak.
 Of particular interest are the WB movements from 600 N/Main St with the left turn at LOS C and right turn at LOS B during both AM and PM models.
 Reasons for this would be as the south bound movement receives more continuous vehicle actuations from the improved interchange design, the westbound movement is not actuated as frequently as in the existing model.
 Another reason could be a slight adjustment to the ring barrier diagram that was assumed to be minimal and was not reflected in the existing model.
 Future reports with the existing model will be edited to show this adjustment.
 
-During the PM model on Interchange the WB through and left movements both showed LOS C, but that is to be expected with the dramatic changes in volumes during the PM peak.
-
 Overall, the build model performs better than the existing model.
-There are a few exceptions but those were previously mentioned and are expected due to the characteristics of a dog bone interchange.
+There are a few exceptions but those were previously mentioned and are expected due to the characteristics of a dog-bone interchange.
 
 The VISSIM model also produced travel times by recording the time when a vehicle passed through an origin location and the time it passed through a destination location.
 This resulted in six possible movements which are shown in @fig-tt-movements.
@@ -180,9 +183,9 @@ This resulted in six possible movements which are shown in @fig-tt-movements.
 ![Movement designations for travel time comparison.](figures/traveltime.png){#fig-tt-movements}
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
-@fig-tt compares average travel times from the existing model compared to the build model for both AM and PM peak periods.
-The changes in travel times are proportional to the changes in distance traveled by vehicles.
-Additionally, the increase in travel time is explained by the severe reduction in speeds from 30 MPH to 15 MPH.
+@fig-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
+However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
+Additionally, the increase in travel time is explained by the reduction in speeds from 30 MPH to 15 MPH.
 Later analysis when comparing these times to future models will have more significant interpretations.
 
 ```{r}
@@ -231,16 +234,18 @@ ggplot(tt) +
 
 ```
 
+{{< pagebreak >}}
+
 # Conclusions
 
-The modified dog bone interchange preforms moderately well in accommodating existing volumes at the I-15/Main St interchange in Payson, UT.
+The modified dog-bone interchange preforms moderately well in accommodating existing volumes at the I-15/Main St interchange in Payson, UT.
 Travel times increase between the models, but such increases are due to changes in distance traveled and reductions in speeds.
 
-Not visible in the model however are the dramatic changes in safety in the model.
-This model drastically allows for safer, more controlled travel through the interchange on all approaches.
+Not visible in the model, however, are the dramatic changes in safety with the redesign.
+This model allows for safer and more controlled travel through the interchange on all approaches.
 
-This modification to the interchange is recommended for consideration with future volumes.
-Additional consideration should be given to pedestrian and bicycle user access.
+This redesign of the interchange is recommended for consideration with future volumes.
+Additional consideration should be given to pedestrian and bicycle user access in future design plans.
 
 {{< pagebreak >}}
 
