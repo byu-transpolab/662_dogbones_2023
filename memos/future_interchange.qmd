@@ -145,18 +145,32 @@ Turning movement counts for this analysis were the same as were collected for th
 
 ```{r}
 #| label: tbl-am-los
-#| tbl-cap: Existing Model Results (AM Peak)
+#| tbl-cap: Rebuild Model Results (AM Peak)
 
-targets::tar_load(am_results)
-am_results %>% format_los()
+targets::tar_load(build_am_results)
+build_am_results %>% format_los()
 ```
 
 ```{r}
 #| label: tbl-pm-los
-#| tbl-cap: Existing Model Results (PM Peak)
+#| tbl-cap: Rebuild Model Results (PM Peak)
 
-targets::tar_load(pm_results)
-pm_results %>% format_los()
+targets::tar_load(build_pm_results)
+build_pm_results %>% format_los()
+```
+
+```{r}
+#| label: tbl-am-tt
+#| tbl-cap: Rebuild Travel Times (AM Peak)
+
+targets::tar_load(build_am_traveltimes_formatted)
+```
+
+```{r}
+#| label: tbl-pm-tt
+#| tbl-cap: Rebuild Travel Times (PM Peak)
+
+targets::tar_load(build_pm_traveltimes_formatted)
 ```
 
 

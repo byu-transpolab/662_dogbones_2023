@@ -4,7 +4,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("tidyverse", "DiagrammeR", "gtools", "flextable", "readxl"),
+  packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
 )
 
 #Source R functions
@@ -64,15 +64,41 @@ network_ex_targets <- tar_plan(
 )
 
 memo_targets <- tar_plan(
+  
   #### Memo 1: Existing Interchange ####
   am_peak_turn_counts = get_hourly_turn_counts(counts, peak$AM),
   pm_peak_turn_counts = get_hourly_turn_counts(counts, peak$PM),
   
-  tar_target(am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att", format = "file"),
-  am_results = get_vissim_results(am_results_file, signalized_intersections, ex_graph, hcm_los),
-  tar_target(pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
-  pm_results = get_vissim_results(pm_results_file, signalized_intersections, ex_graph, hcm_los),
+  tar_target(ex_am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att", format = "file"),
+  ex_am_results = read_att(ex_am_results_file, lineskip = 28),
+  ex_am_los = get_vissim_los(ex_am_results, signalized_intersections, ex_graph, hcm_los),
+  ex_am_los_formatted = format_los(ex_am_los, intersection_translation),
+  tar_target(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
+  ex_pm_results = read_att(ex_pm_results_file, lineskip = 28),
+  ex_pm_los = get_vissim_los(ex_pm_results, signalized_intersections, ex_graph, hcm_los),
+  ex_pm_los_formatted = format_los(ex_pm_los, intersection_translation),
+  
+  #### Memo 2: New Interchange ####
+  tar_target(build_am_results_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Node Results.att", format = "file"),
+  build_am_results = read_att(build_am_results_file, lineskip = 28),
+  build_am_los = get_vissim_los(build_am_results, signalized_intersections, ex_graph, hcm_los),
+  build_am_los_formatted = format_los(build_am_los, intersection_translation),
+  
+  tar_target(build_pm_results_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Node Results.att", format = "file"),
+  build_pm_results = read_att(build_pm_results_file, lineskip = 28),
+  build_pm_los = get_vissim_los(build_pm_results, signalized_intersections, ex_graph, hcm_los),
+  build_pm_los_formatted = format_los(build_pm_los, intersection_translation),
+  
+  tar_target(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att", format = "file"),
+  build_am_traveltimes = read_att(build_am_traveltimes_file, lineskip = 20),
+  build_am_traveltimes_formatted = format_traveltimes(build_am_traveltimes),
+  
+  tar_target(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att", format = "file"),
+  build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 20),
+  build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
 )
+
+  
 
 #### Run all targets ###########################################################
 
