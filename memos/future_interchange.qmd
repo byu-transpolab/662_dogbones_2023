@@ -28,16 +28,16 @@ format_los_comp_kbl <- function(los_comp) {
 ```
 
 The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign.
-Current conditions were analyzed in an existing conditions memo {@existing}.
+Current conditions were analyzed in an existing conditions memo [@existing].
 
 This memorandum outlines justification for pursuing a redesign of the intersection, the proposed roadway configuration, results from the build VISSIM model, comparisons to the existing model, and conclusions.
 
 # Build Justifications
 
-In the existing conditions memo {@existing}, traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
+In the existing conditions memo [@existing], traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
 With these results, a redesign is not warranted.
 
-Crash data was collected for the I-15/Main St Interchange from {@aashto} for between the years 2018 and 2022.
+Crash data was collected for the I-15/Main St Interchange from [@aashto] for between the years 2018 and 2022.
 @fig-crashes shows the crash locations as detailed in Tables [-@tbl-kabco]--[-@tbl-movement].
 
 ![Crash site data for study area.](figures/crash2e.png){#fig-crashes}
@@ -78,9 +78,9 @@ Of these none were fatal, and the majority were no injury/property damage only (
 The collisions were primarily angled, front to rear and sideswipe the same direction with a single head on collision.
 
 These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
-This location is an opportunity to reduce crash risk in Utah as the Utah Department of Transportation strives to reach "Zero Fatalities." {@fatalities}
+This location is an opportunity to reduce crash risk in Utah as the Utah Department of Transportation strives to reach "Zero Fatalities." [@fatalities]
 
-This area is expected to grow aggressively {@payson_city_payson_2020} and additional volume in these intersections would increase crash likelihood.
+This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections would increase crash likelihood.
 Additionally, with growth in volume, these intersections would soon reach capacity resulting in unacceptable levels of delay.
 
 A modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main St interchange.
@@ -141,7 +141,7 @@ A future memo will detail how the model performs under detailed growth.
 # Results
 
 Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results of the analysis performed in the VISSIM model for the AM and PM peak periods, compared with the existing scenario model.
-LOS was determined from the Highway Capacity Manual 7th edition [@hcm].
+LOS was determined from the Highway Capacity Manual 7th edition [@hcm7].
 Note the existing model delay and LOS differ slightly from the existing conditions memo as minor changes were made in the existing model as minor errors were discovered.
 
 ```{r}
