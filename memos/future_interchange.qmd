@@ -173,6 +173,14 @@ targets::tar_load(build_am_traveltimes_formatted)
 targets::tar_load(build_pm_traveltimes_formatted)
 ```
 
+```{r}
+#| label: fig-am-tt
+#| tbl-cap: Travel Time Comparison (AM Peak)
+
+targets::tar_load(ex_am_traveltimes_formatted)
+targets::tar_load(build_am_traveltimes_formatted)
+```
+
 
 {{< pagebreak >}}
 

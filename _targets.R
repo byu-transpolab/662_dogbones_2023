@@ -2,6 +2,7 @@
 
 library(targets)
 library(tarchetypes)
+library(lubridate)
 
 tar_option_set(
   packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
@@ -73,10 +74,19 @@ memo_targets <- tar_plan(
   ex_am_results = read_att(ex_am_results_file, lineskip = 28),
   ex_am_los = get_vissim_los(ex_am_results, signalized_intersections, ex_graph, hcm_los),
   ex_am_los_formatted = format_los(ex_am_los, intersection_translation),
+  
   tar_target(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
   ex_pm_results = read_att(ex_pm_results_file, lineskip = 28),
   ex_pm_los = get_vissim_los(ex_pm_results, signalized_intersections, ex_graph, hcm_los),
   ex_pm_los_formatted = format_los(ex_pm_los, intersection_translation),
+  
+  tar_target(ex_am_traveltimes_file, "vissim/existing_2023_AM/existing_AM_Vehicle Travel Time Results.att", format = "file"),
+  ex_am_traveltimes = read_att(ex_am_traveltimes_file, lineskip = 20),
+  ex_am_traveltimes_formatted = format_traveltimes(ex_am_traveltimes),
+  
+  tar_target(ex_pm_traveltimes_file, "vissim/existing_2023_PM/existing_PM_Vehicle Travel Time Results.att", format = "file"),
+  ex_pm_traveltimes = read_att(ex_pm_traveltimes_file, lineskip = 20),
+  ex_pm_traveltimes_formatted = format_traveltimes(ex_pm_traveltimes),
   
   #### Memo 2: New Interchange ####
   tar_target(build_am_results_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Node Results.att", format = "file"),
