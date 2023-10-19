@@ -2,6 +2,7 @@
 
 library(targets)
 library(tarchetypes)
+library(lubridate)
 
 tar_option_set(
   packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
@@ -73,10 +74,19 @@ memo_targets <- tar_plan(
   ex_am_results = read_att(ex_am_results_file, lineskip = 28),
   ex_am_los = get_vissim_los(ex_am_results, signalized_intersections, ex_graph, hcm_los),
   ex_am_los_formatted = format_los(ex_am_los, intersection_translation),
+  
   tar_target(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
   ex_pm_results = read_att(ex_pm_results_file, lineskip = 28),
   ex_pm_los = get_vissim_los(ex_pm_results, signalized_intersections, ex_graph, hcm_los),
   ex_pm_los_formatted = format_los(ex_pm_los, intersection_translation),
+  
+  tar_target(ex_am_traveltimes_file, "vissim/existing_2023_AM/existing_AM_Vehicle Travel Time Results.att", format = "file"),
+  ex_am_traveltimes = read_att(ex_am_traveltimes_file, lineskip = 19),
+  ex_am_traveltimes_formatted = format_traveltimes(ex_am_traveltimes),
+  
+  tar_target(ex_pm_traveltimes_file, "vissim/existing_2023_PM/existing_PM_Vehicle Travel Time Results.att", format = "file"),
+  ex_pm_traveltimes = read_att(ex_pm_traveltimes_file, lineskip = 19),
+  ex_pm_traveltimes_formatted = format_traveltimes(ex_pm_traveltimes),
   
   #### Memo 2: New Interchange ####
   tar_target(build_am_results_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Node Results.att", format = "file"),
@@ -94,13 +104,18 @@ memo_targets <- tar_plan(
     build_am_los,
     los_names = c("Existing", "Build")),
   ex_build_am_los_comp_formatted = format_los_comp(ex_build_am_los_comp, intersection_translation),
+  ex_build_pm_los_comp = compare_los(
+    ex_pm_los,
+    build_pm_los,
+    los_names = c("Existing", "Build")),
+  ex_build_pm_los_comp_formatted = format_los_comp(ex_build_pm_los_comp, intersection_translation),
   
   tar_target(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att", format = "file"),
   build_am_traveltimes = read_att(build_am_traveltimes_file, lineskip = 20),
   build_am_traveltimes_formatted = format_traveltimes(build_am_traveltimes),
 
   tar_target(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att", format = "file"),
-  build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 20),
+  build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
 )
 
