@@ -83,3 +83,18 @@ format_turns <- function(data, intersection_translation) {
   
   formatted
 }
+
+compare_los <- function(ref_los, comp_los, los_names = c("ref", "comp")) {
+  
+  ref_los %>% 
+    full_join(
+      comp_los,
+      join_by(intersection, leg, turn, type),
+      suffix = paste0("_", los_names)) %>% 
+    filter(
+      type == "Movement",
+           ) %>% 
+    select(-contains("qlen"), -type) %>% 
+    relocate(intersection, leg, turn, contains("avgdelay"), contains("LOS"))
+  
+}
