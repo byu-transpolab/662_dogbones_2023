@@ -62,6 +62,14 @@ public class PaysonPerson {
         sc.getPopulation().addPerson(p);
     }
 
+    getTourType(PaysonPerson){
+
+    }
+
+    makeTour(PaysonPerson){
+        
+    }
+
     void makePlans(Person p, Random r){
         Plan plan = pf.createPlan();
         Double patternProb = r.nextDouble(0.0, 1.0);
