@@ -1,16 +1,12 @@
 package org.matsim.project;
 
-import org.apache.logging.log4j.Logger;
 import org.matsim.api.core.v01.Coord;
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.population.*;
 import org.matsim.core.utils.geometry.CoordUtils;
 import org.matsim.core.utils.geometry.CoordinateTransformation;
-import org.matsim.utils.objectattributes.attributable.Attributes;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class PaysonPerson {
@@ -20,7 +16,6 @@ public class PaysonPerson {
     Boolean worker;
     Double workerprob = 0.42;
     Id<Person> id;
-    String tourType;
 
     Scenario sc;
     PopulationFactory pf;
@@ -39,8 +34,8 @@ public class PaysonPerson {
         this.pf = pf;
         this.ct = ct;
 
-        Boolean gendercoin = r.nextBoolean();
-        if(gendercoin){
+        Boolean genderCoin = r.nextBoolean();
+        if(genderCoin){
             this.gender = "female";
         } else {
             this.gender = "male";
@@ -54,110 +49,124 @@ public class PaysonPerson {
 
         this.age = makeAge(r);
 
+        Person p = pf.createPerson(Id.createPersonId(id));
+        String tourType = getTourType(worker, r);
+        makeTour(p, tourType, r);
+
         // add to MATSim population
-        Person mp = pf.createPerson(Id.createPersonId(id));
-        mp.getAttributes().putAttribute("age", age);
-        mp.getAttributes().putAttribute("gender", gender);
-        mp.getAttributes().putAttribute("worker", worker);
-        String myTourType = getTourType(this, r);
-        makeTour(mp, myTourType, r);
-        sc.getPopulation().addPerson(mp);
+        p.getAttributes().putAttribute("age", age);
+        p.getAttributes().putAttribute("gender", gender);
+        p.getAttributes().putAttribute("worker", worker);
+        p.getAttributes().putAttribute("tourType", tourType);
+
+        sc.getPopulation().addPerson(p);
     }
 
-    String getTourType(PaysonPerson p, Random r){
+    String getTourType(Boolean worker, Random r){
         Double tourProb = r.nextDouble(0.0, 1.0);
-        if(p.worker){
+        String tourType;
+        if(worker){
             if(tourProb < 0.083){
-                p.tourType = "Home";
+                tourType = "Home";
             } else if (tourProb < 0.083 + 0.632) {
-                p.tourType = "Mandatory";
+                tourType = "Mandatory";
             } else {
-                p.tourType = "Discretionary";
+                tourType = "Discretionary";
             }
         } else {
             if(tourProb < 0.229){
-                p.tourType = "Home";
+                tourType = "Home";
             } else if (tourProb < 0.229 + 0.165) {
-                p.tourType = "Mandatory";
+                tourType = "Mandatory";
             } else {
-                p.tourType = "Discretionary";
+                tourType = "Discretionary";
             }
         }
-        return p.tourType;
+        return tourType;
     }
 
-    void makeTour(Person mp, String myTourType, Random r){
+    void makeTour(Person p, String tourType, Random r){
         Plan plan = pf.createPlan();
         Double homeX = r.nextGaussian(-111.7362,0.0135612);
         Double homeY = r.nextGaussian(40.03375, 0.0105619);
         Coord homeLocation = CoordUtils.createCoord(homeX, homeY);
+
         // everyone starts at home
         Activity homeStart = pf.createActivityFromCoord("Home", homeLocation);
-        homeStart.setEndTime(6 * 3600);
+        homeStart.setEndTime(6*3600);
         plan.addActivity(homeStart);
         Leg leg = pf.createLeg("car");
         plan.addLeg(leg);
 
-        if (myTourType == "Mandatory") {
-            makeMandatoryTour(plan, homeLocation, r);
-        } else if (myTourType == "Discretionary") {
+        if (tourType == "Mandatory") {
+            makeMandatoryTour(plan, r);
+        } else if (tourType == "Discretionary") {
             makeDiscretionaryTour(plan, homeLocation, r);
         }
 
+        // everyone ends at home
         Activity homeEnd = pf.createActivityFromCoord("Home", homeLocation);
         homeEnd.setEndTime(24*3600);
         plan.addActivity(homeEnd);
 
-        mp.addPlan(plan);
-        mp.setSelectedPlan(plan);
+        p.addPlan(plan);
+        p.setSelectedPlan(plan);
     }
 
     private void makeDiscretionaryTour(Plan plan, Coord homeLocation, Random r) {
+        // Make between 1 and 3 trips
         Integer numTrips = r.nextInt(2) + 1;
 
-        double currentHour = 6; // Starting at 6 am
-        double timevariable;
+        Double dayStart = 6.0*3600; // 6 AM
+        Double dayEnd = 22.0*3600; // 10 PM
+        Double currentTime = dayStart;
+        int consecutiveTrips = 0;
 
         for (Integer i = 1; i <= numTrips; i++) {
-            // Code to add activity at random Payson location
+
+
             Coord destinationLocation = getRandomDestinationLocation(r);
-            double startTime = getRandomStartTime(currentHour, r);
+            Double startTime = getRandomTime(currentTime, r, 3600*0.5, (dayEnd - currentTime));
+            Double endTime = getRandomTime(startTime, r, 3600*0.5, Math.min(3600*3.0, (dayEnd - currentTime)));
+            if(endTime > dayEnd) endTime = dayEnd;
 
-            // Create discretionary activity
             Activity discretionaryActivity = pf.createActivityFromCoord("Discretionary", destinationLocation);
-
-            // Spend 3 hours at home and 1 hr at events
-            discretionaryActivity.setEndTime(startTime + r.nextGaussian(3*3600,3600);
+            discretionaryActivity.setStartTime(startTime);
+            discretionaryActivity.setEndTime(endTime);
             plan.addActivity(discretionaryActivity);
+            consecutiveTrips++;
 
-            // Add leg between home and discretionary activity
             Leg legToDiscretionary = pf.createLeg("car");
             plan.addLeg(legToDiscretionary);
 
-            timevariable = discretionaryActivity.getEndTime().seconds();
+            currentTime = endTime;
 
-            // Update current hour for discretionary activity
-            currentHour = (startTime / 3600) + (timevariable - startTime) / 3600;
+            if(currentTime + (3600*0.6) >= dayEnd) break; // Don't make more activities if close to end of day
 
             // Chance to return home between activities
-            if (i < numTrips && shouldReturnHome(r, i)) {
+            if (i < numTrips && shouldReturnHome(r, consecutiveTrips)) {
+                // Reset consecutive trips
+                consecutiveTrips = 0;
+
+                // Make home activity
                 Activity returnHomeActivity = pf.createActivityFromCoord("Home", homeLocation);
-                returnHomeActivity.setEndTime(currentHour * 3600 + r.nextGaussian(3600,60*15); // Randomizing return home activity duration (1-4 hours)
+
+                startTime = getRandomTime(currentTime, r, 3600*0.5, (dayEnd - currentTime));
+                endTime = getRandomTime(startTime, r, 3600*0.5, Math.min(3600*3.0, (dayEnd - currentTime)));
+                if(endTime > dayEnd) endTime = dayEnd;
+
+                returnHomeActivity.setStartTime(startTime);
+                returnHomeActivity.setEndTime(endTime);
                 plan.addActivity(returnHomeActivity);
 
                 // Add leg between discretionary and home activity
                 Leg legToHome = pf.createLeg("car");
                 plan.addLeg(legToHome);
 
-                // Update current hour for home activity
-                timevariable = discretionaryActivity.getEndTime().seconds();
+                currentTime = endTime;
 
-                // Update current hour for discretionary activity
-                currentHour = (startTime / 3600) + (timevariable - startTime) / 3600;
+                if(currentTime + (3600*0.6) >= dayEnd) break; // Don't make more activities if close to end of day
             }
-
-            // Update current hour for next activity
-            currentHour += 2; // Assuming 2 hours for each activity
         }
     }
 
@@ -169,24 +178,25 @@ public class PaysonPerson {
         return CoordUtils.createCoord(destinationX, destinationY);
     }
 
-    private double getRandomStartTime(double currentHour, Random r) {
+    private double getRandomTime(Double currentTime, Random r, Double minGap, Double maxGap) {
         // Code to generate a random start time within the specified time window
-        double startTimeWindow = 2 * 3600; // 2 hours time window
-        return currentHour * 3600 + r.nextDouble(startTimeWindow);
+        return (currentTime + r.nextDouble(minGap, maxGap));
     }
 
-    private boolean shouldReturnHome(Random r, int numTripsDone) {
-        // Determine the probability of returning home based on the number of trips done
-        if (numTripsDone == 1) {
-            return r.nextDouble() < 0.5; // 50% probability for one trip
-        } else if (numTripsDone == 2) {
-            return r.nextDouble() < 0.8; // 80% probability for two consecutive trips
+    private boolean shouldReturnHome(Random r, int consecutiveTrips) {
+        // Determine the probability of returning home based on the number of consecutive trips done
+        Double goHomeProb = r.nextDouble(0.0, 1.0);
+        if (consecutiveTrips <= 1) {
+            return goHomeProb < 0.4;
+        } else if (consecutiveTrips <= 2) {
+            return goHomeProb < 0.6;
         } else {
-            return r.nextDouble() < 0.99; // 99% probability for three consecutive trips
+            return goHomeProb < 0.8;
         }
     }
 
-    private void makeMandatoryTour(Plan plan, Coord homeLocation, Random r) {
+    private void makeMandatoryTour(Plan plan, Random r) {
+        // Works north or south
         Coord nbWorkLoc = CoordUtils.createCoord(-111.6833027, 40.1037746);
         Coord sbWorkLoc = CoordUtils.createCoord(-111.7934400, 39.9599421);
         Coord workLocation;
@@ -196,11 +206,32 @@ public class PaysonPerson {
             workLocation = nbWorkLoc;
         }
 
-        // make work activity (including time)
+        Double startTime = getRandomTime(3600*7.0, r, 0.0, 3600*2.0);
+        Double endTime = getRandomTime(3600*16.0, r, 0.0, 3600*2.0);
+
+        // make mandatory activity (including time)
+        Activity workActivity = pf.createActivityFromCoord("Mandatory", workLocation);
+        workActivity.setStartTime(startTime);
+        workActivity.setEndTime(endTime);
+        plan.addActivity(workActivity);
+
+        Leg leg = pf.createLeg("car");
+        plan.addLeg(leg);
 
         // make a discretionary activity on the way home sometimes
+        if(r.nextDouble() < 0.5){
+            startTime = getRandomTime(endTime, r, 3600*0.5, 3600*1.0);
+            endTime = getRandomTime(startTime, r, 3600*0.5, 3600*3.0);
 
-        // go home
+            Activity extraActivity = pf.createActivityFromCoord("Discretionary", workLocation);
+            extraActivity.setStartTime(startTime);
+            extraActivity.setEndTime(endTime);
+            plan.addActivity(extraActivity);
+
+            Leg legDisc = pf.createLeg("car");
+            plan.addLeg(legDisc);
+        }
+
 
     }
 

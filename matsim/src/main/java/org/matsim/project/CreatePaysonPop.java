@@ -1,9 +1,6 @@
 package org.matsim.project;
 
-import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
-import org.matsim.api.core.v01.population.Person;
-import org.matsim.api.core.v01.population.Population;
 import org.matsim.api.core.v01.population.PopulationFactory;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
@@ -34,9 +31,7 @@ public class CreatePaysonPop {
     }
 
     static void createNPeople (Integer n){
-        for(Integer i = 0; i < n; i++){
-            PaysonPerson p = new PaysonPerson(i, random, scenario, pf, ct);
-        }
+        for(Integer i = 0; i < n; i++) new PaysonPerson(i, random, scenario, pf, ct);
     }
 
     static void writePopulation(String filename) {
@@ -45,9 +40,15 @@ public class CreatePaysonPop {
     }
 
     public static void main(String[] args) {
+        Integer n = Integer.valueOf(args[0]);
+        String populationFile = args[1];
         setupScenario("EPSG:26912");
-        createNPeople(15);
-        writePopulation("scenarios/payson_pop.xml");
+
+        createNPeople(n);
+        System.out.println("Made " + n + " persons");
+
+        writePopulation(populationFile);
+        System.out.println("Wrote population at " + populationFile);
     }
 
 }
