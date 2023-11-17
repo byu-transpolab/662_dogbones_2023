@@ -115,12 +115,75 @@ public class PaysonPerson {
     private void makeDiscretionaryTour(Plan plan, Coord homeLocation, Random r) {
         Integer numTrips = r.nextInt(2) + 1;
 
-        for(Integer i = 1; i <= numTrips; i ++){
-            // code to add activity at random Payson location
-            // also make random ish time
-            // chance to return home between activities
-        }
+        double currentHour = 6; // Starting at 6 am
+        double timevariable;
 
+        for (Integer i = 1; i <= numTrips; i++) {
+            // Code to add activity at random Payson location
+            Coord destinationLocation = getRandomDestinationLocation(r);
+            double startTime = getRandomStartTime(currentHour, r);
+
+            // Create discretionary activity
+            Activity discretionaryActivity = pf.createActivityFromCoord("Discretionary", destinationLocation);
+
+            // Spend 3 hours at home and 1 hr at events
+            discretionaryActivity.setEndTime(startTime + r.nextGaussian(3*3600,3600);
+            plan.addActivity(discretionaryActivity);
+
+            // Add leg between home and discretionary activity
+            Leg legToDiscretionary = pf.createLeg("car");
+            plan.addLeg(legToDiscretionary);
+
+            timevariable = discretionaryActivity.getEndTime().seconds();
+
+            // Update current hour for discretionary activity
+            currentHour = (startTime / 3600) + (timevariable - startTime) / 3600;
+
+            // Chance to return home between activities
+            if (i < numTrips && shouldReturnHome(r, i)) {
+                Activity returnHomeActivity = pf.createActivityFromCoord("Home", homeLocation);
+                returnHomeActivity.setEndTime(currentHour * 3600 + r.nextGaussian(3600,60*15); // Randomizing return home activity duration (1-4 hours)
+                plan.addActivity(returnHomeActivity);
+
+                // Add leg between discretionary and home activity
+                Leg legToHome = pf.createLeg("car");
+                plan.addLeg(legToHome);
+
+                // Update current hour for home activity
+                timevariable = discretionaryActivity.getEndTime().seconds();
+
+                // Update current hour for discretionary activity
+                currentHour = (startTime / 3600) + (timevariable - startTime) / 3600;
+            }
+
+            // Update current hour for next activity
+            currentHour += 2; // Assuming 2 hours for each activity
+        }
+    }
+
+    private Coord getRandomDestinationLocation(Random r) {
+        // Code to generate a random destination location around the mean coordinate
+        // Use a normal distribution or any other distribution based on your requirements
+        double destinationX = r.nextGaussian(-111.7362,0.0135612);
+        double destinationY = r.nextGaussian(40.03375, 0.0105619);
+        return CoordUtils.createCoord(destinationX, destinationY);
+    }
+
+    private double getRandomStartTime(double currentHour, Random r) {
+        // Code to generate a random start time within the specified time window
+        double startTimeWindow = 2 * 3600; // 2 hours time window
+        return currentHour * 3600 + r.nextDouble(startTimeWindow);
+    }
+
+    private boolean shouldReturnHome(Random r, int numTripsDone) {
+        // Determine the probability of returning home based on the number of trips done
+        if (numTripsDone == 1) {
+            return r.nextDouble() < 0.5; // 50% probability for one trip
+        } else if (numTripsDone == 2) {
+            return r.nextDouble() < 0.8; // 80% probability for two consecutive trips
+        } else {
+            return r.nextDouble() < 0.99; // 99% probability for three consecutive trips
+        }
     }
 
     private void makeMandatoryTour(Plan plan, Coord homeLocation, Random r) {
