@@ -20,6 +20,7 @@ public class PaysonPerson {
     Boolean worker;
     Double workerprob = 0.42;
     Id<Person> id;
+    String tourType;
 
     Scenario sc;
     PopulationFactory pf;
@@ -54,50 +55,90 @@ public class PaysonPerson {
         this.age = makeAge(r);
 
         // add to MATSim population
-        Person p = pf.createPerson(Id.createPersonId(id));
-        p.getAttributes().putAttribute("age", age);
-        p.getAttributes().putAttribute("gender", gender);
-        p.getAttributes().putAttribute("worker", worker);
-        makePlans(p, r);
-        sc.getPopulation().addPerson(p);
+        Person mp = pf.createPerson(Id.createPersonId(id));
+        mp.getAttributes().putAttribute("age", age);
+        mp.getAttributes().putAttribute("gender", gender);
+        mp.getAttributes().putAttribute("worker", worker);
+        String myTourType = getTourType(this, r);
+        makeTour(mp, myTourType, r);
+        sc.getPopulation().addPerson(mp);
     }
 
-    getTourType(PaysonPerson){
-
+    String getTourType(PaysonPerson p, Random r){
+        Double tourProb = r.nextDouble(0.0, 1.0);
+        if(p.worker){
+            if(tourProb < 0.083){
+                p.tourType = "Home";
+            } else if (tourProb < 0.083 + 0.632) {
+                p.tourType = "Mandatory";
+            } else {
+                p.tourType = "Discretionary";
+            }
+        } else {
+            if(tourProb < 0.229){
+                p.tourType = "Home";
+            } else if (tourProb < 0.229 + 0.165) {
+                p.tourType = "Mandatory";
+            } else {
+                p.tourType = "Discretionary";
+            }
+        }
+        return p.tourType;
     }
 
-    makeTour(PaysonPerson){
-        
-    }
-
-    void makePlans(Person p, Random r){
+    void makeTour(Person mp, String myTourType, Random r){
         Plan plan = pf.createPlan();
-        Double patternProb = r.nextDouble(0.0, 1.0);
-        Double homeX = r.nextGaussian(0,1);
-        Double homeY = r.nextGaussian(0, 1);
+        Double homeX = r.nextGaussian(-111.7362,0.0135612);
+        Double homeY = r.nextGaussian(40.03375, 0.0105619);
         Coord homeLocation = CoordUtils.createCoord(homeX, homeY);
-
         // everyone starts at home
         Activity homeStart = pf.createActivityFromCoord("Home", homeLocation);
-
-       // if home pattern, then they never leave
         homeStart.setEndTime(6 * 3600);
         plan.addActivity(homeStart);
-
         Leg leg = pf.createLeg("car");
         plan.addLeg(leg);
 
-       // if work pattern, then travel to I-15 NB and return later
-
+        if (myTourType == "Mandatory") {
+            makeMandatoryTour(plan, homeLocation, r);
+        } else if (myTourType == "Discretionary") {
+            makeDiscretionaryTour(plan, homeLocation, r);
+        }
 
         Activity homeEnd = pf.createActivityFromCoord("Home", homeLocation);
         homeEnd.setEndTime(24*3600);
         plan.addActivity(homeEnd);
 
+        mp.addPlan(plan);
+        mp.setSelectedPlan(plan);
+    }
 
-       // if discretionary, then maybe travel?
-        p.addPlan(plan);
-        p.setSelectedPlan(plan);
+    private void makeDiscretionaryTour(Plan plan, Coord homeLocation, Random r) {
+        Integer numTrips = r.nextInt(2) + 1;
+
+        for(Integer i = 1; i <= numTrips; i ++){
+            // code to add activity at random Payson location
+            // also make random ish time
+            // chance to return home between activities
+        }
+
+    }
+
+    private void makeMandatoryTour(Plan plan, Coord homeLocation, Random r) {
+        Coord nbWorkLoc = CoordUtils.createCoord(-111.6833027, 40.1037746);
+        Coord sbWorkLoc = CoordUtils.createCoord(-111.7934400, 39.9599421);
+        Coord workLocation;
+        if(r.nextDouble(0.0, 1.0) < 0.05) {
+            workLocation = sbWorkLoc;
+        } else {
+            workLocation = nbWorkLoc;
+        }
+
+        // make work activity (including time)
+
+        // make a discretionary activity on the way home sometimes
+
+        // go home
+
     }
 
     private Integer makeAge(Random r){
