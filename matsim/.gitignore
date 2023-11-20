@@ -21,6 +21,8 @@ hs_err_pid*
 /test/output/
 /bin/
 
+**payson_pop*.xml
+output
 # IntelliJ
 /.idea/
 *.iml

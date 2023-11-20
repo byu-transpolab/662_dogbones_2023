@@ -57,7 +57,7 @@ public class RunMatsim{
 
 		Config config;
 		if ( args==null || args.length==0 || args[0]==null ){
-			config = ConfigUtils.loadConfig( "scenarios/payson/config.xml" );
+			config = ConfigUtils.loadConfig( "scenarios/payson/config_2023.xml" );
 		} else {
 			config = ConfigUtils.loadConfig( args );
 		}
@@ -66,6 +66,7 @@ public class RunMatsim{
 
 		// possibly modify config here
 
+		config.network().setInputCRS("epsg:26912");
 		// ---
 		
 		Scenario scenario = ScenarioUtils.loadScenario(config) ;

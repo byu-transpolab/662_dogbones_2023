@@ -14,14 +14,14 @@ public class PaysonPerson {
     String gender;
     Integer age;
     Boolean worker;
-    Double workerprob = 0.42;
+    Double workerProb = 0.42;
     Id<Person> id;
 
     Scenario sc;
     PopulationFactory pf;
     CoordinateTransformation ct;
 
-    // constructor method
+    // constructor methods
     public PaysonPerson(String gender, Integer age){
         this.gender = gender;
         this.age = age;
@@ -41,7 +41,7 @@ public class PaysonPerson {
             this.gender = "male";
         }
 
-        if(r.nextDouble(0.0, 1.0) < workerprob){
+        if(r.nextDouble(0.0, 1.0) < workerProb){
             worker = true;
         } else {
             worker = false;
@@ -89,7 +89,7 @@ public class PaysonPerson {
         Plan plan = pf.createPlan();
         Double homeX = r.nextGaussian(-111.7362,0.0135612);
         Double homeY = r.nextGaussian(40.03375, 0.0105619);
-        Coord homeLocation = CoordUtils.createCoord(homeX, homeY);
+        Coord homeLocation = ct.transform(CoordUtils.createCoord(homeX, homeY));
 
         // everyone starts at home
         Activity homeStart = pf.createActivityFromCoord("Home", homeLocation);
@@ -175,7 +175,7 @@ public class PaysonPerson {
         // Use a normal distribution or any other distribution based on your requirements
         double destinationX = r.nextGaussian(-111.7362,0.0135612);
         double destinationY = r.nextGaussian(40.03375, 0.0105619);
-        return CoordUtils.createCoord(destinationX, destinationY);
+        return ct.transform(CoordUtils.createCoord(destinationX, destinationY));
     }
 
     private double getRandomTime(Double currentTime, Random r, Double minGap, Double maxGap) {
@@ -197,8 +197,8 @@ public class PaysonPerson {
 
     private void makeMandatoryTour(Plan plan, Random r) {
         // Works north or south
-        Coord nbWorkLoc = CoordUtils.createCoord(-111.6833027, 40.1037746);
-        Coord sbWorkLoc = CoordUtils.createCoord(-111.7934400, 39.9599421);
+        Coord nbWorkLoc = ct.transform(CoordUtils.createCoord(-111.6833027, 40.1037746));
+        Coord sbWorkLoc = ct.transform(CoordUtils.createCoord(-111.7934400, 39.9599421));
         Coord workLocation;
         if(r.nextDouble(0.0, 1.0) < 0.05) {
             workLocation = sbWorkLoc;
@@ -223,7 +223,7 @@ public class PaysonPerson {
             startTime = getRandomTime(endTime, r, 3600*0.5, 3600*1.0);
             endTime = getRandomTime(startTime, r, 3600*0.5, 3600*3.0);
 
-            Activity extraActivity = pf.createActivityFromCoord("Discretionary", workLocation);
+            Activity extraActivity = pf.createActivityFromCoord("Discretionary", getRandomDestinationLocation(r));
             extraActivity.setStartTime(startTime);
             extraActivity.setEndTime(endTime);
             plan.addActivity(extraActivity);
