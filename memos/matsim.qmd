@@ -14,7 +14,7 @@ library(kableExtra)
 
 ```
 
-In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2023 to the 2050 horizon year. The existing condition will be tested under future volumes to test a "no build" scenario, and the design conditions will be tested under future volumes to test a "build" scenario.
+In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2022 to the 2050 horizon year. The existing condition will be tested under future volumes to test a "no build" scenario, and the design conditions will be tested under future volumes to test a "build" scenario.
 
 The projected volumes will be created using a traffic simulation program called Multi-Agent Transport Simulation (MATSim) [@MATSim]. This program simulates individual travelers in a transportation network and "trains" them to find the optimal path during their tour by running the simulation through multiple iterations. Individual travelers can be counted at the study area to obtain traffic volumes. This allows some flexibility to be able to model future traffic volumes as explained in the following sections.
 
@@ -92,6 +92,18 @@ pm_peak_turn_counts_2050 %>% format_turning_counts()
 ```
 
 ![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via")
+
++---------------------------------+-------------------------+-------------------------+
+| **Intersection**                | **2022 Turning Counts** | **2050 Turning Counts** |
++=================================+=========================+=========================+
+| 900 North                       | 5295                    | 7354                    |
++---------------------------------+-------------------------+-------------------------+
+| SB Interchange                  | 7983                    | 11101                   |
++---------------------------------+-------------------------+-------------------------+
+| NB Interchange                  | 8883                    | 11716                   |
++---------------------------------+-------------------------+-------------------------+
+| 600 North                       | 6806                    | 8846                    |
++---------------------------------+-------------------------+-------------------------+
 
 # Conclusions
 
