@@ -35,6 +35,9 @@ misc_targets <- tar_plan(
 )
 
 counts_targets <- tar_plan(
+  
+  #### Memo 1: Current Volumes ####
+  
   tar_target(int100_file, "data/turning_counts/int100.xlsx", format = "file"),
   tar_target(int101_file, "data/turning_counts/int101.xlsx", format = "file"),
   tar_target(int102_file, "data/turning_counts/int102.xlsx", format = "file"),
@@ -47,6 +50,21 @@ counts_targets <- tar_plan(
   
   counts_list = list(`100` = int100, `101` = int101, `102` = int102, `103` = int103),
   counts = combine_counts(counts_list),
+  
+  #### Memo 3: Future Volumes ####
+  
+  tar_target(int100_2050_file, "data/turning_counts/int100_2050.xlsx", format = "file"),
+  tar_target(int101_2050_file, "data/turning_counts/int101_2050.xlsx", format = "file"),
+  tar_target(int102_2050_file, "data/turning_counts/int102_2050.xlsx", format = "file"),
+  tar_target(int103_2050_file, "data/turning_counts/int103_2050.xlsx", format = "file"),
+  
+  int100_2050 = format_counts(int100_2050_file, peak),
+  int101_2050 = format_counts(int101_2050_file, peak),
+  int102_2050 = format_counts(int102_2050_file, peak),
+  int103_2050 = format_counts(int103_2050_file, peak),
+  
+  counts_list_2050 = list(`100` = int100_2050, `101` = int101_2050, `102` = int102_2050, `103` = int103_2050),
+  counts_2050 = combine_counts(counts_list_2050),
 )
 
 network_ex_targets <- tar_plan(
@@ -117,6 +135,10 @@ memo_targets <- tar_plan(
   tar_target(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att", format = "file"),
   build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
+  
+  #### Memo 3: Future Volumes ####
+  am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
+  pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
 )
 
   
