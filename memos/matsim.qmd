@@ -47,7 +47,7 @@ Tour type was randomly assigned by the distribution included in [-@tbl-tourtyped
 
 # MATSim Network
 
-![MATSim Payson network](matsim/Screenshot%202023-11-13%20at%2012.59.46%20PM.png "network")
+![MATSim Payson network](matsim/Screenshot 2023-11-13 at 12.59.46 PM.png "network"){#fig-network}
 
 # Population Projection
 
@@ -91,7 +91,7 @@ targets::tar_load(pm_peak_turn_counts_2050)
 pm_peak_turn_counts_2050 %>% format_turning_counts()
 ```
 
-![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via")
+![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via"){#fig-via}
 
 | **Intersection** | **2022 Turning Counts** | **2050 Turning Counts** |
 |------------------|-------------------------|-------------------------|
