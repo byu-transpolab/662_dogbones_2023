@@ -144,14 +144,12 @@ memo_targets <- tar_plan(
     vissim_growth,
     intersection_translation,
     renames = c(
-      "AM Volume (2022)" = "am",
-      "PM Volume (2022)" = "pm",
+      "2022 AM Peak Hour Volume (AM)" = "am",
+      "2022 PM Peak Hour Volume (PM)" = "pm",
       "Growth Rate (2022\u20132050)" = "growth_rate",
-      "AM Volume (2050)" = "new_am",
-      "PM Volume (2050)" = "new_pm"
+      "2050 Peak Hour Volume (AM)" = "new_am",
+      "2050 Peak Hour Volume (PM)" = "new_pm"
     )),
-  #am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
-  #pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
 )
 
   
