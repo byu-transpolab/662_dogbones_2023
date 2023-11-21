@@ -53,13 +53,15 @@ End times were between 4-6 pm. Mandatory trip tours were given a 50% chance to c
 
 The team was provided with a network for the Payson MATSim model that roughly modeled the actual roadway network in and around Payson, UT. Using this network means that the paths that agents take should be close to available paths in Payson, UT. Attributes included in each roadway link were speed, number of lanes, annual average daily traffic (AADT) and capacity. [@fig-network] displays the MATSim network overlayed on a map of Payson, UT.
 
-![MATSim Payson network](matsim/Screenshot%202023-11-13%20at%2012.59.46%20PM.png "network"){#fig-network width="450"}
+![MATSim Payson network](matsim/network.png){#fig-network width="450"}
 
 # Population Projections
 
 The population for Payson, UT in 2050 was projected using a growth rate based on Utah County growth over the same time period. Based on numbers from the Kem C. Gardner Policy Institute, the population of Utah County in 2022 was 702,943 and the projected population for 2050 is 1,185,679 [@uou_state_2022]. This is a cumulative net growth rate of 68.7% from 2022 to 2050. It is important to note that this is not a yearly compounded growth rate, but a linear growth rate between the two populations. As Payson is in Utah County and has plenty of room for growth, the team felt comfortable applying the Utah County growth rate to Payson's population. 
 
 The population of Payson, UT in 2022 was 22,516, so with a 68.7% net growth rate, this means that the projected population of Payson, UT in 2050 is approximately 37,979 [@quickfacts_payson]. The traffic volumes at the study area were projected using a growth rate derived from the MATSim model. The MATSim model was run with the existing population size for Payson and again with a projected population size for Payson. This allowed for a growth rate to be calculated for each turning movement at the study area. Rather than using the projected volumes produced by MATSim, the growth rate was applied to the volumes produced in the VISSIM model for existing traffic to calculate projected traffic volumes. 
+
+![MATSim Loaded Payson network](matsim/Home.jpg){#fig-loaded- network width="450"}
 
 Even though the traffic volumes produced by the MATSim model are incomplete, the growth rates calculated from MATSim are reasonable to apply to the VISSIM model as an academic exercise.
 
@@ -84,23 +86,23 @@ $$ {#eq-growth}
 
 Turning movement proportions were very similar between the 2022 and 2050 models. [@fig-via] shows the turning movement distributions and histograms illustrating the volume breakdowns between the 2022 and 2050 models. Generally, the distributions widen in 2050, with the pm queues taking more than two additional hours to dissipate in the 2050 model as compared to the 2022 model (from 7pm to 9:30pm).
 
-![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via"){#fig-via}
+![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png){#fig-via}
 
 Each segment in the network was heavily utilized as drivers looked for the best cost path that would minimize the time and distance traveled. The most severe congestion was present along Main St in the AM peak and the SB I-15 corridor in the PM peak. These segments are well over capacity. However, given the experimental nature of the methodology it is unwise to make planning judgements from this model. The rough growth rates collected from the model will be reviewed and implemented in future steps. 
 
 Also, of note are Figures [-@fig-2022-scores] and [-@fig-2050-scores] which illustrate that over the 200 iterations, the model appears to converge to an equilibrium fit. The 2050 model required more interactions to converge, but after 190 iterations were consistent in its convergence. The 2022 model converged after 125 interactions, likely due to the lower volumes in the network.
 
-!["MATSim scores for 2022 model."](figures/matsim/scorestats2022.png){#fig-2022-scores height="3.5in"}
+![MATSim scores for 2022 model.](figures/matsim/scorestats2022.png){#fig-2022-scores height="3.5in"}
 
-!["MATSim Scores for 2050 model."](figures/matsim/scorestats2050.png){#fig-2050-scores height="3.5in"}
+![MATSim Scores for 2050 model.](figures/matsim/scorestats2050.png){#fig-2050-scores height="3.5in"}
 
 Figures [-@fig-hist-2022] and [-@fig-2050-hist] show the trip distributions for the 200th iteration. The strong peaks at the beginning and end of the time period reflects the stay-at-home and non-mandatory individuals as the model treats them as starting their "home" trip at 6am and returning "home" at 10 pm. During the AM peak, drivers are able to reach their destinations sooner, leading to a smaller number of vehicle hours traveled. The PM peak has a significantly higher number of vehicles hours traveled due to the higher levels of congestion. 
 
 It is possible that there may be a error in the network file that reduced the capacity of the I-15 SB segments, leading to a inflation in delay. The sharp bins in departures from 6-8 am and 4-6 pm illustrate the modeling characteristics of the model as mandatory trips were forced to leave during those time frames. Table ... shows the growth rates applied to the existing counts that were collected for the existing VISSIM model. OD pairs will be calculated from this data and used in the "No-Build" and "Build 2050" models for future analysis.
 
-![2022 hist](figures/matsim/200.legHistogram_all2022.png "Trip histogram for 2022 model."){#fig-hist-2022 height="3.5in"}
+![Trip histogram for 2022 model.](figures/matsim/200.legHistogram_all2022.png){#fig-hist-2022 height="3.5in"}
 
-![2050 hist](figures/matsim/200.legHistogram_all2050.png "Trip histogram for 2050 model."){#fig-2050-hist height="3.5in"}
+![Trip histogram for 2050 model.](figures/matsim/200.legHistogram_all2050.png){#fig-2050-hist height="3.5in"}
 
 \newpage
 
