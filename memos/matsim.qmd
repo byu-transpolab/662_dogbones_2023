@@ -14,22 +14,24 @@ library(kableExtra)
 
 ```
 
+# Population Creation
 
+| **PERSON TYPE**  | **HOME**  | **MANDATORY**  | **NON-MANDATORY**  |
+|------------------|-----------|----------------|--------------------|
+| **NON-WORKER**   | 0.229     | 0.165          | 0.605              |
+| **WORKER**       | 0.083     | 0.632          | 0.285              |
 
-# Payson Population Creation
-
+| **lat**      | **lon**     | **lat_sd**   | **lon_sd**  |
+|--------------|-------------|--------------|-------------|
+| **40.03375** | -111.7362   | 0.0105619    | 0.0135612   |
 
 # MATSim Network
 
-
 # Population Projection
-
 
 # Results
 
-
 # Conclusions
-
 
 # References
 
