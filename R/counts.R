@@ -109,3 +109,17 @@ get_hourly_turn_counts <- function(counts, hour) {
     group_by(intersection, leg, turn) %>% 
     summarise(hour_count = sum(count), .groups = "drop")
 }
+
+get_matsim_growth <- function(matsim_counts_file) {
+  read_csv(matsim_counts_file) %>% 
+    mutate(growth_rate = `2050`/`2022` - 1) %>% 
+    select(intersection, growth_rate)
+}
+
+make_vissim_growth <- function(growth, am, pm)  {
+  am %>% 
+    full_join(pm, join_by(intersection, leg, turn), suffix = c("_am", "_pm")) %>% 
+    left_join(growth, join_by(intersection)) %>% 
+    rename_with(\(x) str_remove(x, "hour_count_")) %>% 
+    mutate(across(c(am, pm), \(x) round(x*(1 + growth_rate)), .names = "new_{.col}"))
+}

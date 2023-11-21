@@ -136,9 +136,22 @@ memo_targets <- tar_plan(
   build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
   
-  # #### Memo 3: Future Volumes ####
-  # am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
-  # pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
+  #### Memo 3: Future Volumes ####
+  tar_file(matsim_counts_file, "data/turning_counts/matsim_counts.csv"),
+  matsim_growth = get_matsim_growth(matsim_counts_file),
+  vissim_growth = make_vissim_growth(matsim_growth, am_peak_turn_counts, pm_peak_turn_counts),
+  pretty_vissim_growth = make_pretty_intersection_table(
+    vissim_growth,
+    intersection_translation,
+    renames = c(
+      "AM Volume (2022)" = "am",
+      "PM Volume (2022)" = "pm",
+      "Growth Rate (2022\u20132050)" = "growth_rate",
+      "AM Volume (2050)" = "new_am",
+      "PM Volume (2050)" = "new_pm"
+    )),
+  #am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
+  #pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
 )
 
   
