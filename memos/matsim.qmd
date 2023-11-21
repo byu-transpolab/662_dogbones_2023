@@ -14,24 +14,32 @@ library(kableExtra)
 
 ```
 
+
+In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2023 to the 2050 horizon year. The existing condition will be tested under future volumes to test a “no build” scenario, and the design conditions will be tested under future volumes to test a “build” scenario.  
+
+The projected volumes will be created using a traffic simulation program called Multi-Agent Transport Simulation (MATSim). This program simulates individual travelers in a transportation network and “trains” them to find the optimal path during their tour by running the simulation through multiple iterations. Individual travelers can be counted at the study area to obtain traffic volumes. This allows some flexibility to be able to model future traffic volumes as explained in the following sections. 
+
+This memorandum includes information of the population creation model, the MATSim network, forecasted volumes, and the resulting turning counts from the MATSim model. 
+
+
 # Population Creation
 
-| **PERSON TYPE**  | **HOME**  | **MANDATORY**  | **NON-MANDATORY**  |
-|------------------|-----------|----------------|--------------------|
-| **NON-WORKER**   | 0.229     | 0.165          | 0.605              |
-| **WORKER**       | 0.083     | 0.632          | 0.285              |
+| **PERSON TYPE** | **HOME** | **MANDATORY** | **NON-MANDATORY** |
+|-----------------|----------|---------------|-------------------|
+| **NON-WORKER**  | 0.229    | 0.165         | 0.605             |
+| **WORKER**      | 0.083    | 0.632         | 0.285             |
 
 : Tour Type Distribution {#tbl-tourtypedist}
 
-| **lat**      | **lon**     | **lat_sd**   | **lon_sd**  |
-|--------------|-------------|--------------|-------------|
-| **40.03375** | -111.7362   | 0.0105619    | 0.0135612   |
+| **lat**      | **lon**   | **lat_sd** | **lon_sd** |
+|--------------|-----------|------------|------------|
+| **40.03375** | -111.7362 | 0.0105619  | 0.0135612  |
 
 : Location Distributions {#tbl-locdist}
 
-| 0 trips  | 1 trips  | 2 trips  |
-|----------|----------|----------|
-| 0.4      | 0.6      | 0.8      |
+| 0 trips | 1 trips | 2 trips |
+|---------|---------|---------|
+| 0.4     | 0.6     | 0.8     |
 
 : Concurrent Trip Probability {#tbl-tripprob}
 
