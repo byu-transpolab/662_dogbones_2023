@@ -51,20 +51,20 @@ counts_targets <- tar_plan(
   counts_list = list(`100` = int100, `101` = int101, `102` = int102, `103` = int103),
   counts = combine_counts(counts_list),
   
-  #### Memo 3: Future Volumes ####
-  
-  tar_target(int100_2050_file, "data/turning_counts/int100_2050.xlsx", format = "file"),
-  tar_target(int101_2050_file, "data/turning_counts/int101_2050.xlsx", format = "file"),
-  tar_target(int102_2050_file, "data/turning_counts/int102_2050.xlsx", format = "file"),
-  tar_target(int103_2050_file, "data/turning_counts/int103_2050.xlsx", format = "file"),
-  
-  int100_2050 = format_counts(int100_2050_file, peak),
-  int101_2050 = format_counts(int101_2050_file, peak),
-  int102_2050 = format_counts(int102_2050_file, peak),
-  int103_2050 = format_counts(int103_2050_file, peak),
-  
-  counts_list_2050 = list(`100` = int100_2050, `101` = int101_2050, `102` = int102_2050, `103` = int103_2050),
-  counts_2050 = combine_counts(counts_list_2050),
+  # #### Memo 3: Future Volumes ####
+  # 
+  # tar_target(int100_2050_file, "data/turning_counts/int100_2050.xlsx", format = "file"),
+  # tar_target(int101_2050_file, "data/turning_counts/int101_2050.xlsx", format = "file"),
+  # tar_target(int102_2050_file, "data/turning_counts/int102_2050.xlsx", format = "file"),
+  # tar_target(int103_2050_file, "data/turning_counts/int103_2050.xlsx", format = "file"),
+  # 
+  # int100_2050 = format_counts(int100_2050_file, peak),
+  # int101_2050 = format_counts(int101_2050_file, peak),
+  # int102_2050 = format_counts(int102_2050_file, peak),
+  # int103_2050 = format_counts(int103_2050_file, peak),
+  # 
+  # counts_list_2050 = list(`100` = int100_2050, `101` = int101_2050, `102` = int102_2050, `103` = int103_2050),
+  # counts_2050 = combine_counts(counts_list_2050),
 )
 
 network_ex_targets <- tar_plan(
@@ -136,9 +136,9 @@ memo_targets <- tar_plan(
   build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
   
-  #### Memo 3: Future Volumes ####
-  am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
-  pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
+  # #### Memo 3: Future Volumes ####
+  # am_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$AM),
+  # pm_peak_turn_counts_2050 = get_hourly_turn_counts(counts_2050, peak$PM),
 )
 
   
