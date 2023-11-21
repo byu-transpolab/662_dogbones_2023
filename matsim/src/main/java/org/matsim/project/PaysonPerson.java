@@ -93,27 +93,35 @@ public class PaysonPerson {
 
         // everyone starts at home
         Activity homeStart = pf.createActivityFromCoord("Home", homeLocation);
-        homeStart.setEndTime(6*3600);
+        Double firstStart = 6.0*3600;
+
+        if (tourType == "Mandatory") {
+            firstStart = getRandomTime(3600*7.0, r, 0.0, 3600*2.0);
+        } else if (tourType == "Discretionary") {
+            firstStart = getRandomTime(6.0*3600, r, 3600*0.5, (22.0*3600 - 6.0*3600));
+        }
+
+        homeStart.setEndTime(firstStart - 1.0*3600);
         plan.addActivity(homeStart);
         Leg leg = pf.createLeg("car");
         plan.addLeg(leg);
 
         if (tourType == "Mandatory") {
-            makeMandatoryTour(plan, r);
+           makeMandatoryTour(plan, r, firstStart);
         } else if (tourType == "Discretionary") {
-            makeDiscretionaryTour(plan, homeLocation, r);
+            makeDiscretionaryTour(plan, homeLocation, r, firstStart);
         }
 
         // everyone ends at home
         Activity homeEnd = pf.createActivityFromCoord("Home", homeLocation);
-        homeEnd.setEndTime(24*3600);
+        homeEnd.setEndTime(24.0*3600);
         plan.addActivity(homeEnd);
 
         p.addPlan(plan);
         p.setSelectedPlan(plan);
     }
 
-    private void makeDiscretionaryTour(Plan plan, Coord homeLocation, Random r) {
+    private void makeDiscretionaryTour(Plan plan, Coord homeLocation, Random r, Double firstStart) {
         // Make between 1 and 3 trips
         Integer numTrips = r.nextInt(2) + 1;
 
@@ -122,11 +130,17 @@ public class PaysonPerson {
         Double currentTime = dayStart;
         int consecutiveTrips = 0;
 
+        Double startTime;
+
         for (Integer i = 1; i <= numTrips; i++) {
 
-
             Coord destinationLocation = getRandomDestinationLocation(r);
-            Double startTime = getRandomTime(currentTime, r, 3600*0.5, (dayEnd - currentTime));
+            if(i == 1) {
+                startTime = firstStart;
+            } else {
+                startTime = getRandomTime(currentTime, r, 3600 * 0.5, (dayEnd - currentTime));
+            }
+
             Double endTime = getRandomTime(startTime, r, 3600*0.5, Math.min(3600*3.0, (dayEnd - currentTime)));
             if(endTime > dayEnd) endTime = dayEnd;
 
@@ -195,7 +209,7 @@ public class PaysonPerson {
         }
     }
 
-    private void makeMandatoryTour(Plan plan, Random r) {
+    private Double makeMandatoryTour(Plan plan, Random r, Double firstStart) {
         // Works north or south
         Coord nbWorkLoc = ct.transform(CoordUtils.createCoord(-111.6833027, 40.1037746));
         Coord sbWorkLoc = ct.transform(CoordUtils.createCoord(-111.7934400, 39.9599421));
@@ -206,22 +220,22 @@ public class PaysonPerson {
             workLocation = nbWorkLoc;
         }
 
-        Double startTime = getRandomTime(3600*7.0, r, 0.0, 3600*2.0);
-        Double endTime = getRandomTime(3600*16.0, r, 0.0, 3600*2.0);
+        Double firstStartTime = firstStart;
+        Double firstEndTime = getRandomTime(3600*16.0, r, 0.0, 3600*2.0);
 
         // make mandatory activity (including time)
         Activity workActivity = pf.createActivityFromCoord("Mandatory", workLocation);
-        workActivity.setStartTime(startTime);
-        workActivity.setEndTime(endTime);
+        workActivity.setStartTime(firstStartTime);
+        workActivity.setEndTime(firstEndTime);
         plan.addActivity(workActivity);
 
         Leg leg = pf.createLeg("car");
         plan.addLeg(leg);
 
         // make a discretionary activity on the way home sometimes
-        if(r.nextDouble() < 0.5){
-            startTime = getRandomTime(endTime, r, 3600*0.5, 3600*1.0);
-            endTime = getRandomTime(startTime, r, 3600*0.5, 3600*3.0);
+        if(r.nextDouble() < 0.3){
+            Double startTime = getRandomTime(firstEndTime, r, 3600*0.5, 3600*1.0);
+            Double endTime = getRandomTime(startTime, r, 3600*0.5, 3600*3.0);
 
             Activity extraActivity = pf.createActivityFromCoord("Discretionary", getRandomDestinationLocation(r));
             extraActivity.setStartTime(startTime);
@@ -232,7 +246,7 @@ public class PaysonPerson {
             plan.addLeg(legDisc);
         }
 
-
+        return firstStartTime;
     }
 
     private Integer makeAge(Random r){
