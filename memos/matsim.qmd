@@ -25,7 +25,13 @@ library(kableExtra)
 |--------------|-------------|--------------|-------------|
 | **40.03375** | -111.7362   | 0.0105619    | 0.0135612   |
 
+| 0 trips  | 1 trips  | 2 trips  |
+|----------|----------|----------|
+| 0.4      | 0.6      | 0.8      |
+
 # MATSim Network
+
+![MATSim Payson network](matsim/Screenshot%202023-11-13%20at%2012.59.46%20PM.png "network")
 
 # Population Projection
 
