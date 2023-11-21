@@ -53,43 +53,43 @@ Tour type was randomly assigned by the distribution included in [-@tbl-tourtyped
 
 # Results
 
-```{r}
-#| label: tbl-am-tmc-2023
-#| tbl-cap: "AM Turning Movement Counts in 2023"
-
-targets::tar_load(am_peak_turn_counts)
-
-am_peak_turn_counts %>% format_turning_counts() %>% 
-  kable_styling(latex_options = "HOLD_position")
-```
-
-```{r}
-#| label: tbl-pm-tmc-2023
-#| tbl-cap: "PM Turning Movement Counts in 2023"
-
-targets::tar_load(pm_peak_turn_counts)
-
-pm_peak_turn_counts %>% format_turning_counts()
-```
-
-```{r}
-#| label: tbl-am-tmc-2050
-#| tbl-cap: "AM Turning Movement Counts in 2050"
-
-targets::tar_load(am_peak_turn_counts_2050)
-
-am_peak_turn_counts_2050 %>% format_turning_counts() %>% 
-  kable_styling(latex_options = "HOLD_position")
-```
-
-```{r}
-#| label: tbl-pm-tmc-2050
-#| tbl-cap: "PM Turning Movement Counts in 2050"
-
-targets::tar_load(pm_peak_turn_counts_2050)
-
-pm_peak_turn_counts_2050 %>% format_turning_counts()
-```
+# ```{r}
+# #| label: tbl-am-tmc-2023
+# #| tbl-cap: "AM Turning Movement Counts in 2023"
+# 
+# targets::tar_load(am_peak_turn_counts)
+# 
+# am_peak_turn_counts %>% format_turning_counts() %>% 
+#   kable_styling(latex_options = "HOLD_position")
+# ```
+# 
+# ```{r}
+# #| label: tbl-pm-tmc-2023
+# #| tbl-cap: "PM Turning Movement Counts in 2023"
+# 
+# targets::tar_load(pm_peak_turn_counts)
+# 
+# pm_peak_turn_counts %>% format_turning_counts()
+# ```
+# 
+# ```{r}
+# #| label: tbl-am-tmc-2050
+# #| tbl-cap: "AM Turning Movement Counts in 2050"
+# 
+# targets::tar_load(am_peak_turn_counts_2050)
+# 
+# am_peak_turn_counts_2050 %>% format_turning_counts() %>% 
+#   kable_styling(latex_options = "HOLD_position")
+# ```
+# 
+# ```{r}
+# #| label: tbl-pm-tmc-2050
+# #| tbl-cap: "PM Turning Movement Counts in 2050"
+# 
+# targets::tar_load(pm_peak_turn_counts_2050)
+# 
+# pm_peak_turn_counts_2050 %>% format_turning_counts()
+# ```
 
 $$
 Growth(\%)=\frac{2050-2022 \; Volumes}{2022 \; Volumes}(100\%)
