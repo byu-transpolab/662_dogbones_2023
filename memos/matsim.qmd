@@ -24,97 +24,89 @@ This memorandum includes information of the population creation model, the MATSi
 
 The population of Payson, UT was synthetically created using MATSim. Assumptions used for population development are detailed in this section, including the creation and assignment of discretionary, non-discretionary, and home-based tours. These tours include a list of destinations and arrival times for each event. All trips are assigned to a personal vehicle, but the route that the vehicle takes is derived through a best fit algorithm.
 
-Tour type was randomly assigned by the distribution included in [-@tbl-tourtypedist]. These values were derived from the 2017 National Household Travel Survey [@travel_national_2017] for metropolitan areas between one and three million people. Workers and non-workers were created with a probability of 42% of the total population being a worker. "Home" assignments were created on a normal distribution with the mean and standard deviation for longitude and latitude defined in [-@tbl-locdist]. These distributions were also used for the creation of non-mandatory trips for both Mandatory and Non-Mandatory tour creation. Creation of [-@tbl-locdist] was conducted using population weighted block groups from the 2010 census [@census_united_2010].
+Tour type was randomly assigned by the distribution included in [@tbl-tourtypedist]. These values were derived from the 2017 National Household Travel Survey [@travel_national_2017] for metropolitan areas between one and three million people. Workers and non-workers were created with a probability of 42% of the total population being a worker.
 
-| **PERSON TYPE** | **HOME** | **MANDATORY** | **NON-MANDATORY** |
+"Home" assignments were created on a normal distribution with the mean and standard deviation for longitude and latitude defined in [@tbl-locdist]. These distributions were also used for the creation of non-mandatory trips for both Mandatory and Non-Mandatory tour creation. Creation of [@tbl-locdist] was conducted using population weighted block groups from the 2010 census [@census_united_2010].
+
+| PERSON TYPE | HOME | MANDATORY| NON-MANDATORY |
 |-----------------|----------|---------------|-------------------|
-| **NON-WORKER**  | 0.229    | 0.165         | 0.605             |
-| **WORKER**      | 0.083    | 0.632         | 0.285             |
+| Non-Worker  | 0.229    | 0.165         | 0.605             |
+| Worker      | 0.083    | 0.632         | 0.285             |
 
 : Tour Type Distribution {#tbl-tourtypedist}
 
-| **lat**      | **lon**   | **lat_sd** | **lon_sd** |
-|--------------|-----------|------------|------------|
-| **40.03375** | -111.7362 | 0.0105619  | 0.0135612  |
+| lat  | lon   | lat_sd | lon_sd |
+|----------|-----------|------------|------------|
+| 40.03375 | -111.7362 | 0.0105619  | 0.0135612  |
 
 : Location Distributions {#tbl-locdist}
 
-| 0 trips | 1 trips | 2 trips |
-|---------|---------|---------|
-| 0.4     | 0.6     | 0.8     |
+Non-mandatory trip tours are comprised of one to three discretionary trips. These destinations were created on the normal distributions as described in @tbl-locdist. Start and end times for the tour were constrained to be between 6 am and 10 pm. Each subsequent activity begins at a random time after the previous one (Mandatory activities begin between 7 am and 9 am and end between 4 pm and 6 pm). End times were similarly assigned but with a correction factor to ensure that trips end by 10 pm. 
 
-: Concurrent Trip Probability {#tbl-tripprob}
+A random distribution was developed to determine if trips were concurrent, or if users returned to their "home" location in between. If a single trip had been taken, there was a 40% that they would return home, if two trips, 60%, and if three trips, then 80%. This distribution was created to reflect personal opinions of the likelihood of concurrent trips after a given number of previous concurrent trips. Once all trips or the day ended, whichever came first, the non-mandatory tour was completed.
+
+Mandatory trip tours comprise of a trip to I-15 northbound (NB) or southbound (SB) and a possible discretionary activity on the way to the "home" location. Coordinates were selected on the north and southern ends of the model to assign individuals to travel in such direction either going north to Spanish Fork/Provo and beyond, or south to Santaquin/Nephi and beyond. A random distribution assigned 95% of all mandatory trips northbound. Start time for mandatory trips were between 7-9 am.
+
+End times were between 4-6 pm. Mandatory trip tours were given a 50% chance to complete a discretionary trip. Start times for that trip were within 1 hour of the mandatory trip end time with a duration of 30 minutes. Discretionary trip destinations were selected along a normal distribution from [@tbl-locdist]. All discretionary trips originated from the mandatory trip location and ended at the "home" location. After returning "home" the mandatory tour was completed.
 
 # MATSim Network
 
-![MATSim Payson network](matsim/Screenshot%202023-11-13%20at%2012.59.46%20PM.png "network"){#fig-network}
+The team was provided with a network for the Payson MATSim model that roughly modeled the actual roadway network in and around Payson, UT. Using this network means that the paths that agents take should be close to available paths in Payson, UT. Attributes included in each roadway link were speed, number of lanes, annual average daily traffic (AADT) and capacity. [@fig-network] displays the MATSim network overlayed on a map of Payson, UT.
 
-# Population Projection
+![MATSim Payson network](matsim/Screenshot%202023-11-13%20at%2012.59.46%20PM.png "network"){#fig-network width="450"}
+
+# Population Projections
+
+The population for Payson, UT in 2050 was projected using a growth rate based on Utah County growth over the same time period. Based on numbers from the Kem C. Gardner Policy Institute, the population of Utah County in 2022 was 702,943 and the projected population for 2050 is 1,185,679 [@uou_state_2022]. This is a cumulative net growth rate of 68.7% from 2022 to 2050. It is important to note that this is not a yearly compounded growth rate, but a linear growth rate between the two populations. As Payson is in Utah County and has plenty of room for growth, the team felt comfortable applying the Utah County growth rate to Payson's population. 
+
+The population of Payson, UT in 2022 was 22,516, so with a 68.7% net growth rate, this means that the projected population of Payson, UT in 2050 is approximately 37,979 [@quickfacts_payson]. The traffic volumes at the study area were projected using a growth rate derived from the MATSim model. The MATSim model was run with the existing population size for Payson and again with a projected population size for Payson. This allowed for a growth rate to be calculated for each turning movement at the study area. Rather than using the projected volumes produced by MATSim, the growth rate was applied to the volumes produced in the VISSIM model for existing traffic to calculate projected traffic volumes. 
+
+Even though the traffic volumes produced by the MATSim model are incomplete, the growth rates calculated from MATSim are reasonable to apply to the VISSIM model as an academic exercise.
 
 # Results
 
-# ```{r}
-# #| label: tbl-am-tmc-2023
-# #| tbl-cap: "AM Turning Movement Counts in 2023"
-# 
-# targets::tar_load(am_peak_turn_counts)
-# 
-# am_peak_turn_counts %>% format_turning_counts() %>% 
-#   kable_styling(latex_options = "HOLD_position")
-# ```
-# 
-# ```{r}
-# #| label: tbl-pm-tmc-2023
-# #| tbl-cap: "PM Turning Movement Counts in 2023"
-# 
-# targets::tar_load(pm_peak_turn_counts)
-# 
-# pm_peak_turn_counts %>% format_turning_counts()
-# ```
-# 
-# ```{r}
-# #| label: tbl-am-tmc-2050
-# #| tbl-cap: "AM Turning Movement Counts in 2050"
-# 
-# targets::tar_load(am_peak_turn_counts_2050)
-# 
-# am_peak_turn_counts_2050 %>% format_turning_counts() %>% 
-#   kable_styling(latex_options = "HOLD_position")
-# ```
-# 
-# ```{r}
-# #| label: tbl-pm-tmc-2050
-# #| tbl-cap: "PM Turning Movement Counts in 2050"
-# 
-# targets::tar_load(pm_peak_turn_counts_2050)
-# 
-# pm_peak_turn_counts_2050 %>% format_turning_counts()
-# ```
+[@tbl-tmc] shows the calculated MATSim turning movement counts for each intersection at the study area for 2022 and 2050. These intersections are visualized in [@fig-via] and hourly traffic patterns are shown. Intersection movement counts were collected for the entire simulation run time due to extensive delays in the pm. The growth rate was calculated as shown in @eq-growth . 
+
+As presented in the figure, the northern intersections exhibit a growth of approximately 40% from 2022 to 2050 while the southern intersections exhibit a growth of approximately 30% from 2022 to 2050.
 
 $$
 Growth(\%)=\frac{2050-2022 \; Volumes}{2022 \; Volumes}(100\%)
-$$
+$$ {#eq-growth}
 
-![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via"){#fig-via}
-
-| **Intersection** | **2022 Turning Counts** | **2050 Turning Counts** |
-|------------------|-------------------------|-------------------------|
-| 900 North        | 5295                    | 7354                    |
-| SB Interchange   | 7983                    | 11101                   |
-| NB Interchange   | 8883                    | 11716                   |
-| 600 North        | 6806                    | 8846                    |
+| **Intersection** | **2022 Turning Counts** | **2050 Turning Counts** | **Cumulative Growth Rates** |
+|------------------|------------------|------------------|------------------|
+| 900 North        | 5295                    | 7354                    | 38.9%                   |
+| SB Interchange   | 7983                    | 11101                   | 39.1%                   |
+| NB Interchange   | 8883                    | 11716                   | 31.9%                   |
+| 600 North        | 6806                    | 8846                    | 30.0%                   |
 
 : Existing and Projected Turning Movement Counts {#tbl-tmc}
 
-![2022 scores](figures/matsim/scorestats2022.png "MATSim scores for 2022 model."){#fig-2022-scores}
+Turning movement proportions were very similar between the 2022 and 2050 models. [@fig-via] shows the turning movement distributions and histograms illustrating the volume breakdowns between the 2022 and 2050 models. Generally, the distributions widen in 2050, with the pm queues taking more than two additional hours to dissipate in the 2050 model as compared to the 2022 model (from 7pm to 9:30pm).
 
-![2050 scores](figures/matsim/scorestats2050.png "MATSim Scores for 2050 model."){#fig-2050-scores}
+![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via"){#fig-via}
 
-![2022 hist](figures/matsim/200.legHistogram_all2022.png "Trip histogram for 2022 model.")]{#fig-hist-2022}
+Each segment in the network was heavily utilized as drivers looked for the best cost path that would minimize the time and distance traveled. The most severe congestion was present along Main St in the AM peak and the SB I-15 corridor in the PM peak. These segments are well over capacity. However, given the experimental nature of the methodology it is unwise to make planning judgements from this model. The rough growth rates collected from the model will be reviewed and implemented in future steps. 
 
-![2050 hist](figures/matsim/200.legHistogram_all2050.png "Trip histogram for 2050 model.")]{#fig-2050-hist}
+Also, of note are Figures [-@fig-2022-scores] and [-@fig-2050-scores] which illustrate that over the 200 iterations, the model appears to converge to an equilibrium fit. The 2050 model required more interactions to converge, but after 190 iterations were consistent in its convergence. The 2022 model converged after 125 interactions, likely due to the lower volumes in the network.
+
+!["MATSim scores for 2022 model."](figures/matsim/scorestats2022.png){#fig-2022-scores height="3.5in"}
+
+!["MATSim Scores for 2050 model."](figures/matsim/scorestats2050.png){#fig-2050-scores height="3.5in"}
+
+Figures [-@fig-hist-2022] and [-@fig-2050-hist] show the trip distributions for the 200th iteration. The strong peaks at the beginning and end of the time period reflects the stay-at-home and non-mandatory individuals as the model treats them as starting their "home" trip at 6am and returning "home" at 10 pm. During the AM peak, drivers are able to reach their destinations sooner, leading to a smaller number of vehicle hours traveled. The PM peak has a significantly higher number of vehicles hours traveled due to the higher levels of congestion. 
+
+It is possible that there may be a error in the network file that reduced the capacity of the I-15 SB segments, leading to a inflation in delay. The sharp bins in departures from 6-8 am and 4-6 pm illustrate the modeling characteristics of the model as mandatory trips were forced to leave during those time frames. Table ... shows the growth rates applied to the existing counts that were collected for the existing VISSIM model. OD pairs will be calculated from this data and used in the "No-Build" and "Build 2050" models for future analysis.
+
+![2022 hist](figures/matsim/200.legHistogram_all2022.png "Trip histogram for 2022 model."){#fig-hist-2022 height="3.5in"}
+
+![2050 hist](figures/matsim/200.legHistogram_all2050.png "Trip histogram for 2050 model."){#fig-2050-hist height="3.5in"}
+
+\newpage
 
 # Conclusions
+
+MATSim provides a method for creating turning counts even with limited prediction models. As an academic exercise, these results and growth rates will be used to forecast growth in VISSIM to provide limited recommendations for future growth at the I-15 interchange at Main St in Payson, Utah.
 
 # References
 
