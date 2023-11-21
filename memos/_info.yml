@@ -34,6 +34,7 @@ affiliations:
 bibliography:
   - ../bib/references.bib
   - ../bib/packages.bib
+  - ../bib/matsim.bib
 
 lof: false
 lot: false

@@ -14,15 +14,17 @@ library(kableExtra)
 
 ```
 
+In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2023 to the 2050 horizon year. The existing condition will be tested under future volumes to test a "no build" scenario, and the design conditions will be tested under future volumes to test a "build" scenario.
 
-In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2023 to the 2050 horizon year. The existing condition will be tested under future volumes to test a “no build” scenario, and the design conditions will be tested under future volumes to test a “build” scenario.  
+The projected volumes will be created using a traffic simulation program called Multi-Agent Transport Simulation (MATSim) [@MATSim]. This program simulates individual travelers in a transportation network and "trains" them to find the optimal path during their tour by running the simulation through multiple iterations. Individual travelers can be counted at the study area to obtain traffic volumes. This allows some flexibility to be able to model future traffic volumes as explained in the following sections.
 
-The projected volumes will be created using a traffic simulation program called Multi-Agent Transport Simulation (MATSim). This program simulates individual travelers in a transportation network and “trains” them to find the optimal path during their tour by running the simulation through multiple iterations. Individual travelers can be counted at the study area to obtain traffic volumes. This allows some flexibility to be able to model future traffic volumes as explained in the following sections. 
-
-This memorandum includes information of the population creation model, the MATSim network, forecasted volumes, and the resulting turning counts from the MATSim model. 
-
+This memorandum includes information of the population creation model, the MATSim network, forecasted volumes, and the resulting turning counts from the MATSim model.
 
 # Population Creation
+
+The population of Payson, UT was synthetically created using MATSim. Assumptions used for population development are detailed in this section, including the creation and assignment of discretionary, non-discretionary, and home-based tours. These tours include a list of destinations and arrival times for each event. All trips are assigned to a personal vehicle, but the route that the vehicle takes is derived through a best fit algorithm.
+
+Tour type was randomly assigned by the distribution included in [-@tbl-tourtypedist]. These values were derived from the 2017 National Household Travel Survey [@travel_national_2017] for metropolitan areas between one and three million people. Workers and non-workers were created with a probability of 42% of the total population being a worker. "Home" assignments were created on a normal distribution with the mean and standard deviation for longitude and latitude defined in [-@tbl-locdist]. These distributions were also used for the creation of non-mandatory trips for both Mandatory and Non-Mandatory tour creation. Creation of [-@tbl-locdist] was conducted using population weighted block groups from the 2010 census [@census_united_2010].
 
 | **PERSON TYPE** | **HOME** | **MANDATORY** | **NON-MANDATORY** |
 |-----------------|----------|---------------|-------------------|
@@ -88,6 +90,8 @@ targets::tar_load(pm_peak_turn_counts_2050)
 
 pm_peak_turn_counts_2050 %>% format_turning_counts()
 ```
+
+![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png "via")
 
 # Conclusions
 
