@@ -14,7 +14,7 @@ library(kableExtra)
 
 ```
 
-In the previous reports, existing and design conditions were tested using current volumes [@design] [@existing]. However, it will be necessary to test these conditions using projected volumes from 2022 to the 2050 horizon year. The existing condition will be tested under future volumes to test a "no build" scenario, and the design conditions will be tested under future volumes to test a "build" scenario.
+In the previous reports, existing and design conditions were tested using current volumes [@design; @existing]. However, it will be necessary to test these conditions using projected volumes from 2022 to the 2050 horizon year. The existing condition will be tested under future volumes to test a "no build" scenario, and the design conditions will be tested under future volumes to test a "build" scenario.
 
 The projected volumes will be created using a traffic simulation program called Multi-Agent Transport Simulation (MATSim) [@MATSim]. This program simulates individual travelers in a transportation network and "trains" them to find the optimal path during their tour by running the simulation through multiple iterations. Individual travelers can be counted at the study area to obtain traffic volumes. This allows some flexibility to be able to model future traffic volumes as explained in the following sections.
 
@@ -28,7 +28,7 @@ Tour type was randomly assigned by the distribution included in [@tbl-tourtypedi
 
 "Home" assignments were created on a normal distribution with the mean and standard deviation for longitude and latitude defined in [@tbl-locdist]. These distributions were also used for the creation of non-mandatory trips for both Mandatory and Non-Mandatory tour creation. Creation of [@tbl-locdist] was conducted using population weighted block groups from the 2010 census [@census_united_2010].
 
-| PERSON TYPE | HOME | MANDATORY| NON-MANDATORY |
+| Person Type | Home | Mandatory| Discretionary |
 |-----------------|----------|---------------|-------------------|
 | Non-Worker  | 0.229    | 0.165         | 0.605             |
 | Worker      | 0.083    | 0.632         | 0.285             |
@@ -49,7 +49,7 @@ Mandatory trip tours comprise of a trip to I-15 northbound (NB) or southbound (S
 
 # MATSim Network
 
-The team was provided with a network for the Payson MATSim model that roughly modeled the actual roadway network in and around Payson, UT. Using this network means that the paths that agents take should be close to available paths in Payson, UT. Attributes included in each roadway link were speed, number of lanes, annual average daily traffic (AADT) and capacity. [@fig-network] displays the MATSim network overlayed on a map of Payson, UT.
+The team was provided with a network for the Payson MATSim model that roughly modeled the actual roadway network in and around Payson, UT. Using this network means that the paths that agents take should be close to available paths in Payson, UT. Attributes included in each roadway link were speed, number of lanes, and capacity. [@fig-network] displays the MATSim network overlaid on a map of Payson, UT.
 
 ![MATSim Payson network](matsim/network.png){#fig-network width="550"}
 
@@ -73,7 +73,7 @@ $$
 Growth(\%)=\frac{2050-2022 \; Volumes}{2022 \; Volumes}(100\%)
 $$ {#eq-growth}
 
-| **Intersection** | **2022 Turning Counts** | **2050 Turning Counts** | **Cumulative Growth Rates** |
+| Intersection | 2022 Turning Counts | 2050 Turning Counts | Cumulative Growth Rates |
 |------------------|------------------|------------------|------------------|
 | 900 North        | 5295                    | 7354                    | 38.9%                   |
 | SB Interchange   | 7983                    | 11101                   | 39.1%                   |
@@ -86,13 +86,13 @@ Turning movement proportions were very similar between the 2022 and 2050 models.
 
 ![Existing and projected turning movement counts.](figures/matsim_intersections/VIA_diagram.png){#fig-via}
 
-Each segment in the network was heavily utilized as drivers looked for the best cost path that would minimize the time and distance traveled. The most severe congestion was present along Main St in the AM peak and the SB I-15 corridor in the PM peak. These segments are well over capacity. However, given the experimental nature of the methodology it is unwise to make planning judgements from this model. The rough growth rates collected from the model will be reviewed and implemented in future steps. 
+Each segment in the network was heavily utilized as drivers looked for the best cost path that would minimize the time and distance traveled. The most severe congestion was present along Main St in the AM peak and the SB I-15 corridor in the PM peak. These segments are well over capacity. However, given the experimental nature of the methodology it is unwise to make planning judgments from this model. The rough growth rates collected from the model will be reviewed and implemented in future steps. 
 
 Also, of note are Figures [-@fig-2022-scores] and [-@fig-2050-scores] which illustrate that over the 200 iterations, the model appears to converge to an equilibrium fit. The 2050 model required more interactions to converge, but after 190 iterations were consistent in its convergence. The 2022 model converged after 125 interactions, likely due to the lower volumes in the network.
 
 Figures [-@fig-hist-2022] and [-@fig-2050-hist] show the trip distributions for the 200th iteration. The strong peaks at the beginning and end of the time period reflects the stay-at-home and non-mandatory individuals as the model treats them as starting their "home" trip at 6am and returning "home" at 10 pm. During the AM peak, drivers are able to reach their destinations sooner, leading to a smaller number of vehicle hours traveled. The PM peak has a significantly higher number of vehicles hours traveled due to the higher levels of congestion. 
 
-It is possible that there may be a error in the network file that reduced the capacity of the I-15 SB segments, leading to a inflation in delay. The sharp bins in departures from 6-8 am and 4-6 pm illustrate the modeling characteristics of the model as mandatory trips were forced to leave during those time frames. Table ... shows the growth rates applied to the existing counts that were collected for the existing VISSIM model. OD pairs will be calculated from this data and used in the "No-Build" and "Build 2050" models for future analysis.
+It is possible that there may be a error in the network file that reduced the capacity of the I-15 SB segments, leading to a inflation in delay. The sharp bins in departures from 6-8 am and 4-6 pm illustrate the modeling characteristics of the model as mandatory trips were forced to leave during those time frames. @tbl-vissim-growth shows the growth rates applied to the existing counts that were collected for the existing VISSIM model. OD pairs will be calculated from this data and used in the "No-Build" and "Build 2050" models for future analysis.
 
 ![MATSim scores for 2022 model.](figures/matsim/scorestats2022.png){#fig-2022-scores height="3.5in"}
 
@@ -102,11 +102,24 @@ It is possible that there may be a error in the network file that reduced the ca
 
 ![Trip histogram for 2050 model.](figures/matsim/200.legHistogram_all2050.png){#fig-2050-hist height="3.5in"}
 
+```{r}
+#| label: tbl-vissim-growth
+#| tbl-cap: Something
 
+targets::tar_read(pretty_vissim_growth) %>% 
+  mutate(across(6, \(x) scales::label_percent(0.1)(x))) %>% 
+  kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
+  kable_styling(latex_options = "scale_down") %>% 
+  column_spec(column = c(4,5,7,8), width = "2.5cm") %>% 
+  column_spec(column = 6, width = "2.5cm") %>% 
+  collapse_rows(columns = c(1, 6), valign = "middle", target = 1)
+```
 
 # Conclusions
 
 MATSim provides a method for creating turning counts even with limited prediction models. As an academic exercise, these results and growth rates will be used to forecast growth in VISSIM to provide limited recommendations for future growth at the I-15 interchange at Main St in Payson, Utah.
+
+{{< pagebreak >}}
 
 # References
 
