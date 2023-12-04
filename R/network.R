@@ -78,7 +78,7 @@ get_od_pcts <- function(counts, routes, out_file){
     mutate(vissim_route = paste0(from,to), .after = to) %>% 
     arrange(vissim_route)
   
-  write_csv(od_pcts, out_file)
+  write_csv(od_pcts, out_file, na = "")
   
   od_pcts
 }

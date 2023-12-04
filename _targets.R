@@ -50,21 +50,7 @@ counts_targets <- tar_plan(
   
   counts_list = list(`100` = int100, `101` = int101, `102` = int102, `103` = int103),
   counts = combine_counts(counts_list),
-  
-  # #### Memo 3: Future Volumes ####
-  # 
-  # tar_target(int100_2050_file, "data/turning_counts/int100_2050.xlsx", format = "file"),
-  # tar_target(int101_2050_file, "data/turning_counts/int101_2050.xlsx", format = "file"),
-  # tar_target(int102_2050_file, "data/turning_counts/int102_2050.xlsx", format = "file"),
-  # tar_target(int103_2050_file, "data/turning_counts/int103_2050.xlsx", format = "file"),
-  # 
-  # int100_2050 = format_counts(int100_2050_file, peak),
-  # int101_2050 = format_counts(int101_2050_file, peak),
-  # int102_2050 = format_counts(int102_2050_file, peak),
-  # int103_2050 = format_counts(int103_2050_file, peak),
-  # 
-  # counts_list_2050 = list(`100` = int100_2050, `101` = int101_2050, `102` = int102_2050, `103` = int103_2050),
-  # counts_2050 = combine_counts(counts_list_2050),
+ 
 )
 
 network_ex_targets <- tar_plan(
@@ -150,6 +136,17 @@ memo_targets <- tar_plan(
       "2050 Peak Hour Volume (AM)" = "new_am",
       "2050 Peak Hour Volume (PM)" = "new_pm"
     )),
+  
+  new_counts = grow_counts(counts, matsim_growth),
+  
+  #### Analysis
+  #ex_graph = make_net_graph(ex_nodes_file, ex_edges_file, leg_translation_file),
+  new_turn_pcts = get_turn_pcts(new_counts, ex_graph),
+  #ex_od_routes = get_od_routes(ex_graph),
+  new_od_pcts = get_od_pcts(new_turn_pcts, ex_od_routes, "data/vissim_inputs/new_od_pcts.csv"),
+  new_approach_vols = get_approach_vols(new_counts, ex_graph, peak, count_bin_length, "data/vissim_inputs/new_vols.csv"),
+  
+  
 )
 
   
