@@ -97,7 +97,7 @@ get_approach_vols <- function(counts, net, peak, bin, out_file) {
     mutate(across(contains("volume"), \(x) x*60/bin)) %>% #Gets hourly volumes
     arrange(label)
   
-  write_csv(vols, out_file)
+  write_csv(vols, out_file, na = "")
   
   vols
 }
@@ -122,4 +122,11 @@ make_vissim_growth <- function(growth, am, pm)  {
     left_join(growth, join_by(intersection)) %>% 
     rename_with(\(x) str_remove(x, "hour_count_")) %>% 
     mutate(across(c(am, pm), \(x) round(x*(1 + growth_rate)), .names = "new_{.col}"))
+}
+
+grow_counts <- function(counts, growth){
+  counts %>% 
+    left_join(growth) %>% 
+    mutate(count = count*(1+growth_rate)) %>% 
+    select(-growth_rate)
 }
