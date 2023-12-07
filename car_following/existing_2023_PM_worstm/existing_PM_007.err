@@ -1,0 +1,2 @@
+﻿                  Warning	Simulation second 1402.20: After 60.00 seconds of waiting for lane change the vehicle 966 (on Static Vehicle Route "1014 - 10141034") was removed from link "19: Main St SB" at position 123.013 ft.	Network object type: Vehicle	Network object keys: 966
+                  Warning	Simulation second 3762.70: After 60.00 seconds of waiting for lane change the vehicle 2621 (on Static Vehicle Route "1014 - 10141012") was removed from link "13: I-15 SB Off" at position 165.473 ft.	Network object type: Vehicle	Network object keys: 2621

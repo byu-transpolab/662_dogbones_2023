@@ -1,0 +1,32 @@
+﻿$VISION
+* File:		\\fs-caedm\homes\.caedm\My Documents\temp1\662\existing_2023_PM_worstam\existing_PM.inpx
+* Comment:	Random Seed = 42
+* Date:		12/7/2023 3:14:37 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Vehicle Network Performance Evaluation Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* DELAYAVG(ALL): DelayAvg(All), Delay (average) (All) (Average delay per vehicle: Total delay / (Number of veh in the network + number of veh that have arrived)) [s]
+* STOPSAVG(ALL): StopsAvg(All), Stops (average) (All) (Average number of stops per vehicle: Total number of stops / (Number of veh in the network + number of veh that have arrived))
+* SPEEDAVG(ALL): SpeedAvg(All), Speed (average) (All) (Average speed: Total distance DistTot / Total travel time TravTmTot) [mph]
+* DELAYSTOPAVG(ALL): DelayStopAvg(All), Delay stopped (average) (All) (Average standstill time per vehicle. Total standstill time / (Number of veh in the network + number of veh that have arrived)) [s]
+* 
+* SimRun;TimeInt;DelayAvg(All);StopsAvg(All);SpeedAvg(All);DelayStopAvg(All)
+* Simulation run;Time interval;Delay (average) (All);Stops (average) (All);Speed (average) (All);Delay stopped (average) (All)
+*
+$VEHICLENETWORKPERFORMANCEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;DELAYAVG(ALL);STOPSAVG(ALL);SPEEDAVG(ALL);DELAYSTOPAVG(ALL)
+1;900-4500;26.57;1.13;26.20;9.32
+2;900-4500;29.32;1.25;25.17;9.82
+3;900-4500;25.88;1.12;26.55;8.68
+4;900-4500;26.98;1.12;25.89;9.39
+5;900-4500;29.31;1.24;25.11;10.80
+6;900-4500;25.00;1.10;26.67;8.35
+7;900-4500;28.48;1.17;25.63;10.03
+8;900-4500;28.08;1.22;25.81;9.92
+AVG;900-4500;27.45;1.17;25.88;9.54
+STDDEV;900-4500;1.60;0.06;0.58;0.78
+MIN;900-4500;25.00;1.10;25.11;8.35
+MAX;900-4500;29.32;1.25;26.67;10.80
+

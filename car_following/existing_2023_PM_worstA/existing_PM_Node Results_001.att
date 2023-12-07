@@ -1,0 +1,66 @@
+﻿$VISION
+* File:		D:\Adam Hill Vissim\existing_2023_PM_worstA\existing_PM.inpx
+* Comment:	Random Seed = 42
+* Date:		12/7/2023 3:15:40 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Node Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* MOVEMENT\DIRECTION: Movement\Direction, Movement\Direction (Returns the movement in cardinal direction.  From cardinal direction – to cardinal direction.)
+* MOVEMENT\NODE\NO: Movement\Node\No, Movement\Node\Number (Unique node number)
+* MOVEMENT\NODE\NAME: Movement\Node\Name, Movement\Node\Name (Designation of the node)
+* MOVEMENT\TOLINK\NO: Movement\ToLink\No, Movement\To-link\Number (Unique link/connector number)
+* MOVEMENT\TOLINK\NAME: Movement\ToLink\Name, Movement\To-link\Name (Name of the link or connector)
+* MOVEMENT\FROMLINK\NO: Movement\FromLink\No, Movement\From-link\Number (Unique link/connector number)
+* MOVEMENT\FROMLINK\NAME: Movement\FromLink\Name, Movement\From-link\Name (Name of the link or connector)
+* QLEN: QLen, Queue length (Average queue length: In each time step, the current queue length is measured and the arithmetic mean is thus calculated per time interval.) [ft]
+* QLENMAX: QLenMax, Queue length (maximum) (Queue length (maximum): In each time step, the current queue length is measured and the maximum is thus calculated per time interval.) [ft]
+* VEHS(ALL): Vehs(All), Vehicles (All) (Number of vehicles)
+* LOS(ALL): LOS(All), Level of service (All) (Level-of-service (A..F) as computed by the associated LOS scheme)
+* VEHDELAY(ALL): VehDelay(All), Vehicle delay (average) (All) (Delay of all vehicles.  The delay of a vehicle in leaving a travel time measurement is obtained by subtracting the theoretical (ideal) travel time from the actual travel time.  The theoretical travel time is the travel time which could be achieved if there were no other vehicles and/or no signal controls or other reasons for stops.  Reduced speed areas are taken into account.  The actual travel time does not include any passenger service times of PT vehicles at line stops and no parking time in real parking lots.  The delay due to braking before a PT stop and/or the subsequent acceleration after a PT stop are part of the delay.) [s]
+* STOPDELAY(ALL): StopDelay(All), Stopped delay (average) (All) (Stopped delay per vehicle in seconds without stops at PT stops and in parking lots) [s]
+* STOPS(ALL): Stops(All), Stops (All) (Number of vehicle stops per vehicle without stops at PT stops and in parking lots)
+* 
+* SimRun;TimeInt;Movement\Direction;Movement\Node\No;Movement\Node\Name;Movement\ToLink\No;Movement\ToLink\Name;Movement\FromLink\No;Movement\FromLink\Name;QLen;QLenMax;Vehs(All);LOS(All);VehDelay(All);StopDelay(All);Stops(All)
+* Simulation run;Time interval;Movement\Direction;Movement\Node\Number;Movement\Node\Name;Movement\To-link\Number;Movement\To-link\Name;Movement\From-link\Number;Movement\From-link\Name;Queue length;Queue length (maximum);Vehicles (All);Level of service (All);Vehicle delay (average) (All);Stopped delay (average) (All);Stops (All)
+*
+$MOVEMENTEVALUATION:SIMRUN;TIMEINT;MOVEMENT\DIRECTION;MOVEMENT\NODE\NO;MOVEMENT\NODE\NAME;MOVEMENT\TOLINK\NO;MOVEMENT\TOLINK\NAME;MOVEMENT\FROMLINK\NO;MOVEMENT\FROMLINK\NAME;QLEN;QLENMAX;VEHS(ALL);LOS(ALL);VEHDELAY(ALL);STOPDELAY(ALL);STOPS(ALL)
+1;900-4500;S-SW;100;MainSt/900N;10022;900N WB;10011;Main St NB;2.42;201.96;242;LOS_A;1.66;0.48;0.05
+1;900-4500;S-N;100;MainSt/900N;10032;Main St NB;10011;Main St NB;1.51;166.59;70;LOS_A;2.20;1.26;0.04
+1;900-4500;SW-S;100;MainSt/900N;10012;Main St SB;10021;900N EB;32.12;332.92;221;LOS_C;23.21;5.97;1.91
+1;900-4500;SW-N;100;MainSt/900N;10032;Main St NB;10021;900N EB;0.84;87.45;21;LOS_B;12.00;0.87;1.38
+1;900-4500;N-S;100;MainSt/900N;10012;Main St SB;10031;Main St SB;0.00;0.00;170;LOS_A;3.04;1.06;0.09
+1;900-4500;N-SW;100;MainSt/900N;10022;900N WB;10031;Main St SB;0.50;82.61;40;LOS_A;3.03;0.74;0.23
+1;900-4500;Total;100;MainSt/900N;;;;;6.23;332.92;764;LOS_A;8.61;2.29;0.64
+1;900-4500;S-SW;101;Mainst/1_15SB;44;;10111;Main St NB;36.80;320.49;138;LOS_C;24.77;13.20;1.41
+1;900-4500;S-N;101;Mainst/1_15SB;10132;Main St NB;10111;Main St NB;36.80;320.49;155;LOS_C;24.47;12.86;1.04
+1;900-4500;N-SW;101;Mainst/1_15SB;44;;10131;Main St SB;12.07;250.49;63;LOS_A;9.82;1.84;0.83
+1;900-4500;N-S;101;Mainst/1_15SB;10112;Main St SB;10131;Main St SB;31.85;393.38;329;LOS_C;21.66;13.82;0.79
+1;900-4500;NE-SW;101;Mainst/1_15SB;44;;10141;I-15 SB Off;45.30;272.45;5;LOS_B;16.75;5.75;0.80
+1;900-4500;NE-S;101;Mainst/1_15SB;10112;Main St SB;10141;I-15 SB Off;45.30;272.45;874;LOS_B;16.18;8.56;0.57
+1;900-4500;NE-N;101;Mainst/1_15SB;10132;Main St NB;10141;I-15 SB Off;0.83;63.43;157;LOS_A;1.75;0.44;0.06
+1;900-4500;Total;101;Mainst/1_15SB;;;;;29.32;393.38;1721;LOS_B;17.12;9.33;0.69
+1;900-4500;S-N;102;MainSt/I-15NB;10232;Main St NB;10211;Main St NB;0.00;0.00;244;LOS_A;0.51;0.00;0.00
+1;900-4500;S-NE;102;MainSt/I-15NB;10242;I-15 NB On;10211;Main St NB;0.43;139.81;434;LOS_A;0.78;0.00;0.00
+1;900-4500;S-NE;102;MainSt/I-15NB;10252;Main St NB;10211;Main St NB;0.00;0.00;5;LOS_A;1.39;0.00;0.00
+1;900-4500;SW-S;102;MainSt/I-15NB;10212;Main St SB;10221;I-15 NB Off;6.34;162.67;110;LOS_C;15.16;8.21;0.75
+1;900-4500;SW-N;102;MainSt/I-15NB;10232;Main St NB;10221;I-15 NB Off;4.08;111.19;25;LOS_D;27.20;21.22;0.96
+1;900-4500;SW-NE;102;MainSt/I-15NB;10242;I-15 NB On;10221;I-15 NB Off;1.46;46.76;4;LOS_C;19.02;5.29;1.25
+1;900-4500;SW-NE;102;MainSt/I-15NB;10252;Main St NB;10221;I-15 NB Off;6.34;162.67;10;LOS_B;10.63;4.60;1.00
+1;900-4500;N-S;102;MainSt/I-15NB;10212;Main St SB;10231;Main St SB;1.16;227.95;1006;LOS_A;6.10;0.71;0.09
+1;900-4500;N-NE;102;MainSt/I-15NB;10242;I-15 NB On;10231;Main St SB;2.29;235.68;184;LOS_A;5.71;1.03;0.37
+1;900-4500;N-NE;102;MainSt/I-15NB;10252;Main St NB;10231;Main St SB;1.16;227.95;21;LOS_A;6.32;1.45;0.43
+1;900-4500;NE-S;102;MainSt/I-15NB;10212;Main St SB;10251;Main St NB;2.45;104.42;5;LOS_C;17.31;0.86;1.60
+1;900-4500;NE-N;102;MainSt/I-15NB;10232;Main St NB;10251;Main St NB;2.76;104.09;23;LOS_B;11.92;1.16;1.57
+1;900-4500;NE-NE;102;MainSt/I-15NB;10242;I-15 NB On;10251;Main St NB;2.48;103.20;20;LOS_A;9.58;0.62;1.20
+1;900-4500;Total;102;MainSt/I-15NB;;;;;2.48;235.68;2091;LOS_A;5.20;1.19;0.17
+1;900-4500;S-N;103;MainSt/600N;10332;Main St NB;10311;Main St NB;10.89;279.34;547;LOS_A;6.28;1.37;0.26
+1;900-4500;S-E;103;MainSt/600N;10342;600 N EB;10311;Main St NB;1.49;102.52;97;LOS_A;4.77;0.20;0.26
+1;900-4500;N-S;103;MainSt/600N;10312;Main St SB;10331;Main St SB;59.97;908.30;894;LOS_A;9.56;3.00;0.49
+1;900-4500;N-E;103;MainSt/600N;10342;600 N EB;10331;Main St SB;41.25;758.73;228;LOS_C;22.78;10.17;1.37
+1;900-4500;E-S;103;MainSt/600N;10312;Main St SB;10341;600 N WB;7.11;92.47;87;LOS_B;18.77;10.70;0.80
+1;900-4500;E-N;103;MainSt/600N;10332;Main St NB;10341;600 N WB;7.30;90.45;136;LOS_B;11.19;1.56;0.96
+1;900-4500;Total;103;MainSt/600N;;;;;21.33;908.30;1989;LOS_B;10.46;3.47;0.56
+

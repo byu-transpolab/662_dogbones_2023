@@ -1,0 +1,198 @@
+{
+  "Controller": {
+    "ExecutionFrequency": 1,
+    "OffsetReference": "LeadingStartOfGreen",
+    "PatternSchedule": {
+      "PatternScheduleItems": [
+        {
+          "Pattern": null,
+          "StartTime": 0
+        }
+      ]
+    },
+    "Patterns": [],
+    "PedestrianDetectors": [],
+    "PedestrianSignalGroups": [],
+    "PreemptInputs": [],
+    "Preempts": [],
+    "Sequence": {
+      "BarrierGroups": [
+        {
+          "RingGroups": [
+            {
+              "VehicleSignalGroups": [
+                2
+              ]
+            },
+            {
+              "VehicleSignalGroups": [
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "RingGroups": [
+            {
+              "VehicleSignalGroups": []
+            },
+            {
+              "VehicleSignalGroups": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "TransitInputs": [],
+    "TransitSignalGroups": [],
+    "VehicleDetectors": [
+      {
+        "CalledSGs": [
+          2,
+          6
+        ],
+        "ExtendedSGs": [
+          2,
+          6
+        ],
+        "ID": 2
+      },
+      {
+        "CalledSGs": [
+          5
+        ],
+        "ExtendedSGs": [
+          5
+        ],
+        "ID": 5
+      },
+      {
+        "CalledSGs": [
+          8
+        ],
+        "ExtendedSGs": [
+          8
+        ],
+        "ID": 8
+      }
+    ],
+    "VehicleOverlapSignalGroups": [],
+    "VehicleSignalGroups": [
+      {
+        "Amber": 40,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 2,
+        "MaxGreen1": 400,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 80,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": true,
+        "VehExtension": 14
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 5,
+        "MaxGreen1": 150,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 15,
+        "StartUp": false,
+        "VehExtension": 18
+      },
+      {
+        "Amber": 40,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 6,
+        "MaxGreen1": 250,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 80,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": true,
+        "VehExtension": 14
+      },
+      {
+        "Amber": 40,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 8,
+        "MaxGreen1": 450,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 40,
+        "StartUp": false,
+        "VehExtension": 16
+      }
+    ]
+  },
+  "FormatVersion": [
+    2,
+    0
+  ],
+  "GUI": {
+    "Notes": "",
+    "SequencePresentation": {
+      "BarrierGroupPresentations": [
+        {
+          "RightMargin": 0,
+          "RingGroupPresentations": [
+            {
+              "SignalGroupOffsets": [
+                1
+              ]
+            },
+            {
+              "SignalGroupOffsets": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "RightMargin": 13,
+          "RingGroupPresentations": [
+            {
+              "SignalGroupOffsets": []
+            },
+            {
+              "SignalGroupOffsets": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

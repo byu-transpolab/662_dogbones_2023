@@ -1,0 +1,32 @@
+﻿$VISION
+* File:		D:\Adam Hill Vissim\existing_2023_PM_worstA\existing_PM.inpx
+* Comment:	Random Seed = 42
+* Date:		12/7/2023 3:18:05 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Vehicle Network Performance Evaluation Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* DELAYAVG(ALL): DelayAvg(All), Delay (average) (All) (Average delay per vehicle: Total delay / (Number of veh in the network + number of veh that have arrived)) [s]
+* STOPSAVG(ALL): StopsAvg(All), Stops (average) (All) (Average number of stops per vehicle: Total number of stops / (Number of veh in the network + number of veh that have arrived))
+* SPEEDAVG(ALL): SpeedAvg(All), Speed (average) (All) (Average speed: Total distance DistTot / Total travel time TravTmTot) [mph]
+* DELAYSTOPAVG(ALL): DelayStopAvg(All), Delay stopped (average) (All) (Average standstill time per vehicle. Total standstill time / (Number of veh in the network + number of veh that have arrived)) [s]
+* 
+* SimRun;TimeInt;DelayAvg(All);StopsAvg(All);SpeedAvg(All);DelayStopAvg(All)
+* Simulation run;Time interval;Delay (average) (All);Stops (average) (All);Speed (average) (All);Delay stopped (average) (All)
+*
+$VEHICLENETWORKPERFORMANCEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;DELAYAVG(ALL);STOPSAVG(ALL);SPEEDAVG(ALL);DELAYSTOPAVG(ALL)
+1;900-4500;27.99;1.20;25.71;10.43
+2;900-4500;28.12;1.21;25.59;9.81
+3;900-4500;24.68;1.06;27.01;8.28
+4;900-4500;23.72;0.99;27.14;7.52
+5;900-4500;25.80;1.10;26.33;8.95
+6;900-4500;23.65;1.04;27.21;7.70
+7;900-4500;32.10;1.34;24.42;12.00
+8;900-4500;27.28;1.23;26.12;8.99
+AVG;900-4500;26.67;1.15;26.19;9.21
+STDDEV;900-4500;2.84;0.11;0.95;1.50
+MIN;900-4500;23.65;0.99;24.42;7.52
+MAX;900-4500;32.10;1.34;27.21;12.00
+
