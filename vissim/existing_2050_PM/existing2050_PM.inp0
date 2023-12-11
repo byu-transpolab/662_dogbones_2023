@@ -4157,17 +4157,17 @@
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" intLink="11" name="" no="11" pos="24.372034883594655" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" intLink="19" lookBeyRedSig="false" maxSpeed="19.312128" minClear="18.360104030547113" minGapTime="0" pos="2.0331558130697673"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" intLink="19" lookBeyRedSig="false" maxSpeed="19.312128" minClear="19.567271689315074" minGapTime="0" pos="4.0108261021289984"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10211 1" name="" no="12" pos="109.675748850697" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10211 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="17.942894002474787" minGapTime="0" pos="129.79322482021468"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10211 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="21.806168994003386" minGapTime="0" pos="132.85921369704272"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="61 1" name="" no="13" pos="1.3929756870963572" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="61 1" lookBeyRedSig="false" maxSpeed="12.874752" minClear="17.612749604078971" minGapTime="0" pos="20.134717180464257"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="61 1" lookBeyRedSig="false" maxSpeed="12.874752" minClear="20.750460753646902" minGapTime="0" pos="23.131091441764578"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="53 1" name="" no="14" pos="2.2967812753054155" sigState="GREEN" slowDownDist="3">
@@ -4182,7 +4182,7 @@
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="53 2" name="" no="16" pos="2.1143851574103905" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="35.737162683259498" minGapTime="0" pos="24.861538736423498"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="35.737162683259498" minGapTime="0" pos="27.221925427050412"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="9 1" name="" no="17" pos="9.2504331703662075" sigState="GREEN" slowDownDist="3">
@@ -4192,22 +4192,22 @@
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="50 1" name="" no="18" pos="2.4941571740206223" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="38.03138261791208" minGapTime="0" pos="25.153720473713857"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="38.03138261791208" minGapTime="0" pos="26.985113402692615"/>
 			</conflictMarkers>
 		</priorityRule>
-		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 2" name="" no="19" pos="15.596173587257708" sigState="GREEN" slowDownDist="3">
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 2" name="" no="19" pos="14.551384706838395" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="9.656064" minClear="8.5750358927226031" minGapTime="0" pos="25.159945677551185"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="9.656064" minClear="11.229243902572183" minGapTime="0" pos="27.107369082208528"/>
 			</conflictMarkers>
 		</priorityRule>
-		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 1" name="" no="20" pos="14.939875333569075" sigState="GREEN" slowDownDist="3">
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 1" name="" no="20" pos="13.484960663760951" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="6.3526330476823478" minGapTime="0" pos="21.993990415723324"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="9.1283268035804177" minGapTime="0" pos="23.502063307590777"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10211 1" name="" no="21" pos="142.98676917214519" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10232 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="19.973607854329579" minGapTime="0" pos="3.0805565762673761"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10232 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="20.697915186910002" minGapTime="0" pos="3.0805565762673761"/>
 			</conflictMarkers>
 		</priorityRule>
 	</priorityRules>
