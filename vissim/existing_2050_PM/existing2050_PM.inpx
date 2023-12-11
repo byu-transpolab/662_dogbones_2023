@@ -669,7 +669,7 @@
 				<vehClassDesSpeedDistribution desSpeedDistr="30" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
-		<desSpeedDecision anmFlag="false" lane="10112 1" name="" no="3" pos="34.994457287798795" timeFrom="0" timeTo="2147483647">
+		<desSpeedDecision anmFlag="false" lane="66 1" name="" no="3" pos="4.9906559337475436" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="2"/>
@@ -689,7 +689,7 @@
 				<vehClassDesSpeedDistribution desSpeedDistr="35" vehClass="9"/>
 			</vehClassDesSpeedDistr>
 		</desSpeedDecision>
-		<desSpeedDecision anmFlag="false" lane="10112 2" name="" no="5" pos="34.998918983321317" timeFrom="0" timeTo="2147483647">
+		<desSpeedDecision anmFlag="false" lane="66 2" name="" no="5" pos="4.9951176292700659" timeFrom="0" timeTo="2147483647">
 			<vehClassDesSpeedDistr>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="1"/>
 				<vehClassDesSpeedDistribution desSpeedDistr="45" vehClass="2"/>
@@ -2080,12 +2080,16 @@
 					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="50.934504404275252" y="-122.87340402574802" zOffset="0"/>
 					<linkPolyPoint rad="22.597736747774363" radiusEffect="BRAKE" radiusSrc="CALCULATED" x="46.166212118250414" y="-128.93182910052232" zOffset="0"/>
 					<linkPolyPoint rad="41.299078583778382" radiusEffect="BRAKE" radiusSrc="CALCULATED" x="43.521257975743943" y="-136.68226377330404" zOffset="0"/>
-					<linkPolyPoint rad="57.127596547633637" radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.308688091650154" y="-147.57677188779027" zOffset="0"/>
+					<linkPolyPoint rad="57.127596547633459" radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.308688091650154" y="-147.57677188779027" zOffset="0"/>
 				</linkPolyPts>
 			</geometry>
 			<lanes>
-				<lane markingType="1"/>
-				<lane markingType="1"/>
+				<lane markingType="1">
+					<noLnChL allVehTypes="true"/>
+				</lane>
+				<lane markingType="1">
+					<noLnChR allVehTypes="true"/>
+				</lane>
 			</lanes>
 			<toLinkEndPt lane="10112 1" pos="12.379009277437246"/>
 		</link>
@@ -2310,6 +2314,18 @@
 				<lane markingType="1" width="3.6576000000000004"/>
 			</lanes>
 		</link>
+		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" level="1" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="Main St SB" netPerfEvalAct="true" no="66" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
+			<geometry>
+				<linkPolyPts>
+					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.196278283988462" y="-165.20120548944161" zOffset="0"/>
+					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="40.83903181565443" y="-221.21292538782407" zOffset="0"/>
+				</linkPolyPts>
+			</geometry>
+			<lanes>
+				<lane markingType="1" width="3.6576000000000004"/>
+				<lane markingType="1" width="3.6576000000000004"/>
+			</lanes>
+		</link>
 		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="Main St SB" netPerfEvalAct="true" no="70" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
 			<fromLinkEndPt lane="10012 1" pos="17.654832221135944"/>
 			<geometry>
@@ -2350,7 +2366,7 @@
 			<toLinkEndPt lane="10111 1" pos="0.0005"/>
 		</link>
 		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="Main St SB" netPerfEvalAct="true" no="73" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
-			<fromLinkEndPt lane="10112 1" pos="86.015660511694577"/>
+			<fromLinkEndPt lane="66 1" pos="56.011859157643329"/>
 			<geometry>
 				<linkPolyPts>
 					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="40.839038193591101" y="-221.2119254081633" zOffset="0"/>
@@ -2603,6 +2619,20 @@
 			</lanes>
 			<toLinkEndPt lane="65 2" pos="0.0005"/>
 		</link>
+		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="Main St SB" netPerfEvalAct="true" no="10010" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
+			<fromLinkEndPt lane="10112 1" pos="29.00280135405125"/>
+			<geometry>
+				<linkPolyPts>
+					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.202662598593726" y="-164.20022584902577" zOffset="0"/>
+					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.196275095020127" y="-165.20170547927199" zOffset="0"/>
+				</linkPolyPts>
+			</geometry>
+			<lanes>
+				<lane markingType="1"/>
+				<lane markingType="1"/>
+			</lanes>
+			<toLinkEndPt lane="66 1" pos="0.0005"/>
+		</link>
 		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" level="1" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="Main St NB" netPerfEvalAct="true" no="10011" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
 			<geometry>
 				<linkPolyPts>
@@ -2706,12 +2736,16 @@
 			<geometry>
 				<linkPolyPts>
 					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.387640628841524" y="-135.19801439005454" zOffset="0"/>
-					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="40.83903181565443" y="-221.21292538782407" zOffset="0"/>
+					<linkPolyPoint radiusEffect="BRAKE" radiusSrc="CALCULATED" x="41.202656220657055" y="-164.20122582868655" zOffset="0"/>
 				</linkPolyPts>
 			</geometry>
 			<lanes>
-				<lane markingType="1" width="3.6576000000000004"/>
-				<lane markingType="1" width="3.6576000000000004"/>
+				<lane markingType="1" width="3.6576000000000004">
+					<noLnChL allVehTypes="true"/>
+				</lane>
+				<lane markingType="1" width="3.6576000000000004">
+					<noLnChR allVehTypes="true"/>
+				</lane>
 			</lanes>
 		</link>
 		<link assumSpeedOncom="60" consVehInDynPot="false" costPerKm="0" desSpeedFact="1" direction="ALL" displayType="1" emergStopDist="5" emiCalcAct="true" gradient="0" hasOvtLn="false" isPedArea="false" level="1" linkBehavType="1" linkEvalAct="true" linkEvalSegLen="10" lnChgDist="200" lnChgDistIsPerLn="false" lnChgEvalAct="true" lookAheadDistOvt="500" mesoFollowUpGap="0" mesoSpeed="50" mesoSpeedModel="VEHICLEBASED" name="I-15 SB On" netPerfEvalAct="true" no="10122" ovtOnlyPT="false" ovtSpeedFact="1.3" rvsPark="false" showClsfValues="true" showLinkBar="true" showVeh="true" surch1="0" surch2="0" thickness="0" vehDynPotG="3" vehRecAct="true">
@@ -4076,7 +4110,7 @@
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="48 1" name="" no="3" pos="5.7030451119729078" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
 				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="180" minClear="6.096" minGapTime="3" pos="20.861947742543069"/>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="180" minClear="6.096" minGapTime="3" pos="22.732419415051496"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="180" minClear="6.096" minGapTime="3" pos="21.671561550412619"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="27 1" name="" no="4" pos="4.3613460859250166" sigState="GREEN" slowDownDist="3">
@@ -4123,32 +4157,57 @@
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" intLink="11" name="" no="11" pos="24.372034883594655" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" intLink="11" lookBeyRedSig="false" maxSpeed="0" minClear="2.4384" minGapTime="3" pos="40.859386661739237"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" intLink="19" lookBeyRedSig="false" maxSpeed="19.312128" minClear="19.567271689315074" minGapTime="0" pos="4.0108261021289984"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10211 1" name="" no="12" pos="109.675748850697" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10232 1" lookBeyRedSig="false" maxSpeed="0" minClear="3.1903056537454977" minGapTime="3" pos="5.336842533017907"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10211 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="21.806168994003386" minGapTime="0" pos="132.85921369704272"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="61 1" name="" no="13" pos="1.3929756870963572" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="61 1" lookBeyRedSig="false" maxSpeed="0" minClear="2.1336" minGapTime="4" pos="20.134717180464257"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="61 1" lookBeyRedSig="false" maxSpeed="12.874752" minClear="20.750460753646902" minGapTime="0" pos="23.131091441764578"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="53 1" name="" no="14" pos="2.2967812753054155" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="53 1" lookBeyRedSig="false" maxSpeed="0" minClear="2.1336" minGapTime="4" pos="17.249697953328678"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="32.762968035005542" minGapTime="0" pos="21.692503740726021"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10111 1" name="" no="15" pos="50.053405259674783" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="51 1" lookBeyRedSig="false" maxSpeed="0" minClear="2.4384" minGapTime="3" pos="13.225573116219383"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="51 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="44.11062633901021" minGapTime="0" pos="45.936869796773379"/>
 			</conflictMarkers>
 		</priorityRule>
 		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="53 2" name="" no="16" pos="2.1143851574103905" sigState="GREEN" slowDownDist="3">
 			<conflictMarkers>
-				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="53 2" lookBeyRedSig="false" maxSpeed="0" minClear="2.1336" minGapTime="4" pos="17.028090755018574"/>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="35.737162683259498" minGapTime="0" pos="27.221925427050412"/>
+			</conflictMarkers>
+		</priorityRule>
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="9 1" name="" no="17" pos="9.2504331703662075" sigState="GREEN" slowDownDist="3">
+			<conflictMarkers>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="19.312128" minClear="32.029975030678926" minGapTime="0" pos="21.496278706726621"/>
+			</conflictMarkers>
+		</priorityRule>
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="50 1" name="" no="18" pos="2.4941571740206223" sigState="GREEN" slowDownDist="3">
+			<conflictMarkers>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="19.312128" minClear="38.03138261791208" minGapTime="0" pos="26.985113402692615"/>
+			</conflictMarkers>
+		</priorityRule>
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 2" name="" no="19" pos="14.551384706838395" sigState="GREEN" slowDownDist="3">
+			<conflictMarkers>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 2" lookBeyRedSig="false" maxSpeed="9.656064" minClear="11.229243902572183" minGapTime="0" pos="27.107369082208528"/>
+			</conflictMarkers>
+		</priorityRule>
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10112 1" name="" no="20" pos="13.484960663760951" sigState="GREEN" slowDownDist="3">
+			<conflictMarkers>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10112 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="9.1283268035804177" minGapTime="0" pos="23.502063307590777"/>
+			</conflictMarkers>
+		</priorityRule>
+		<priorityRule affectDrivDir="FORWARD" allPedTypes="true" allVehTypes="true" anmFlag="false" lane="10211 1" name="" no="21" pos="142.98676917214519" sigState="GREEN" slowDownDist="3">
+			<conflictMarkers>
+				<conflictMarker allPedTypes="true" allVehTypes="true" effectDrivDir="FORWARD" lane="10232 1" lookBeyRedSig="false" maxSpeed="9.656064" minClear="20.697915186910002" minGapTime="0" pos="3.0805565762673761"/>
 			</conflictMarkers>
 		</priorityRule>
 	</priorityRules>
@@ -4664,6 +4723,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="2"/>
@@ -4677,6 +4738,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4692,6 +4755,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4713,6 +4778,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4756,6 +4823,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="2"/>
@@ -4769,6 +4838,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4784,6 +4855,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4805,6 +4878,8 @@
 						<intObjectRef key="10131"/>
 						<intObjectRef key="50"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4859,6 +4934,8 @@
 						<intObjectRef key="13"/>
 						<intObjectRef key="53"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="2"/>
@@ -4870,6 +4947,8 @@
 						<intObjectRef key="13"/>
 						<intObjectRef key="53"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4883,6 +4962,8 @@
 						<intObjectRef key="13"/>
 						<intObjectRef key="53"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>
@@ -4902,6 +4983,8 @@
 						<intObjectRef key="13"/>
 						<intObjectRef key="53"/>
 						<intObjectRef key="10112"/>
+						<intObjectRef key="10010"/>
+						<intObjectRef key="66"/>
 						<intObjectRef key="73"/>
 						<intObjectRef key="10231"/>
 						<intObjectRef key="11"/>

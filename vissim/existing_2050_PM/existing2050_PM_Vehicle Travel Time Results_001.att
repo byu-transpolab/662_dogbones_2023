@@ -1,7 +1,7 @@
 ﻿$VISION
 * File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\existing2050_PM.inpx
 * Comment:	Random Seed = 42
-* Date:		12/8/2023 5:10:13 PM
+* Date:		12/11/2023 1:41:45 PM
 * Application:	PTV Vissim 2023.00-08 [261369]
 * 
 * Table: Vehicle Travel Time Results
@@ -18,10 +18,10 @@
 * Simulation run;Time interval;Vehicle travel time evaluation;Vehicle travel time evaluation\Name;Vehicles (All);Travel time (All);Distance traveled (All)
 *
 $VEHICLETRAVELTIMEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;VEHICLETRAVELTIMEMEASUREMENT;VEHICLETRAVELTIMEMEASUREMENT\NAME;VEHS(ALL);TRAVTM(ALL);DISTTRAV(ALL)
-1;900-4500;1;nbt;159;189.65;1189.65
-1;900-4500;2;nbn;512;15.22;701.95
-1;900-4500;3;nbs;159;208.31;1336.87
-1;900-4500;4;sbt;364;73.88;1341.49
-1;900-4500;5;sbn;52;58.45;1049.60
-1;900-4500;6;sbs;90;14.64;454.96
+1;900-4500;1;nbt;97;463.33;1189.65
+1;900-4500;2;nbn;387;30.03;701.95
+1;900-4500;3;nbs;108;481.67;1336.87
+1;900-4500;4;sbt;325;198.61;1341.49
+1;900-4500;5;sbn;53;154.21;1049.60
+1;900-4500;6;sbs;77;25.38;454.96
 
