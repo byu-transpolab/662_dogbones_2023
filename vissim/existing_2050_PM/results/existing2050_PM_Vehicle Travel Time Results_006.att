@@ -1,0 +1,81 @@
+﻿$VISION
+* File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\existing2050_PM.inpx
+* Comment:	Random Seed = 42
+* Date:		12/8/2023 11:43:53 AM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Vehicle Travel Time Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* VEHICLETRAVELTIMEMEASUREMENT: VehicleTravelTimeMeasurement, Vehicle travel time evaluation (Vehicle Travel Time Measurement)
+* VEHICLETRAVELTIMEMEASUREMENT\NAME: VehicleTravelTimeMeasurement\Name, Vehicle travel time evaluation\Name (Name of travel time measurement)
+* VEHS(ALL): Vehs(All), Vehicles (All) (Number of vehicles recorded)
+* TRAVTM(ALL): TravTm(All), Travel time (All) (Average travel time [s] of vehicles in the network) [s]
+* DISTTRAV(ALL): DistTrav(All), Distance traveled (All) [ft]
+* 
+* SimRun;TimeInt;VehicleTravelTimeMeasurement;VehicleTravelTimeMeasurement\Name;Vehs(All);TravTm(All);DistTrav(All)
+* Simulation run;Time interval;Vehicle travel time evaluation;Vehicle travel time evaluation\Name;Vehicles (All);Travel time (All);Distance traveled (All)
+*
+$VEHICLETRAVELTIMEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;VEHICLETRAVELTIMEMEASUREMENT;VEHICLETRAVELTIMEMEASUREMENT\NAME;VEHS(ALL);TRAVTM(ALL);DISTTRAV(ALL)
+1;900-4500;1;nbt;0;;
+1;900-4500;2;nbn;1;14.46;701.95
+1;900-4500;3;nbs;0;;
+1;900-4500;4;sbt;85;1097.90;1341.49
+1;900-4500;5;sbn;11;591.91;1049.60
+1;900-4500;6;sbs;19;83.80;454.96
+2;900-4500;1;nbt;16;178.11;1189.65
+2;900-4500;2;nbn;80;14.42;701.95
+2;900-4500;3;nbs;14;194.51;1336.87
+2;900-4500;4;sbt;94;671.34;1341.49
+2;900-4500;5;sbn;16;518.75;1049.60
+2;900-4500;6;sbs;38;42.65;454.96
+3;900-4500;1;nbt;2;544.34;1189.65
+3;900-4500;2;nbn;56;31.06;701.95
+3;900-4500;3;nbs;3;472.80;1336.87
+3;900-4500;4;sbt;92;682.17;1341.49
+3;900-4500;5;sbn;13;278.49;1049.60
+3;900-4500;6;sbs;22;45.64;454.96
+4;900-4500;1;nbt;4;286.04;1189.65
+4;900-4500;2;nbn;63;16.84;701.95
+4;900-4500;3;nbs;10;212.18;1336.87
+4;900-4500;4;sbt;94;915.86;1341.49
+4;900-4500;5;sbn;9;495.59;1049.60
+4;900-4500;6;sbs;25;61.80;454.96
+5;900-4500;1;nbt;4;402.14;1189.65
+5;900-4500;2;nbn;19;15.58;701.95
+5;900-4500;3;nbs;3;402.73;1336.87
+5;900-4500;4;sbt;90;984.93;1341.49
+5;900-4500;5;sbn;10;1032.36;1049.60
+5;900-4500;6;sbs;38;54.23;454.96
+6;900-4500;1;nbt;25;347.51;1189.65
+6;900-4500;2;nbn;73;24.36;701.95
+6;900-4500;3;nbs;12;279.98;1336.87
+6;900-4500;4;sbt;85;699.70;1341.49
+6;900-4500;5;sbn;17;306.43;1049.60
+6;900-4500;6;sbs;34;38.90;454.96
+AVG;900-4500;1;nbt;9;351.63;1189.65
+AVG;900-4500;2;nbn;49;19.45;701.95
+AVG;900-4500;3;nbs;7;312.44;1336.87
+AVG;900-4500;4;sbt;90;841.98;1341.49
+AVG;900-4500;5;sbn;13;537.25;1049.60
+AVG;900-4500;6;sbs;29;54.50;454.96
+STDDEV;900-4500;1;nbt;10;136.12;0.00
+STDDEV;900-4500;2;nbn;32;6.79;0.00
+STDDEV;900-4500;3;nbs;6;121.33;0.00
+STDDEV;900-4500;4;sbt;4;182.37;0.00
+STDDEV;900-4500;5;sbn;3;272.19;0.00
+STDDEV;900-4500;6;sbs;8;16.58;0.00
+MIN;900-4500;1;nbt;0;178.11;1189.65
+MIN;900-4500;2;nbn;1;14.42;701.95
+MIN;900-4500;3;nbs;0;194.51;1336.87
+MIN;900-4500;4;sbt;85;671.34;1341.49
+MIN;900-4500;5;sbn;9;278.49;1049.60
+MIN;900-4500;6;sbs;19;38.90;454.96
+MAX;900-4500;1;nbt;25;544.34;1189.65
+MAX;900-4500;2;nbn;80;31.06;701.95
+MAX;900-4500;3;nbs;14;472.80;1336.87
+MAX;900-4500;4;sbt;94;1097.90;1341.49
+MAX;900-4500;5;sbn;17;1032.36;1049.60
+MAX;900-4500;6;sbs;38;83.80;454.96
+

@@ -1,0 +1,2 @@
+﻿                  Warning	Simulation second 3215.80: Vehicle 3051 (on Static Vehicle Route "1022 - 10221031") reached the end of link "10212: Main St SB" without finding the subsequent link ("75: Main St SB").	Network object type: Vehicle	Network object keys: 3051
+                  Warning	Vehicle input 1002 could not be finished completely (remain: 60 vehicles).	Network object type: Vehicle Input	Network object keys: 1002

@@ -1,0 +1,280 @@
+{
+  "Controller": {
+    "ExecutionFrequency": 1,
+    "OffsetReference": "LeadingStartOfGreen",
+    "PatternSchedule": {
+      "PatternScheduleItems": [
+        {
+          "Pattern": null,
+          "StartTime": 0
+        }
+      ]
+    },
+    "Patterns": [],
+    "PedestrianDetectors": [
+      {
+        "CalledSGs": [],
+        "ID": 102
+      },
+      {
+        "CalledSGs": [],
+        "ID": 108
+      }
+    ],
+    "PedestrianSignalGroups": [],
+    "PreemptInputs": [],
+    "Preempts": [],
+    "Sequence": {
+      "BarrierGroups": [
+        {
+          "RingGroups": [
+            {
+              "VehicleSignalGroups": [
+                2
+              ]
+            },
+            {
+              "VehicleSignalGroups": [
+                1,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "RingGroups": [
+            {
+              "VehicleSignalGroups": [
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "TransitInputs": [],
+    "TransitSignalGroups": [],
+    "VehicleDetectors": [
+      {
+        "CalledSGs": [
+          2
+        ],
+        "ExtendedSGs": [
+          2
+        ],
+        "ID": 2
+      },
+      {
+        "CalledSGs": [
+          3
+        ],
+        "ExtendedSGs": [
+          3
+        ],
+        "ID": 3
+      },
+      {
+        "CalledSGs": [
+          6
+        ],
+        "ExtendedSGs": [
+          6
+        ],
+        "ID": 6
+      },
+      {
+        "CalledSGs": [
+          8
+        ],
+        "ExtendedSGs": [
+          8
+        ],
+        "ID": 8
+      }
+    ],
+    "VehicleOverlapSignalGroups": [],
+    "VehicleSignalGroups": [
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 1,
+        "MaxGreen1": 90,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 20
+      },
+      {
+        "Amber": 40,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 2,
+        "MaxGreen1": 1210,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 150,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": true,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 3,
+        "MaxGreen1": 180,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 4,
+        "MaxGreen1": 300,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 5,
+        "MaxGreen1": 250,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 40,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 6,
+        "MaxGreen1": 1070,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": true,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": false,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 7,
+        "MaxGreen1": 250,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 10
+      },
+      {
+        "Amber": 30,
+        "CoordPriorityMinGreen": 0,
+        "CoordRecoveryMinGreen": 0,
+        "DualEntry": true,
+        "FreeRunPriorityMinGreen": 0,
+        "ID": 8,
+        "MaxGreen1": 150,
+        "MaxGreen2": 0,
+        "MaxGreen3": 0,
+        "MaxRecall": false,
+        "MinGreen": 50,
+        "MinRecall": false,
+        "Name": "",
+        "RedClearance": 20,
+        "StartUp": false,
+        "VehExtension": 10
+      }
+    ]
+  },
+  "FormatVersion": [
+    2,
+    0
+  ],
+  "GUI": {
+    "Notes": "",
+    "SequencePresentation": {
+      "BarrierGroupPresentations": [
+        {
+          "RightMargin": 0,
+          "RingGroupPresentations": [
+            {
+              "SignalGroupOffsets": [
+                1
+              ]
+            },
+            {
+              "SignalGroupOffsets": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "RightMargin": 13,
+          "RingGroupPresentations": [
+            {
+              "SignalGroupOffsets": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

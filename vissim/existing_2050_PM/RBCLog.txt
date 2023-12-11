@@ -1,0 +1,78 @@
+-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:51:48 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\103.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Box\Fall 2023\662\Term Project\payson_timing\payson_model\103.prbc) --> File Saved
+### (Friday, September 22, 2023 -- 7:57:43 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, September 22, 2023 -- 6:19:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Load-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:50:53 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Tuesday, October 3, 2023 -- 5:03:43 PM) ###

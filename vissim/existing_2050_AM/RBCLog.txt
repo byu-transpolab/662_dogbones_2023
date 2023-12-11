@@ -1,0 +1,82 @@
+-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:44:16 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\101.prbc) --> File Saved
+-----------------------------------------------------------------
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:52:37 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved
+### (Friday, December 8, 2023 -- 1:51:08 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 1:48:50 PM) ###
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+### (Friday, December 8, 2023 -- 3:43:36 PM) ###
+-----------------------------------------------------------------
+[SUCCESS] : RBCGUI::LoadSettings() --> Settings Loaded
+[SUCCESS] : RBCGUI::SaveFile(C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_AM\103.prbc) --> File Saved

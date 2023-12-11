@@ -1,0 +1,34 @@
+﻿$VISION
+* File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\existing_2050_PM\existing2050_PM.inpx
+* Comment:	Random Seed = 42
+* Date:		12/8/2023 5:14:25 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Node Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* MOVEMENT\DIRECTION: Movement\Direction, Movement\Direction (Returns the movement in cardinal direction.  From cardinal direction – to cardinal direction.)
+* MOVEMENT\NODE\NO: Movement\Node\No, Movement\Node\Number (Unique node number)
+* MOVEMENT\NODE\NAME: Movement\Node\Name, Movement\Node\Name (Designation of the node)
+* MOVEMENT\TOLINK\NO: Movement\ToLink\No, Movement\To-link\Number (Unique link/connector number)
+* MOVEMENT\TOLINK\NAME: Movement\ToLink\Name, Movement\To-link\Name (Name of the link or connector)
+* MOVEMENT\FROMLINK\NO: Movement\FromLink\No, Movement\From-link\Number (Unique link/connector number)
+* MOVEMENT\FROMLINK\NAME: Movement\FromLink\Name, Movement\From-link\Name (Name of the link or connector)
+* QLEN: QLen, Queue length (Average queue length: In each time step, the current queue length is measured and the arithmetic mean is thus calculated per time interval.) [ft]
+* QLENMAX: QLenMax, Queue length (maximum) (Queue length (maximum): In each time step, the current queue length is measured and the maximum is thus calculated per time interval.) [ft]
+* VEHS(ALL): Vehs(All), Vehicles (All) (Number of vehicles)
+* LOS(ALL): LOS(All), Level of service (All) (Level-of-service (A..F) as computed by the associated LOS scheme)
+* VEHDELAY(ALL): VehDelay(All), Vehicle delay (average) (All) (Delay of all vehicles.  The delay of a vehicle in leaving a travel time measurement is obtained by subtracting the theoretical (ideal) travel time from the actual travel time.  The theoretical travel time is the travel time which could be achieved if there were no other vehicles and/or no signal controls or other reasons for stops.  Reduced speed areas are taken into account.  The actual travel time does not include any passenger service times of PT vehicles at line stops and no parking time in real parking lots.  The delay due to braking before a PT stop and/or the subsequent acceleration after a PT stop are part of the delay.) [s]
+* STOPDELAY(ALL): StopDelay(All), Stopped delay (average) (All) (Stopped delay per vehicle in seconds without stops at PT stops and in parking lots) [s]
+* STOPS(ALL): Stops(All), Stops (All) (Number of vehicle stops per vehicle without stops at PT stops and in parking lots)
+* 
+* SimRun;TimeInt;Movement\Direction;Movement\Node\No;Movement\Node\Name;Movement\ToLink\No;Movement\ToLink\Name;Movement\FromLink\No;Movement\FromLink\Name;QLen;QLenMax;Vehs(All);LOS(All);VehDelay(All);StopDelay(All);Stops(All)
+* Simulation run;Time interval;Movement\Direction;Movement\Node\Number;Movement\Node\Name;Movement\To-link\Number;Movement\To-link\Name;Movement\From-link\Number;Movement\From-link\Name;Queue length;Queue length (maximum);Vehicles (All);Level of service (All);Vehicle delay (average) (All);Stopped delay (average) (All);Stops (All)
+*
+$MOVEMENTEVALUATION:SIMRUN;TIMEINT;MOVEMENT\DIRECTION;MOVEMENT\NODE\NO;MOVEMENT\NODE\NAME;MOVEMENT\TOLINK\NO;MOVEMENT\TOLINK\NAME;MOVEMENT\FROMLINK\NO;MOVEMENT\FROMLINK\NAME;QLEN;QLENMAX;VEHS(ALL);LOS(ALL);VEHDELAY(ALL);STOPDELAY(ALL);STOPS(ALL)
+AVG;900-4500;Total;100;MainSt/900N;;;;;12.38;301.71;948;;11.84;3.71;0.80
+AVG;900-4500;Total;101;Mainst/1_15SB;;;;;273.79;953.97;1843;;156.68;98.27;10.11
+AVG;900-4500;Total;102;MainSt/I-15NB;;;;;25.25;607.14;2334;;23.49;7.29;0.80
+AVG;900-4500;Total;103;MainSt/600N;;;;;79.81;924.24;2292;;29.07;15.14;0.84
+

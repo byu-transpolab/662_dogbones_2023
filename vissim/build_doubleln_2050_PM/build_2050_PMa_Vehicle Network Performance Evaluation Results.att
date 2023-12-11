@@ -1,0 +1,34 @@
+﻿$VISION
+* File:		C:\Users\Adam Hill\Documents\GitHub\662_dogbones_2023\vissim\build_doubleln_2050_PM\build_2050_PMa.inpx
+* Comment:	Random Seed = 42
+* Date:		12/11/2023 1:02:17 PM
+* Application:	PTV Vissim 2023.00-08 [261369]
+* 
+* Table: Vehicle Network Performance Evaluation Results
+* 
+* SIMRUN: SimRun, Simulation run (Number of simulation run)
+* TIMEINT: TimeInt, Time interval (Time interval)
+* DELAYAVG(ALL): DelayAvg(All), Delay (average) (All) (Average delay per vehicle: Total delay / (Number of veh in the network + number of veh that have arrived)) [s]
+* STOPSAVG(ALL): StopsAvg(All), Stops (average) (All) (Average number of stops per vehicle: Total number of stops / (Number of veh in the network + number of veh that have arrived))
+* SPEEDAVG(ALL): SpeedAvg(All), Speed (average) (All) (Average speed: Total distance DistTot / Total travel time TravTmTot) [mph]
+* DELAYSTOPAVG(ALL): DelayStopAvg(All), Delay stopped (average) (All) (Average standstill time per vehicle. Total standstill time / (Number of veh in the network + number of veh that have arrived)) [s]
+* 
+* SimRun;TimeInt;DelayAvg(All);StopsAvg(All);SpeedAvg(All);DelayStopAvg(All)
+* Simulation run;Time interval;Delay (average) (All);Stops (average) (All);Speed (average) (All);Delay stopped (average) (All)
+*
+$VEHICLENETWORKPERFORMANCEMEASUREMENTEVALUATION:SIMRUN;TIMEINT;DELAYAVG(ALL);STOPSAVG(ALL);SPEEDAVG(ALL);DELAYSTOPAVG(ALL)
+1;900-4500;73.13;3.83;12.57;28.08
+2;900-4500;92.72;5.12;11.18;37.25
+3;900-4500;87.14;4.56;11.45;35.84
+4;900-4500;92.12;4.70;11.14;40.01
+5;900-4500;119.34;6.41;9.65;53.61
+6;900-4500;68.13;3.66;12.97;23.52
+7;900-4500;112.42;6.15;10.09;51.05
+8;900-4500;105.04;5.37;10.47;46.54
+9;900-4500;71.79;3.35;12.68;30.08
+10;900-4500;90.65;4.55;11.27;40.10
+AVG;900-4500;91.25;4.77;11.35;38.61
+STDDEV;900-4500;17.29;1.02;1.12;9.82
+MIN;900-4500;68.13;3.35;9.65;23.52
+MAX;900-4500;119.34;6.41;12.97;53.61
+
