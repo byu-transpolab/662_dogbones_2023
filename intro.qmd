@@ -1,10 +1,10 @@
-# Introduction {1}
+# Introduction
 
 ## Introduction
 
 The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign. The Main Street interchange is one of two interchanges serving the city of Payson. It connects I-15 to Main Street, which is classified as a minor arterial [@FuncClass] and carries an Annual Average Daily Traffic (AADT) of 15,000 veh per day [@AADT]. Due to growth and increased travel in the area, the interchange is being investigated for a potential redesign to better serve the Payson and nearby Benjamin, Utah communities. UDOT prepared an Environmental Impact Statement in 2019 for the interchange and proposed a series of braided ramps to connect the existing interchange to the proposed Nebo Beltway, just northeast of Main Street [@UDOTStudy]. This study will provide a second evaluation of the existing conditions and potential redesign options for the interchange. @fig-study-area shows imagery of the study area.
 
-![I-15 interchange at Main Street in Payson, Utah.](figures/study_area.png)){#fig-study-area fig-pos="H" height="2.5in"}
+![I-15 interchange at Main Street in Payson, Utah.](figures/study_area.png){#fig-study-area fig-pos="H" height="2.5in"}
 
 ## Outline
 

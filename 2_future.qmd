@@ -1,10 +1,4 @@
----
-metadata-files:
-  - _info.yml
-format: pdf
----
-
-# Build Model Creation {3}
+# Build Model Creation
 
 ```{r}
 #| label: setup

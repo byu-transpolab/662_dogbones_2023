@@ -5,15 +5,15 @@ execute:
   echo: false
 
 book:
-  title: "title"
+  title: "I-15/Main Street Interchange in Payson, Utah"
   author:
     - name: Hayden Atchley
-      # email: satchley@byu.edu
+      email: satchley@byu.edu
       # orcid: 0000-0002-0815-3488
       affiliations:
         - ref: byucce
     - name: Adam Hill
-      # email: kamrynwm@student.byu.edu
+      email: hilla25@byu.edu
       # orcid:
       affiliations:
         - ref: byucce
@@ -52,6 +52,7 @@ affiliations:
 bibliography:
   - bib/references.bib
   - bib/packages.bib
+  - bib/matsim.bib
 
 lof: true
 lot: true
@@ -72,8 +73,8 @@ fig-align: center
 #     - _acronyms.yml
 
 format:
-  html:
-    theme: cosmo
+  # html:
+  #   theme: cosmo
   pdf:
     toc-depth: 3
     # template: template.tex

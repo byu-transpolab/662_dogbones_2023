@@ -1,10 +1,4 @@
----
-metadata-files:
-  - _info.yml
-format: pdf
----
-
-# Conclusions and Recommendations {7}
+# Conclusions and Recommendations 
 
 ## Problem Statement
 

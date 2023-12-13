@@ -1,10 +1,4 @@
----
-metadata-files:
-  - _info.yml
-format: pdf
----
-
-# Existing Model Creation \[2\]
+# Existing Model Creation
 
 ```{r}
 #| label: setup

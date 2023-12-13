@@ -1,13 +1,4 @@
----
-metadata-files:
-  - _info.yml
-format: pdf
-editor: 
-  markdown: 
-    wrap: sentence
----
-
-# Sensitivity Analysis {5}
+# Sensitivity Analysis
 
 ```{r}
 #| label: setup
