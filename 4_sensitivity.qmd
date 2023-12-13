@@ -1,0 +1,62 @@
+---
+metadata-files:
+  - _info.yml
+format: pdf
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+
+```
+
+# Introduction
+
+Redesigning the existing I-15 interchange at Main Street in Payson, Utah, is under consideration, as discussed by @design.
+The team conducted a sensitivity analysis to evaluate if the design model resists changes in driver parameters.
+
+# Methodology
+
+The Utah Department of Transportation (UDOT) requires consultants to use the Wiedemann 74 model for urban roadways and provides "reasonable values" for the additive and multiplicative parts of the safety distance calculations.
+@tbl-udot-values illustrates these values.
+The Wiedemann 74 car-following model also includes an "average standstill distance" parameter, but UDOT does not permit changing this value. We will leave this value at its default of 6.56 feet.
+
+|       Factor        | Suggested Range |
+|:-------------------:|:---------------:|
+|    Additive Part    |  2.00 to 2.80   |
+| Multiplicative Part |  3.00 to 3.80   |
+
+: UDOT Recommended Wiedemann 74 Values {#tbl-udot-values}
+
+Maximum and minimum combinations of parameters were simulated in the existing and redesigned interchange using 2023 traffic volumes.
+Note the default values used in the models are 2.00 and 3.00, and these will be used for scenario analysis.
+These cases were analyzed only to see the models' sensitivity to car-following parameters.
+
+# Results
+
+The team collected network delays to show aggregate responses to changes in these variables, which are shown in @tbl-delay.
+For example, the results from the Existing Case 1 model show a total delay of 65,000 seconds for all vehicles, with an average delay of 24.9 seconds per vehicle across all ten simulation iterations.
+
+|        | Additive Part | Multiplicative Part | Existing 2023 Delay | Build 2023 Delay |
+|:-----------:|:------:|:----------:|:----------:|:--------:|
+| Case 1 |     2.00      |        3.00         |   65,242 (24.88)    |  65,036 (24.58)  |
+| Case 2 |     2.80      |        3.00         |   70,410 (26.86)    |  74,582 (28.15)  |
+| Case 3 |     2.00      |        2.80         |   68,056 (25.95)    |  69,644 (26.29)  |
+| Case 4 |     2.80      |        3.80         |   72,995 (27.84)    |  80,938 (30.52)  |
+
+: Network Delay by Scenario in Seconds \[Total (Average)\] {#tbl-delay}
+
+From the VISSIM results, the car following behavior has an insignificant impact on the delays of either interchange.
+When comparing the best to worst models, there is a maximum difference of less than 4 seconds per vehicle.
+Additionally, when comparing existing and built models, there is a maximum difference of 3 seconds.
+Thus, given these traffic levels, the models resist all reasonable car following parameters.
+
+# Conclusion
+
+Car following behavior characteristics are rarely calibrated in traffic simulation, even though they can significantly impact traffic congestion.
+It is uncertain how the design of the interchange at I-15 and Main Street in Payson, Utah, will affect car-following behavior.
+Still, these results show that the redesigned interchange is resistant to changes in car following behavior.
+

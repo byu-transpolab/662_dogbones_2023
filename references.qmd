@@ -1,0 +1,10 @@
+---
+metadata-files:
+  - _info.yml
+format: pdf
+---
+
+# References
+
+::: {#refs}
+:::

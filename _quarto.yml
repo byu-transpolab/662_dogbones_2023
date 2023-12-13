@@ -8,8 +8,8 @@ book:
   title: "title"
   author:
     - name: Hayden Atchley
-      email: satchley@byu.edu
-      orcid: 0000-0002-0815-3488
+      # email: satchley@byu.edu
+      # orcid: 0000-0002-0815-3488
       affiliations:
         - ref: byucce
     - name: Adam Hill
@@ -32,15 +32,14 @@ book:
   date-format: DD MMMM YYYY
   chapters:
     - index.qmd
-    # - intro.qmd
-    # - lit-review.qmd
-    # - methods.qmd
-    # - 1_land_use.qmd
-    # - 2_transit.qmd
-    # - 3_wfh.qmd
-    # - discussion.qmd
-    # # - conclusions.qmd
-    # - references.qmd
+    - intro.qmd
+    - 1_existing.qmd
+    - 2_future.qmd
+    - 3_matsim.qmd
+    - 4_sensitivity.qmd
+    - 5_build.qmd
+    - conclusions.qmd
+    - references.qmd
  
 affiliations:
   - id: byucce
