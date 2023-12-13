@@ -32,13 +32,12 @@ book:
   date-format: DD MMMM YYYY
   chapters:
     - index.qmd
-    - intro.qmd
-    - 1_existing.qmd
-    - 2_future.qmd
-    - 3_matsim.qmd
-    - 4_sensitivity.qmd
-    - 5_build.qmd
-    - conclusions.qmd
+    - 2_existing.qmd
+    - 3_future.qmd
+    - 4_matsim.qmd
+    - 5_sensitivity.qmd
+    - 6_build.qmd
+    - 7_conclusions.qmd
     - references.qmd
  
 affiliations:
@@ -77,6 +76,7 @@ format:
   #   theme: cosmo
   pdf:
     toc-depth: 3
+    number-depth: 3
     # template: template.tex
     # mainfont: Gentium Book Basic
     # sansfont: Alte Haas Grotesk

@@ -1,0 +1,202 @@
+# Existing Model Creation
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+
+targets::tar_load(intersection_translation)
+
+format_turns <- function(data) {
+  data %>% 
+    mutate(
+      turn = case_when(
+        turn == 1 ~ "l",
+        turn == 3 ~ "r",
+        turn == 4 ~ "\u2192I-15",
+        turn == 5 ~ "\u2192800 N",
+        TRUE ~ turn
+      ),
+      leg = if_else(leg == "OB", "800 N", leg)
+    ) %>% 
+    left_join(intersection_translation, join_by(intersection == intersection_num)) %>% 
+    relocate(intersection_name) %>% 
+    rename(Intersection = intersection_name) %>% 
+    select(-intersection)
+}
+
+format_turning_counts <- function(counts){
+  counts %>% 
+    format_turns() %>% 
+    pivot_wider(names_from = turn, values_from = hour_count) %>% 
+    relocate(Intersection, leg, l, t, r) %>% 
+    rename(
+      Approach = leg,
+      Left = l,
+      Thru = t,
+      Right = r,
+    ) %>% 
+    mutate(across(everything(), as.character)) %>% 
+    mutate(across(everything(), \(x) replace_na(x, "\u2013"))) %>% 
+    kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
+    kable_styling() %>% 
+    collapse_rows(columns = 1, valign = "middle")
+}
+
+format_los <- function(results) {
+  results %>% 
+    format_turns() %>% 
+    filter(!is.na(avgdelay)) %>% 
+    left_join(
+      filter(., type == "Intersection") %>% 
+        select(Intersection, avgdelay, LOS),
+      join_by(Intersection),
+      suffix = c("_m", "_i")) %>% 
+    filter(type != "Intersection") %>% 
+    select(-type, -maxqlen) %>% 
+    relocate(Intersection, leg, turn) %>% 
+    mutate(turn = case_when(
+      turn == "l" ~ "Left",
+      turn == "t" ~ "Thru",
+      turn == "r" ~ "Right",
+      TRUE ~ turn
+    )) %>% 
+    kbl(align = "c", booktabs = TRUE, linesep = "", col.names = c(
+      "Intersection",
+      "Approach",
+      "Movement",
+      "Avg. Queue Length (ft)",
+      # "Max Queue Length (ft)",
+      "Avg. Vehicle Delay",
+      "Level of Service",
+      "Avg. Vehicle Delay",
+      "Level of Service"
+    )) %>% 
+    kable_styling(latex_options = "scale_down") %>%
+    column_spec(4:8,"2cm") %>% 
+    collapse_rows(columns = c(1,2,7,8), valign = "middle", target = 1)
+}
+```
+
+## Introduction
+
+This section will document the modeling of existing traffic conditions.
+These conditions were modeled to evaluate the current performance of the interchange.
+This section will outline the study parameters, model setup and results from the existing interchange analysis.
+
+## Model Setup
+
+To model the interchange accurately, turning movement counts were collected for the intersections in the study area.
+Traffic counting cameras were set up on September 26, 2023 at the I-15 NB Interchange, I-15 SB Interchange, and Main St/900 N to capture volumes.
+Volumes were then counted via the footage using CountPRO software [@CountPro].
+Automated Traffic Signal Performance Measure (ATSPM) data [@ATSPM] were used for the volumes for Main St/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
+It should be noted that the South interchange was modeled as a five-leg intersection.
+These tables reference 800 N as the auxiliary fifth leg of this intersection because it is somewhat separated from the other approaches of the intersection, but still interacts with it.
+
+```{r}
+#| label: tbl-am-tmc
+#| tbl-cap: "AM Turning Movement Counts at the Study Area"
+
+targets::tar_load(am_peak_turn_counts)
+
+am_peak_turn_counts %>% format_turning_counts() %>% 
+  kable_styling(latex_options = "HOLD_position")
+```
+
+```{r}
+#| label: tbl-pm-tmc
+#| tbl-cap: "PM Turning Movement Counts at the Study Area"
+
+targets::tar_load(pm_peak_turn_counts)
+
+am_peak_turn_counts %>% format_turning_counts()
+```
+
+Data were collected at Main Street and 600 N and 900 N due to interactions with the existing interchange.
+Additionally, the junction of the I-15 NB Interchange was modeled with the 800 N junction to evaluate interactions.
+Specifically at 800 N, volumes entering and exiting the approach were quite low, but it was decided to keep that intersection for the completeness of the model.
+
+These turning movement counts were used as inputs for a model built with PTV VISSIM [@VISSIM].
+The VISSIM model also required the roadway geometry to be modeled using links and nodes, which loosely follow the actual geometry of the interchange.
+This construction of this model is outlined in this section.
+
+The VISSIM model was developed off the UDOT VISSIM template [@template] and is shown in @fig-vissim_existing_all.
+The template provided speed distributions and driver characteristics approved by the UDOT Traffic group.
+
+![Existing VISSIM Model](figures/existing/everythinge.png){#fig-vissim_existing_all}
+
+Desired speed decisions were modeled based off posted speed limits and confirmed with the UDOT Speed Limit Map [@SpeedLimits].
+Roadway geometries were based off the most current versions of the Google Roadview imagery [@Google].
+A brief site visit was conducted by a member of the team to confirm key roadway characteristics.
+
+Geometries were loosely designed with the only measurements being the left and right turn bays.
+Radii and curvature were approximated based on satellite imagery.
+Elevations, superelevations, and roadway crowns were not modeled in the network.
+On turns, reduced speed areas were placed to resemble driver behavior.
+
+Signal timing plans were obtained from UDOT's MaxView [@maxview] database on September 24th, 2023.
+The I-15 SB Interchange and Main St/600 N are fully actuated ring-barrier-controlled intersections, but are not coordinated.
+Timings and signal characteristics were modeled to match the timing plans and roadway geometry.
+
+Where appropriate, conflict areas, and priority rules were placed to govern vehicle behavior.
+Behavior leading to vehicle conflict was minimized to the best ability of the modeler.
+Due to the lack of related traffic, bicycles and pedestrians were not modeled.
+However, future models should provide for bicycle and pedestrian facilities.
+It was only due to the lack of data that these users were not modeled.
+
+The collected data did indicate a higher percentage of high grossing vehicles, and such percentages were modeled in the vehicle inputs.
+Due to the limited collected data, over calibration was avoided by preventing elevated levels of detail in the model.
+
+Vehicle movements were created by developing an origin-destination (OD) matrix for the network using RStudio with the DiagrammeR [@DiagrammeR] and gtools [@gtools] packages.
+A network graph and turning movement percentages were calculated for each node.
+Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
+Thus, approximate OD movements were created and inputted into the model.
+
+<!-- show the od figure? -->
+
+No adjustment factors were used in the creation of input volumes, so the data do not reflect AADT, but are valid for the purposes of this study.
+Based on the collected data, an A.M.
+peak of 7:15--8:15 A.M., and an P.M.
+peak of 4:30--5:30 P.M.
+were estimated and corresponding values were used in the calculation of the input volumes and OD distribution.
+
+An initial loading period was implemented by duplicating "0--15" volumes.
+Following the loading period, a simulation run of 60 minutes (15-minute bins) was conducted.
+Ten model iterations of both A.M.
+and P.M.
+models were run.
+
+Travel time data was not collected for this network, nor was any Bluetooth or radar data collected.
+The VISSIM model was calibrated only by visual observations to confirm accuracy of driver behavior.
+No further elements were considered for the calibration of the model.
+
+## Results
+
+Tables [-@tbl-am-los] and [-@tbl-pm-los] display the results of the analysis performed in the VISSIM model for both the A.M.
+and P.M.
+peak periods.
+Level of Service was determined from the Highway Capacity Manual 7^th^ edition [@hcm7].
+Each of the approaches are performing relatively well under the existing conditions.
+Points of concern are approaches with a single lane that service all vehicle movements.
+The approaches include the 900 N and I-15 NB Off-ramp with LOS C. With additional loading, it is likely that the network could see considerable reductions in service capabilities.
+
+```{r}
+#| label: tbl-am-los
+#| tbl-cap: Existing Model Results (AM Peak)
+
+targets::tar_load(am_results)
+am_results %>% format_los()
+```
+
+```{r}
+#| label: tbl-pm-los
+#| tbl-cap: Existing Model Results (PM Peak)
+
+targets::tar_load(pm_results)
+pm_results %>% format_los()
+```
+
+These results will be valuable for further analysis at the study location.
+However, there is not an apparent need for the interchange to be modified based on this analysis alone.
