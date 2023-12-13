@@ -4,7 +4,7 @@ metadata-files:
 format: pdf
 ---
 
-# Growth Rate Projection {3}
+# Growth Rate Projection {4}
 
 ```{r}
 #| label: setup
@@ -15,7 +15,7 @@ library(kableExtra)
 
 ```
 
-In the previous reports, existing and design conditions at the Payson interchange were tested using current volumes [@design; @existing].
+In the previous reports, existing and design conditions at the Payson interchange were tested using current volumes.
 However, it is necessary to test these conditions using projected volumes for the 2050 horizon year.
 The future volumes will be used in both a "no-build" and "build" scenario at the interchange.
 
@@ -160,7 +160,7 @@ OD pairs will be calculated from this data and used in the "No-Build 2050" and "
 
 ```{r}
 #| label: tbl-vissim-growth
-#| tbl-cap: Something
+#| tbl-cap: Traffic Volumes for 2050 Models
 
 targets::tar_read(pretty_vissim_growth) %>% 
   mutate(across(6, \(x) scales::label_percent(0.1)(x))) %>% 

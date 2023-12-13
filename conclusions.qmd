@@ -4,4 +4,28 @@ metadata-files:
 format: pdf
 ---
 
+# Conclusions and Recomendations {7}
 
+## Problem Statement
+
+The City of Payson tasked the team with an alternative design for the Payson Main Street I-15 interchange to handle future growth. The team modeled existing traffic patterns using VISSIM, and by using MATSim modeling software, a future growth rate of 30% over the next 27 years was predicted. The team created Future traffic models using VISSIM, and results were compiled and compared. The following section summarizes key results from the analysis.
+
+## Key Results
+
+Initial conditions provide limited traffic-based justifications for the implementation of mitigation measures. However, due to a large number of intersection-related crashes, the team considered safety improvements. Additionally, if growth present exceeding 30%, traffic conditions during the PM peak will be such that they will necessitate some mitigation efforts.
+
+The proposed mitigations include a dual roundabout/dogbone interchange. This design reduces speeds through the network and allows for safer pedestrian and bicycle access through the interchange. Additionally, the design provides satisfactory traffic flow conditions within the reason for the heavy traffic volumes. However, the existing conditions would also likely perform adequately by adding exclusive turning lanes and implementing a signal at the NB I-15 interchange.
+
+## Recommendations
+
+The team recommends the following future steps for the Payson Main St. I-15 interchange:
+
+-   Implementing a redesign to increase capacity at the interchange is necessary due to the predicted heavy growth.
+
+-   The use of the provided design could provide a high-capacity solution that would also increase the safety of all users.
+
+-   Implementing the design suggested here would require significant funds and construction time. The City of Payson should contract additional analysis on the addition of a signal at the NB I-15 interchange to coordinate with the SB I-15 interchange. This solution may be cheaper and have a shorter construction time.
+
+-   Regardless, bridge expansion and reconstruction are likely necessary. The team highly recommends that the City of Payson and contracted design firms consider pedestrian and bicycle access during such rebuilding. Due to likely growth to the north of I-15, this may transform into a high pedestrian and bicycle access route between north and south Payson.
+
+-   The additional WB leg to the NB interchange should either be removed and rerouted or added to a roundabout, as presented in this report, to remove unnecessary conflict points.

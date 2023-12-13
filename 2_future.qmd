@@ -4,7 +4,7 @@ metadata-files:
 format: pdf
 ---
 
-# Build Model Creation {2}
+# Build Model Creation {3}
 
 ```{r}
 #| label: setup
@@ -28,12 +28,10 @@ format_los_comp_kbl <- function(los_comp) {
 }
 ```
 
-The existing I-15 interchange at Main Street in Payson, Utah is under investigation for a potential redesign.
-Current conditions were analyzed in an existing conditions memo [@existing].
 
 ## Build Justifications
 
-In the existing conditions memo [@existing], traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
+During existing conditions, traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
 Based on performance alone, a redesign is not warranted.
 However, performance is not the only criterion that can warrant a redesign, and safety concerns were evident when conducting the existing study.
 

@@ -1,5 +1,14 @@
 
-# Introduction {.unnumbered}
+# Introduction {1}
+
+## Problem Statement
+
+The City of Payson identified the Payson Main Street interchange with I-15 for potential redesign due to aggressive projected future growth. The City of Payson tasked the team with modeling existing and future conditions and providing recommendations for improvements to existing infrastructure. 
+The team will estimate future growth using the MATSim modeling package. The team will also use PTV VISSIM software to model traffic conditions. Results will be analyzed using the 6th edition of the Highway Capacity Manual framework. The team will also review the recent crash history at these intersections to provide context for the analysis.
+
+## Outline
+
+The following report will consist of six sections. First, the team will model existing conditions using traffic counts and signal timing plans. Second, the team will outline a future configuration with justifications from existing crash data. Third, the team will approximate future growth rates using the MATSim modeling package. Fourth, the team will check the model for resiliency during various car-following model variations. Fifth, the team will review results from the no-build and build models. The team will then summarize key findings and provide recommendations for future consideration.
 
 
 

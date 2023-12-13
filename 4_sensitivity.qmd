@@ -4,6 +4,8 @@ metadata-files:
 format: pdf
 ---
 
+# Sensitivity Analysis {5}
+
 ```{r}
 #| label: setup
 #| include: false
@@ -13,12 +15,12 @@ library(kableExtra)
 
 ```
 
-# Introduction
+## Introduction
 
-Redesigning the existing I-15 interchange at Main Street in Payson, Utah, is under consideration, as discussed by @design.
+Redesigning the existing I-15 interchange at Main Street in Payson, Utah, is under consideration.
 The team conducted a sensitivity analysis to evaluate if the design model resists changes in driver parameters.
 
-# Methodology
+## Methodology
 
 The Utah Department of Transportation (UDOT) requires consultants to use the Wiedemann 74 model for urban roadways and provides "reasonable values" for the additive and multiplicative parts of the safety distance calculations.
 @tbl-udot-values illustrates these values.
@@ -35,7 +37,7 @@ Maximum and minimum combinations of parameters were simulated in the existing an
 Note the default values used in the models are 2.00 and 3.00, and these will be used for scenario analysis.
 These cases were analyzed only to see the models' sensitivity to car-following parameters.
 
-# Results
+## Results
 
 The team collected network delays to show aggregate responses to changes in these variables, which are shown in @tbl-delay.
 For example, the results from the Existing Case 1 model show a total delay of 65,000 seconds for all vehicles, with an average delay of 24.9 seconds per vehicle across all ten simulation iterations.
@@ -54,7 +56,7 @@ When comparing the best to worst models, there is a maximum difference of less t
 Additionally, when comparing existing and built models, there is a maximum difference of 3 seconds.
 Thus, given these traffic levels, the models resist all reasonable car following parameters.
 
-# Conclusion
+## Conclusion
 
 Car following behavior characteristics are rarely calibrated in traffic simulation, even though they can significantly impact traffic congestion.
 It is uncertain how the design of the interchange at I-15 and Main Street in Payson, Utah, will affect car-following behavior.

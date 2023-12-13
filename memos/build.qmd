@@ -1,10 +1,9 @@
 ---
+title: "Redesign of the I-15 Interchange at Main Street in Payson, Utah"
 metadata-files:
   - _info.yml
 format: pdf
 ---
-
-# Future Model Comparisons {6}
 
 ## Introduction
 
@@ -97,3 +96,11 @@ ggplot(tt) +
 Under the existing intersection design, the model fails during the PM peak, exhibiting LOS F at all intersections. These failing conditions are primarily due to the lack of designated turning lanes and severe overloading of the various intersections. The build model performs to a high level of traffic management, with the highest LOS being exhibited at the I-15 SB interchange, performing at an LOS E. However, users should expect such delays due to the high traffic volume levels. Providing for LOS C or better under such conditions would create a massive intersection, such as damage to safety or local ecology.
 
 If such growth continues, additional highway interchanges would be necessary to provide additional capacity.
+
+
+{{< pagebreak >}}
+
+# References
+
+::: {#refs}
+:::
