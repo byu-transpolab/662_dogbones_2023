@@ -16,5 +16,6 @@ _targets/
 docs/
 
 /.quarto/
+/_book/
 
 /memos/*.pdf
