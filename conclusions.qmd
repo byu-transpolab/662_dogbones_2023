@@ -4,7 +4,7 @@ metadata-files:
 format: pdf
 ---
 
-# Conclusions and Recomendations {7}
+# Conclusions and Recommendations {7}
 
 ## Problem Statement
 
