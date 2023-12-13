@@ -2,6 +2,9 @@
 metadata-files:
   - _info.yml
 format: pdf
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 # Growth Rate Projection {4}
@@ -15,14 +18,12 @@ library(kableExtra)
 
 ```
 
-In the previous reports, existing and design conditions at the Payson interchange were tested using current volumes.
-However, it is necessary to test these conditions using projected volumes for the 2050 horizon year.
-The future volumes will be used in both a "no-build" and "build" scenario at the interchange.
+## Introduction
 
-The projected volumes were created using the Multi-Agent Transport Simulation (MATSim) [@MATSim].
-MATSim simulates individual travelers in a transportation network and "trains" them to find the optimal path during their tour by running the simulation through multiple iterations.
-
-This memorandum includes information of the population creation model, the MATSim network, forecasted volumes, the resulting turning counts from the MATSim model, and forecasted turning movement counts.
+This section will document the evaluation of projected 2050 volumes in \"build\" and \"no-build\" scenarios for the proposed redesign of the I-15 interchange at Main Street in Payson, Utah.
+The projected volumes were created using the Multi-Agent Transport Simulation (MATSim) (Association 2023).
+MATSim simulates individual travelers in a transportation network and \"trains\" them to find the optimal path during their tour by running the simulation through multiple iterations.
+This section will outline information for the population creation model, the MATSim network, forecasted volumes, the resulting turning counts from the MATSim model, and forecasted turning movement counts.
 
 ## Population Creation
 
@@ -175,4 +176,3 @@ targets::tar_read(pretty_vissim_growth) %>%
 
 MATSim provides a method for creating turning counts even with limited prediction models.
 As an academic exercise, these results and growth rates will be used to forecast growth in VISSIM to provide limited recommendations for future growth at the I-15 interchange at Main Street in Payson, Utah.
-

@@ -2,6 +2,9 @@
 metadata-files:
   - _info.yml
 format: pdf
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 # Sensitivity Analysis {5}
@@ -24,7 +27,8 @@ The team conducted a sensitivity analysis to evaluate if the design model resist
 
 The Utah Department of Transportation (UDOT) requires consultants to use the Wiedemann 74 model for urban roadways and provides "reasonable values" for the additive and multiplicative parts of the safety distance calculations.
 @tbl-udot-values illustrates these values.
-The Wiedemann 74 car-following model also includes an "average standstill distance" parameter, but UDOT does not permit changing this value. We will leave this value at its default of 6.56 feet.
+The Wiedemann 74 car-following model also includes an "average standstill distance" parameter, but UDOT does not permit changing this value.
+We will leave this value at its default of 6.56 feet.
 
 |       Factor        | Suggested Range |
 |:-------------------:|:---------------:|
@@ -43,7 +47,7 @@ The team collected network delays to show aggregate responses to changes in thes
 For example, the results from the Existing Case 1 model show a total delay of 65,000 seconds for all vehicles, with an average delay of 24.9 seconds per vehicle across all ten simulation iterations.
 
 |        | Additive Part | Multiplicative Part | Existing 2023 Delay | Build 2023 Delay |
-|:-----------:|:------:|:----------:|:----------:|:--------:|
+|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 | Case 1 |     2.00      |        3.00         |   65,242 (24.88)    |  65,036 (24.58)  |
 | Case 2 |     2.80      |        3.00         |   70,410 (26.86)    |  74,582 (28.15)  |
 | Case 3 |     2.00      |        2.80         |   68,056 (25.95)    |  69,644 (26.29)  |
@@ -61,4 +65,3 @@ Thus, given these traffic levels, the models resist all reasonable car following
 Car following behavior characteristics are rarely calibrated in traffic simulation, even though they can significantly impact traffic congestion.
 It is uncertain how the design of the interchange at I-15 and Main Street in Payson, Utah, will affect car-following behavior.
 Still, these results show that the redesigned interchange is resistant to changes in car following behavior.
-
