@@ -1,5 +1,13 @@
 # Future Model Comparisons
 
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+```
+
 ## Introduction
 
 MATSim modeling software roughly predicted future growth in the Payson area.

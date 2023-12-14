@@ -130,3 +130,18 @@ grow_counts <- function(counts, growth){
     mutate(count = count*(1+growth_rate)) %>% 
     select(-growth_rate)
 }
+
+format_turning_counts <- function(counts, intersection_translation){
+  counts %>% 
+    format_turns(intersection_translation) %>% 
+    pivot_wider(names_from = turn, values_from = hour_count) %>% 
+    relocate(Intersection, leg, l, t, r) %>% 
+    rename(
+      Approach = leg,
+      Left = l,
+      Thru = t,
+      Right = r,
+    ) %>% 
+    mutate(across(everything(), as.character)) %>% 
+    mutate(across(everything(), \(x) replace_na(x, "\u2013")))
+}
