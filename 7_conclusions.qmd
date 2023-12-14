@@ -25,18 +25,18 @@ format_los_comp_kbl <- function(los_comp) {
 
 ## Problem Statement
 
-The City of Payson tasked the team with an alternative design for the Payson Main Street I-15 interchange to handle future growth.
+The City of Payson tasked the team to find an alternative design for the Payson Main Street I-15 interchange to handle future growth.
 The team modeled existing traffic conditions using VISSIM, and by using MATSim modeling software, a future growth rate of 30% over the next 27 years was predicted.
 The team created future traffic models using VISSIM, and results were compiled and compared.
 This section summarizes key results from the analysis.
 
 ## Key Results
 
-Initial conditions provide limited traffic-based justifications for the implementation of mitigation measures.
-However, due to a large number of intersection-related crashes, the team considered safety improvements.
-Additionally, if growth present exceeding 30%, traffic conditions during the PM peak will be such that they will necessitate some mitigation efforts.
+Initial conditions provide limited traffic-based justifications for a redesign of the interchange.
+However, due to a large number of intersection-related crashes, the team considered safety improvements as further justification for a redesign.
+Additionally, if growth exceeds 30%, traffic conditions during the PM peak will be such that they will necessitate some traffic congestion mitigation efforts.
 
-@tbl-final-intersection-comp compares the intersections***........***
+@tbl-final-intersection-comp compares the intersections from the existing, future No-Build, and future Build conditions.
 
 ```{r}
 #| label: tbl-final-intersection-comp
@@ -47,9 +47,9 @@ targets::tar_read(intersection_los_comp) %>%
   kbl()
 ```
 
-The proposed mitigations include a dual roundabout/dogbone interchange.
+The proposed redesign includes a dual roundabout/dogbone interchange.
 This design reduces speeds through the network and allows for safer pedestrian and bicycle access through the interchange.
-Additionally, the design provides satisfactory traffic flow conditions within the reason for the heavy traffic volumes.
+Additionally, the design provides satisfactory traffic flow conditions compared to the heavy traffic volumes predicted in the No-Build scenario.
 However, the existing conditions would also likely perform adequately by adding exclusive turning lanes and implementing a signal at the NB I-15 interchange.
 
 ## Recommendations
