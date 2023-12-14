@@ -102,6 +102,8 @@ A network graph and turning movement percentages were calculated for each node.
 Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
 Thus, approximate OD movements were created and inputted into the model.
 See @fig-od-network for a representation of the OD network used.
+Each cluster of nodes represents an intersection, with each node being an approach of that intersection.
+The edges of the graph are directed, showing which movements are allowable.
 
 ```{r}
 #| label: fig-od-network
