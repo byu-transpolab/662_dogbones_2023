@@ -6,6 +6,20 @@
 
 library(tidyverse)
 library(kableExtra)
+
+format_los_comp_kbl <- function(los_comp) {
+  los_comp %>%
+  mutate(Intersection = ifelse(
+    Intersection == "SB Interchange",
+    "SB Interchange*",
+    Intersection
+  )) %>% 
+  kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
+  kable_styling(latex_options = "scale_down") %>% 
+  column_spec(column = 4:ncol(ex_build_am_los_comp_formatted), width = "3cm") %>% 
+  collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
+  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
+}
 ```
 
 ## Introduction
@@ -32,37 +46,35 @@ The team implemented the additional modifications listed below to simulate futur
 
 ## Results
 
-Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results build model in the AM and PM peak periods, compared with the no-build scenario model.
+Tables [-@tbl-final-am-los-comp] and [-@tbl-final-pm-los-comp] show the results build model in the AM and PM peak periods, compared with the no-build scenario model.
 LOS was determined from the Highway Capacity Manual 7th edition [@hcm7].
 
 ```{r}
-#| label: tbl-am-los-comp
+#| label: tbl-final-am-los-comp
 #| tbl-cap: Comparison of LOS Results (AM)
 
 targets::tar_load(ex_build_am_los_comp_formatted)
 
-## update for the build and no build
-
-# ex_build_am_los_comp_formatted %>% format_los_comp_kbl()
+ex_build_am_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 ```{r}
-#| label: tbl-pm-los-comp
+#| label: tbl-final-pm-los-comp
 #| tbl-cap: Comparison of LOS Results (PM)
 
 targets::tar_load(ex_build_pm_los_comp_formatted)
 
-# ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
+ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
-@fig-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
+@fig-final-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
 However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
 Additionally, the increase in travel time is explained by the reduction in speeds from 30 MPH to 15 MPH.
 Later analysis when comparing these times to future models will have more significant interpretations.
 
 ```{r}
-#| label: fig-tt
+#| label: fig-final-tt
 #| fig-cap: Travel time comparison between existing and build models.
 
 targets::tar_load(nobuild_am_traveltimes_formatted)
