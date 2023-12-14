@@ -6,6 +6,7 @@
 
 library(tidyverse)
 library(kableExtra)
+library(DiagrammeR)
 
 targets::tar_load(intersection_translation)
 
@@ -100,8 +101,17 @@ Vehicle movements were created by developing an origin-destination (OD) matrix f
 A network graph and turning movement percentages were calculated for each node.
 Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
 Thus, approximate OD movements were created and inputted into the model.
+See @fig-od-network for a representation of the OD network used.
 
-#### show od figure
+```{r}
+#| label: fig-od-network
+#| fig-cap: OD network used to determine vehicle routing in R.
+
+targets::tar_load(ex_graph)
+
+ex_graph %>% 
+  render_graph()
+```
 
 No adjustment factors were used in the creation of input volumes, so the data do not reflect AADT, but are valid for the purposes of this study.
 Based on the collected data, an AM peak of 7:15--8:15 AM, and a PM peak of 4:30--5:30 PM were estimated and corresponding values were used in the calculation of the input volumes and OD distribution.
