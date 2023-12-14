@@ -17,7 +17,7 @@ format_los_comp_kbl <- function(los_comp) {
   )) %>% 
   kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
   kable_styling(latex_options = "scale_down") %>% 
-  column_spec(column = 4:ncol(ex_build_am_los_comp_formatted), width = "3cm") %>% 
+  column_spec(column = 4:ncol(final_am_los_comp_formatted), width = "3cm") %>% 
   collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
   footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
 }
@@ -27,7 +27,7 @@ format_los_comp_kbl <- function(los_comp) {
 
 MATSim modeling software roughly predicted future growth in the Payson area.
 The team used a growth rate of 30% over the next 27 years to predict impacts on the existing and built models.
-The following section describes the process used to run and compare the models and reviews the results of the models.
+This section outlines the process used to run and compare the models and reviews the results of the models.
 
 ## Methodology
 
@@ -53,18 +53,18 @@ Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results 
 #| label: tbl-am-los-comp_build
 #| tbl-cap: Comparison of LOS Results (AM)
 
-targets::tar_load(ex_build_am_los_comp_formatted)
+targets::tar_load(final_am_los_comp_formatted)
 
-ex_build_am_los_comp_formatted %>% format_los_comp_kbl()
+final_am_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 ```{r}
 #| label: tbl-pm-los-comp_build
 #| tbl-cap: Comparison of LOS Results (PM)
 
-targets::tar_load(ex_build_pm_los_comp_formatted)
+targets::tar_load(final_pm_los_comp_formatted)
 
-ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
+final_pm_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
@@ -116,18 +116,6 @@ ggplot(tt) +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank())
 
-```
-
-
-@tbl-final-intersection-comp compares the intersections***........***
-
-```{r}
-#| label: tbl-final-intersection-comp
-#| tbl-cap: Comparison of Intersection Delay and LOS
-
-targets::tar_read(intersection_los_comp) %>% 
-  mutate(time = str_to_upper(time)) %>% 
-  kbl()
 ```
 
 
