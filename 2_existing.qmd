@@ -27,17 +27,16 @@ los_kbl <- function(results) {
 
 ## Introduction
 
-This section will document the modeling of existing traffic conditions.
-These conditions were modeled to evaluate the current performance of the interchange.
-This section will outline the study parameters, model setup and results from the existing interchange analysis.
+To understand traffic needs for the interchange, the team created a existing model.
+This section will outline the existing interchange model parameters, model setup and results from the  model.
 
 ## Model Setup
 
 To model the interchange accurately, turning movement counts were collected for the intersections in the study area.
-Traffic counting cameras were set up on September 26, 2023 at the I-15 NB Interchange, I-15 SB Interchange, and Main St/900 N to capture volumes.
-Volumes were then counted via the footage using CountPRO software [@CountPro].
-Automated Traffic Signal Performance Measure (ATSPM) data [@ATSPM] were used for the volumes for Main St/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
-It should be noted that the South interchange was modeled as a five-leg intersection.
+Traffic cameras were set up on September 26, 2023 at the I-15 Northbound (NB) Interchange, I-15 Southbound (SB) Interchange, and Main St/900 North (900 N) to capture volumes.
+Volumes were then counted hand counted from the footage using CountPRO software [@CountPro].
+Automated Traffic Signal Performance Measure data [@ATSPM] were used for the volumes for Main St/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
+It should be noted that the NB interchange was modeled as a five-leg intersection.
 These tables reference 800 N as the auxiliary fifth leg of this intersection because it is somewhat separated from the other approaches of the intersection, but still interacts with it.
 
 ```{r}
@@ -121,7 +120,7 @@ No further elements were considered for the calibration of the model.
 Tables [-@tbl-am-los] and [-@tbl-pm-los] display the results of the analysis performed in the VISSIM model for both the A.M.
 and P.M.
 peak periods.
-Level of Service was determined from the Highway Capacity Manual 7^th^ edition [@hcm7].
+Level of Service (LOS) was determined from the Highway Capacity Manual 7^th^ edition [@hcm7] for this and future analyses throughout the report.
 Each of the approaches are performing relatively well under the existing conditions.
 Points of concern are approaches with a single lane that service all vehicle movements.
 The approaches include the 900 N and I-15 NB Off-ramp with LOS C. With additional loading, it is likely that the network could see considerable reductions in service capabilities.
