@@ -9,27 +9,14 @@ library(kableExtra)
 
 targets::tar_load(intersection_translation)
 
-
-
-format_turning_counts <- function(counts){
+counts_kbl <- function(counts){
   counts %>% 
-    format_turns() %>% 
-    pivot_wider(names_from = turn, values_from = hour_count) %>% 
-    relocate(Intersection, leg, l, t, r) %>% 
-    rename(
-      Approach = leg,
-      Left = l,
-      Thru = t,
-      Right = r,
-    ) %>% 
-    mutate(across(everything(), as.character)) %>% 
-    mutate(across(everything(), \(x) replace_na(x, "\u2013"))) %>% 
     kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
     kable_styling() %>% 
     collapse_rows(columns = 1, valign = "middle")
 }
 
-format_los <- function(results) {
+los_kbl <- function(results) {
   results %>% 
     kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
     kable_styling(latex_options = "scale_down") %>%
@@ -57,19 +44,18 @@ These tables reference 800 N as the auxiliary fifth leg of this intersection bec
 #| label: tbl-am-tmc
 #| tbl-cap: "AM Turning Movement Counts at the Study Area"
 
-targets::tar_load(am_peak_turn_counts)
+targets::tar_load(am_counts_formatted)
 
-am_peak_turn_counts %>% format_turning_counts() %>% 
-  kable_styling(latex_options = "HOLD_position")
+am_counts_formatted %>% counts_kbl()
 ```
 
 ```{r}
 #| label: tbl-pm-tmc
 #| tbl-cap: "PM Turning Movement Counts at the Study Area"
 
-targets::tar_load(pm_peak_turn_counts)
+targets::tar_load(pm_counts_formatted)
 
-am_peak_turn_counts %>% format_turning_counts()
+pm_counts_formatted %>% counts_kbl()
 ```
 
 Data were collected at Main Street and 600 N and 900 N due to interactions with the existing interchange.
@@ -144,16 +130,16 @@ The approaches include the 900 N and I-15 NB Off-ramp with LOS C. With additiona
 #| label: tbl-am-los
 #| tbl-cap: Existing Model Results (AM Peak)
 
-targets::tar_load(ex_am_results)
-ex_am_results %>% format_los()
+targets::tar_load(ex_am_los_formatted)
+ex_am_los_formatted %>% los_kbl()
 ```
 
 ```{r}
 #| label: tbl-pm-los
 #| tbl-cap: Existing Model Results (PM Peak)
 
-targets::tar_load(ex_pm_results)
-ex_pm_results %>% format_los()
+targets::tar_load(ex_pm_los_formatted)
+ex_pm_los_formatted %>% los_kbl()
 ```
 
 These results will be valuable for further analysis at the study location.

@@ -68,7 +68,9 @@ memo_targets <- tar_plan(
   
   #### Memo 1: Existing Interchange ####
   am_peak_turn_counts = get_hourly_turn_counts(counts, peak$AM),
+  am_counts_formatted = format_turning_counts(am_peak_turn_counts, intersection_translation),
   pm_peak_turn_counts = get_hourly_turn_counts(counts, peak$PM),
+  pm_counts_formatted = format_turning_counts(pm_peak_turn_counts, intersection_translation),
   
   tar_file(ex_am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att"),
   ex_am_results = read_att(ex_am_results_file, lineskip = 28),
