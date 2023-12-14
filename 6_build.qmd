@@ -6,6 +6,8 @@
 
 library(tidyverse)
 library(kableExtra)
+library(ggplot2)
+library(scales)
 ```
 
 ## Introduction
@@ -20,7 +22,7 @@ To simulate future growth in the region, the team multiplied existing 2023 traff
 VISSIM models then simulated future traffic conditions.
 The team implemented the additional modifications listed below to simulate future situations:
 
--   Signal timings were adjusted using Synchro to provide optimal cycle lengths and split timings.
+-   Signal timings were adjusted using Synchro (source?) to provide optimal cycle lengths and split timings.
     The team used a 150-second cycle length in all signals and optimized splits under existing signal characteristics.
 
 -   The team modified the build model to allow double lane circulation on the SB interchange between the off and on-ramps.
@@ -32,11 +34,10 @@ The team implemented the additional modifications listed below to simulate futur
 
 ## Results
 
-Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results build model in the AM and PM peak periods, compared with the no-build scenario model.
-LOS was determined from the Highway Capacity Manual 7th edition [@hcm7].
+Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results Build model in the AM and PM peak periods, compared with the No-Build scenario model.
 
 ```{r}
-#| label: tbl-am-los-comp
+#| label: tbl-am-los-comp_build
 #| tbl-cap: Comparison of LOS Results (AM)
 
 targets::tar_load(ex_build_am_los_comp_formatted)
@@ -47,7 +48,7 @@ targets::tar_load(ex_build_am_los_comp_formatted)
 ```
 
 ```{r}
-#| label: tbl-pm-los-comp
+#| label: tbl-pm-los-comp_build
 #| tbl-cap: Comparison of LOS Results (PM)
 
 targets::tar_load(ex_build_pm_los_comp_formatted)
@@ -56,13 +57,12 @@ targets::tar_load(ex_build_pm_los_comp_formatted)
 ```
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
-@fig-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
+@fig-tt_build compares average travel times from the Build model with the No-Build model for both AM and PM peak periods.
 However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
-Additionally, the increase in travel time is explained by the reduction in speeds from 30 MPH to 15 MPH.
-Later analysis when comparing these times to future models will have more significant interpretations.
+
 
 ```{r}
-#| label: fig-tt
+#| label: fig-tt_build
 #| fig-cap: Travel time comparison between existing and build models.
 
 targets::tar_load(nobuild_am_traveltimes_formatted)
@@ -109,7 +109,7 @@ ggplot(tt) +
 
 ## Conclusion
 
-Under the existing intersection design, the model fails during the PM peak, exhibiting LOS F at all intersections.
+Under the No-Build intersection design, the model fails during the PM peak, exhibiting LOS F at all intersections.
 These failing conditions are primarily due to the lack of designated turning lanes and severe overloading of the various intersections.
 The build model performs to a high level of traffic management, with the highest LOS being exhibited at the I-15 SB interchange, performing at an LOS E. However, users should expect such delays due to the high traffic volume levels.
 Providing for LOS C or better under such conditions would create a massive intersection, such as damage to safety or local ecology.

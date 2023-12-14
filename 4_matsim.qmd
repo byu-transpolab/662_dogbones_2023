@@ -12,7 +12,7 @@ library(kableExtra)
 ## Introduction
 
 This section will document the evaluation of projected 2050 volumes in \"build\" and \"no-build\" scenarios for the proposed redesign of the I-15 interchange at Main Street in Payson, Utah.
-The projected volumes were created using the Multi-Agent Transport Simulation (MATSim) (Association 2023).
+The projected volumes were created using MATSim [@MATSim].
 MATSim simulates individual travelers in a transportation network and \"trains\" them to find the optimal path during their tour by running the simulation through multiple iterations.
 This section will outline information for the population creation model, the MATSim network, forecasted volumes, the resulting turning counts from the MATSim model, and forecasted turning movement counts.
 
@@ -20,10 +20,10 @@ This section will outline information for the population creation model, the MAT
 
 The population creation model used is very simple.
 Given a total population, each person is given a random, normally-distributed home location within Payson.
-@tbl-locdist gives the mean and standard deviation of the latitude and longitude, given in WGS84 coordinates.
+@tbl-locdist gives the mean and standard deviation (SD) of the latitude and longitude, given in World Geodetic System coordinates.
 These values come from population-weighted block group data from the 2010 Census [@census_united_2010].
 @fig-loaded-network shows a sample of the population distribution.
-This is not very accurate, but is serviceable for the purposes of this project.
+This model is not a good fit to estimate household and trip destination locations, but is serviceable for the purposes of this project.
 
 | Mean Latitude | Mean Longitude | SD Latitude | SD Longitude |
 |---------------|----------------|-------------|--------------|
@@ -57,7 +57,7 @@ Based on information provided for this project, 42% of the total population was 
 
 "Home" tours include no activities outside the home.
 
-Mandatory tours consist of a trip to I-15 northbound (NB) or southbound (SB) and a possible discretionary activity on the way to the home location.
+Mandatory tours consist of a trip to I-15 NB or SB and a possible discretionary activity on the way to the home location.
 Coordinates were selected on the north and southern ends of the model to assign individuals to travel in such direction either going north to Spanish Fork/Provo and beyond, or south to Santaquin/Nephi and beyond.
 A random distribution assigned 95% of all mandatory trips northbound.
 The start times for mandatory activities were assigned randomly between 7 and 9 AM, and the end times between 4 and 6 PM.
