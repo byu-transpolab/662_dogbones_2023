@@ -22,7 +22,7 @@ format_los_comp_kbl <- function(los_comp) {
 }
 ```
 
-## Introduction
+## Overview
 
 After considering current traffic conditions, the team created a possible intersection redesign for the Main Street/I-15 interchange.
 This section will outline justification for pursuing a redesign of the intersection, the proposed roadway configuration, results from the build VISSIM model, comparisons to the existing model, and conclusions based on the comparison.
