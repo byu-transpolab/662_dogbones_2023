@@ -65,17 +65,17 @@ Later analysis when comparing these times to future models will have more signif
 #| label: fig-tt
 #| fig-cap: Travel time comparison between existing and build models.
 
-targets::tar_load(ex_am_traveltimes_formatted)
-targets::tar_load(build_am_traveltimes_formatted)
-targets::tar_load(ex_pm_traveltimes_formatted)
-targets::tar_load(build_pm_traveltimes_formatted)
+targets::tar_load(nobuild_am_traveltimes_formatted)
+targets::tar_load(build_2050_am_traveltimes_formatted)
+targets::tar_load(nobuild_pm_traveltimes_formatted)
+targets::tar_load(build_2050_pm_traveltimes_formatted)
 
-ex_am_traveltimes_formatted <- ex_am_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (AM)"))
-build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (AM)"))
-ex_pm_traveltimes_formatted <- ex_pm_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (PM)"))
-build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (PM)"))
+nobuild_am_traveltimes_formatted <- nobuild_am_traveltimes_formatted %>% mutate(Model = "No-Build", Label = paste0(Movement," (AM)"))
+build_2050_am_traveltimes_formatted <- build_2050_am_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (AM)"))
+nobuild_pm_traveltimes_formatted <- nobuild_pm_traveltimes_formatted %>% mutate(Model = "No-Build", Label = paste0(Movement," (PM)"))
+build_2050_pm_traveltimes_formatted <- build_2050_pm_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (PM)"))
 
-tt <- rbind(ex_am_traveltimes_formatted, build_am_traveltimes_formatted, ex_pm_traveltimes_formatted, build_pm_traveltimes_formatted) %>%
+tt <- rbind(nobuild_am_traveltimes_formatted, build_2050_am_traveltimes_formatted, nobuild_pm_traveltimes_formatted, build_2050_pm_traveltimes_formatted) %>%
   select(Model, Movement, Label, TT = `Average Travel Time (sec)`, Distance = `Average Distance Traveled (ft)`) %>%
   arrange(Label)
 
@@ -96,12 +96,12 @@ ggplot(tt) +
   geom_line(data = tt %>% filter(cont_y == 17), aes(x = TT, y = cont_y), color = "red") +
   geom_point(aes(x = TT, y = cont_y, color = Model), size = 2.5) +
   theme_bw() +
-  labs(x = "Travel Time (Seconds)",
+  labs(x = "Average Travel Time per Vehicle (seconds)",
        y = "Movement (Time of Day)") +
-   scale_y_continuous(breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17),
+   scale_y_continuous(breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17), 
                       labels = unique(tt$Label)) +
-  scale_color_manual(values = c("Build" = "slateblue", "Existing" = "red")) +
-  scale_x_continuous(breaks = seq(10,100,10), limits = c(0,NA), expand = expansion(mult = c(0,0.05))) +
+  scale_color_manual(values = c("Build" = "slateblue", "No-Build" = "red")) +
+  scale_x_continuous(trans = log_trans(), breaks = c(seq(0,50,10), 75, seq(100,500,100), 15, 150), minor_breaks = c(seq(0,100,5), seq(100,500,50)), limits = c(10,NA), expand = expansion(c(0,0.05))) +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank())
 

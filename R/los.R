@@ -85,23 +85,23 @@ format_turns <- function(data, intersection_translation) {
 }
 
 compare_los <- function(ref_los, comp_los, los_names = c("ref", "comp")) {
-  
-  ref_los %>% 
+  comp <- ref_los %>% 
     full_join(
       comp_los,
       join_by(intersection, leg, turn, type),
       suffix = paste0(" (", los_names, ")")) %>% 
     filter(
       type == "Movement",
-           ) %>% 
+    ) %>% 
     select(-contains("qlen"), -type) %>% 
     relocate(intersection, leg, turn, contains(los_names[1]), contains(los_names[2])) %>% 
     filter(!is.na(leg), !is.na(turn))
   
+  comp
 }
 
 format_los_comp <- function(los_comp, intersection_translation) {
-  los_comp %>% 
+  comp <- los_comp %>% 
     format_turns(intersection_translation) %>% 
     mutate(turn = case_when(
       turn == "l" ~ "Left",
@@ -117,4 +117,30 @@ format_los_comp <- function(los_comp, intersection_translation) {
       Approach = leg,
       Movement = turn
     )
+  
+  comp
+}
+
+compare_intersection_los <- function(scenarios = list()){
+  comp <- scenarios %>% 
+    map(
+      function(x){
+        filter(x, type == "Intersection") %>% 
+          select(intersection, avgdelay, LOS)
+      }
+    ) %>% 
+    bind_rows(.id = "scenario") %>% 
+    separate_wider_delim(scenario, "_", names = c("scenario", "time")) %>% 
+    mutate(
+      delay = paste0(LOS, " (", signif(avgdelay,3), " s/veh)"),
+      intersection = if_else(
+        intersection == 101,
+        "101*",
+        as.character(intersection)
+      )) %>% 
+    select(scenario, time, intersection, delay) %>% 
+    pivot_wider(names_from = scenario, values_from = delay) %>% 
+    arrange(time, intersection)
+  
+  comp
 }
