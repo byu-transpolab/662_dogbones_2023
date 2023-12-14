@@ -2,7 +2,6 @@
 
 library(targets)
 library(tarchetypes)
-library(lubridate)
 
 tar_option_set(
   packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
@@ -17,10 +16,10 @@ sapply(r_files, source)
 
 misc_targets <- tar_plan(
   count_bin_length <- 15, #minutes
-  tar_target(leg_translation_file, "data/leg_translation.csv", format = "file"),
-  tar_target(intersection_translation_file, "data/intersection_translation.csv", format = "file"),
+  tar_file(leg_translation_file, "data/leg_translation.csv"),
+  tar_file(intersection_translation_file, "data/intersection_translation.csv"),
   intersection_translation = readr::read_csv(intersection_translation_file),
-  tar_target(hcm_los_file, "data/hcm_los_key.csv", format = "file"),
+  tar_file(hcm_los_file, "data/hcm_los_key.csv"),
   hcm_los = make_hcm_los(hcm_los_file),
   signalized_intersections = tibble::tribble(
     ~intersection, ~signalized,
@@ -36,28 +35,25 @@ misc_targets <- tar_plan(
 
 counts_targets <- tar_plan(
   
-  #### Memo 1: Current Volumes ####
-  
-  tar_target(int100_file, "data/turning_counts/int100.xlsx", format = "file"),
-  tar_target(int101_file, "data/turning_counts/int101.xlsx", format = "file"),
-  tar_target(int102_file, "data/turning_counts/int102.xlsx", format = "file"),
-  tar_target(int103_file, "data/turning_counts/int103.xlsx", format = "file"),
+  tar_file(int100_file, "data/turning_counts/int100.xlsx"),
+  tar_file(int101_file, "data/turning_counts/int101.xlsx"),
+  tar_file(int102_file, "data/turning_counts/int102.xlsx"),
+  tar_file(int103_file, "data/turning_counts/int103.xlsx"),
   
   int100 = format_counts(int100_file, peak),
   int101 = format_counts(int101_file, peak),
   int102 = format_counts(int102_file, peak),
   int103 = format_counts(int103_file, peak),
   
-  counts_list = list(`100` = int100, `101` = int101, `102` = int102, `103` = int103),
-  counts = combine_counts(counts_list),
- 
+  counts = combine_counts(
+    list(`100` = int100, `101` = int101, `102` = int102, `103` = int103)),
 )
 
 network_ex_targets <- tar_plan(
   
   #### Data
-  tar_target(ex_nodes_file, "data/nodes_existing.csv", format = "file"),
-  tar_target(ex_edges_file, "data/edges_existing.csv", format = "file"),
+  tar_file(ex_nodes_file, "data/nodes_existing.csv"),
+  tar_file(ex_edges_file, "data/edges_existing.csv"),
   
   #### Analysis
   ex_graph = make_net_graph(ex_nodes_file, ex_edges_file, leg_translation_file),
@@ -74,31 +70,31 @@ memo_targets <- tar_plan(
   am_peak_turn_counts = get_hourly_turn_counts(counts, peak$AM),
   pm_peak_turn_counts = get_hourly_turn_counts(counts, peak$PM),
   
-  tar_target(ex_am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att", format = "file"),
+  tar_file(ex_am_results_file, "vissim/existing_2023_AM/existing_AM_Node Results.att"),
   ex_am_results = read_att(ex_am_results_file, lineskip = 28),
   ex_am_los = get_vissim_los(ex_am_results, signalized_intersections, ex_graph, hcm_los),
   ex_am_los_formatted = format_los(ex_am_los, intersection_translation),
   
-  tar_target(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att", format = "file"),
+  tar_file(ex_pm_results_file, "vissim/existing_2023_PM/existing_PM_Node Results.att"),
   ex_pm_results = read_att(ex_pm_results_file, lineskip = 28),
   ex_pm_los = get_vissim_los(ex_pm_results, signalized_intersections, ex_graph, hcm_los),
   ex_pm_los_formatted = format_los(ex_pm_los, intersection_translation),
   
-  tar_target(ex_am_traveltimes_file, "vissim/existing_2023_AM/existing_AM_Vehicle Travel Time Results.att", format = "file"),
+  tar_file(ex_am_traveltimes_file, "vissim/existing_2023_AM/existing_AM_Vehicle Travel Time Results.att"),
   ex_am_traveltimes = read_att(ex_am_traveltimes_file, lineskip = 19),
   ex_am_traveltimes_formatted = format_traveltimes(ex_am_traveltimes),
   
-  tar_target(ex_pm_traveltimes_file, "vissim/existing_2023_PM/existing_PM_Vehicle Travel Time Results.att", format = "file"),
+  tar_file(ex_pm_traveltimes_file, "vissim/existing_2023_PM/existing_PM_Vehicle Travel Time Results.att"),
   ex_pm_traveltimes = read_att(ex_pm_traveltimes_file, lineskip = 19),
   ex_pm_traveltimes_formatted = format_traveltimes(ex_pm_traveltimes),
   
   #### Memo 2: New Interchange ####
-  tar_target(build_am_results_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Node Results.att", format = "file"),
+  tar_file(build_am_results_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Node Results.att"),
   build_am_results = read_att(build_am_results_file, lineskip = 28),
   build_am_los = get_vissim_los(build_am_results, signalized_intersections, ex_graph, hcm_los),
   build_am_los_formatted = format_los(build_am_los, intersection_translation),
   
-  tar_target(build_pm_results_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Node Results.att", format = "file"),
+  tar_file(build_pm_results_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Node Results.att"),
   build_pm_results = read_att(build_pm_results_file, lineskip = 28),
   build_pm_los = get_vissim_los(build_pm_results, signalized_intersections, ex_graph, hcm_los),
   build_pm_los_formatted = format_los(build_pm_los, intersection_translation),
@@ -114,11 +110,11 @@ memo_targets <- tar_plan(
     los_names = c("Existing", "Build")),
   ex_build_pm_los_comp_formatted = format_los_comp(ex_build_pm_los_comp, intersection_translation),
   
-  tar_target(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att", format = "file"),
+  tar_file(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att"),
   build_am_traveltimes = read_att(build_am_traveltimes_file, lineskip = 20),
   build_am_traveltimes_formatted = format_traveltimes(build_am_traveltimes),
 
-  tar_target(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att", format = "file"),
+  tar_file(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att"),
   build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
   
