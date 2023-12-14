@@ -4,7 +4,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("tidyverse", "DiagrammeR", "gtools", "readxl"),
+  packages = c("tidyverse", "DiagrammeR", "gtools", "readxl", "scales"),
 )
 
 #Source R functions
@@ -155,6 +155,14 @@ no_build_targets <- tar_plan(
   nobuild_pm_results = read_att(nobuild_pm_results_file, lineskip = 28),
   nobuild_pm_los = get_vissim_los(nobuild_pm_results, signalized_intersections, ex_graph, hcm_los),
   nobuild_pm_los_formatted = format_los(nobuild_pm_los, intersection_translation),
+  
+  tar_file(nobuild_am_traveltimes_file, "vissim/existing_2050_AM/existing2050_AM_Vehicle Travel Time Results.att"),
+  nobuild_am_traveltimes = read_att(nobuild_am_traveltimes_file, lineskip = 18),
+  nobuild_am_traveltimes_formatted = format_traveltimes(nobuild_am_traveltimes),
+  
+  tar_file(nobuild_pm_traveltimes_file, "vissim/existing_2050_PM/existing2050_PM_Vehicle Travel Time Results.att"),
+  nobuild_pm_traveltimes = read_att(nobuild_pm_traveltimes_file, lineskip = 19),
+  nobuild_pm_traveltimes_formatted = format_traveltimes(nobuild_pm_traveltimes),
 )
 
 build_2050_targets <- tar_plan(
@@ -167,6 +175,14 @@ build_2050_targets <- tar_plan(
   build_2050_pm_results = read_att(build_2050_pm_results_file, lineskip = 28),
   build_2050_pm_los = get_vissim_los(build_2050_pm_results, signalized_intersections, ex_graph, hcm_los),
   build_2050_pm_los_formatted = format_los(build_2050_pm_los, intersection_translation),
+  
+  tar_file(build_2050_am_traveltimes_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Vehicle Travel Time Results.att"),
+  build_2050_am_traveltimes = read_att(build_2050_am_traveltimes_file, lineskip = 20),
+  build_2050_am_traveltimes_formatted = format_traveltimes(build_2050_am_traveltimes),
+
+  tar_file(build_2050_pm_traveltimes_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Vehicle Travel Time Results.att"),
+  build_2050_pm_traveltimes = read_att(build_2050_pm_traveltimes_file, lineskip = 19),
+  build_2050_pm_traveltimes_formatted = format_traveltimes(build_2050_pm_traveltimes),
 )
 
 final_analysis_targets <- tar_plan(
@@ -182,13 +198,7 @@ final_analysis_targets <- tar_plan(
     los_names = c("No-Build", "Build")),
   final_pm_los_comp_formatted = format_los_comp(final_pm_los_comp, intersection_translation),
 
-  tar_file(build_2050_am_traveltimes_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Vehicle Travel Time Results.att"),
-  build_2050_am_traveltimes = read_att(build_2050_am_traveltimes_file, lineskip = 20),
-  build_2050_am_traveltimes_formatted = format_traveltimes(build_2050_am_traveltimes),
 
-  tar_file(build_2050_pm_traveltimes_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Vehicle Travel Time Results.att"),
-  build_2050_pm_traveltimes = read_att(build_2050_pm_traveltimes_file, lineskip = 19),
-  build_2050_pm_traveltimes_formatted = format_traveltimes(build_2050_pm_traveltimes),
   
   intersection_los_comp = compare_intersection_los(
     list(
