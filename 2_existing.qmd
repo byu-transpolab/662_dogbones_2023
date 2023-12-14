@@ -144,16 +144,16 @@ The approaches include the 900 N and I-15 NB Off-ramp with LOS C. With additiona
 #| label: tbl-am-los
 #| tbl-cap: Existing Model Results (AM Peak)
 
-targets::tar_load(am_results)
-am_results %>% format_los()
+targets::tar_load(ex_am_results)
+ex_am_results %>% format_los()
 ```
 
 ```{r}
 #| label: tbl-pm-los
 #| tbl-cap: Existing Model Results (PM Peak)
 
-targets::tar_load(pm_results)
-pm_results %>% format_los()
+targets::tar_load(ex_pm_results)
+ex_pm_results %>% format_los()
 ```
 
 These results will be valuable for further analysis at the study location.
