@@ -27,15 +27,19 @@ los_kbl <- function(results) {
 
 ## Introduction
 
-To understand traffic needs for the interchange, the team created a existing model.
+To understand traffic needs for the interchange, the team created a existing conditions model.
+@fig-study-area shows imagery of the study area.
 This section will outline the existing interchange model parameters, model setup and results from the  model.
+
+
+![I-15 interchange at Main Street in Payson, Utah.](figures/study_area.png){#fig-study-area}
 
 ## Model Setup
 
 To model the interchange accurately, turning movement counts were collected for the intersections in the study area.
-Traffic cameras were set up on September 26, 2023 at the I-15 Northbound (NB) Interchange, I-15 Southbound (SB) Interchange, and Main St/900 North (900 N) to capture volumes.
+Traffic cameras were set up on September 26, 2023 at the I-15 Northbound (NB) Interchange, I-15 Southbound (SB) Interchange, and Main Street/900 North (900 N) to capture volumes.
 Volumes were then counted hand counted from the footage using CountPRO software [@CountPro].
-Automated Traffic Signal Performance Measure data [@ATSPM] were used for the volumes for Main St/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
+Automated Traffic Signal Performance Measure data [@ATSPM] were used for the volumes for Main Street/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
 It should be noted that the NB interchange was modeled as a five-leg intersection.
 These tables reference 800 N as the auxiliary fifth leg of this intersection because it is somewhat separated from the other approaches of the intersection, but still interacts with it.
 
@@ -80,7 +84,7 @@ Elevations, superelevations, and roadway crowns were not modeled in the network.
 On turns, reduced speed areas were placed to resemble driver behavior.
 
 Signal timing plans were obtained from UDOT's MaxView [@maxview] database on September 24th, 2023.
-The I-15 SB Interchange and Main St/600 N are fully actuated ring-barrier-controlled intersections, but are not coordinated.
+The I-15 SB Interchange and Main Street/600 N are fully actuated ring-barrier-controlled intersections, but are not coordinated.
 Timings and signal characteristics were modeled to match the timing plans and roadway geometry.
 
 Where appropriate, conflict areas, and priority rules were placed to govern vehicle behavior.
@@ -100,15 +104,15 @@ Thus, approximate OD movements were created and inputted into the model.
 #### show od figure
 
 No adjustment factors were used in the creation of input volumes, so the data do not reflect AADT, but are valid for the purposes of this study.
-Based on the collected data, an A.M.
-peak of 7:15--8:15 A.M., and an P.M.
-peak of 4:30--5:30 P.M.
+Based on the collected data, an AM
+peak of 7:15--8:15 AM, and an PM
+peak of 4:30--5:30 PM
 were estimated and corresponding values were used in the calculation of the input volumes and OD distribution.
 
 An initial loading period was implemented by duplicating "0--15" volumes.
 Following the loading period, a simulation run of 60 minutes (15-minute bins) was conducted.
-Ten model iterations of both A.M.
-and P.M.
+Ten model iterations of both AM
+and PM
 models were run.
 
 Travel time data was not collected for this network, nor was any Bluetooth or radar data collected.
@@ -117,13 +121,13 @@ No further elements were considered for the calibration of the model.
 
 ## Results
 
-Tables [-@tbl-am-los] and [-@tbl-pm-los] display the results of the analysis performed in the VISSIM model for both the A.M.
-and P.M.
+Tables [-@tbl-am-los] and [-@tbl-pm-los] display the results of the analysis performed in the VISSIM model for both the AM
+and PM
 peak periods.
 Level of Service (LOS) was determined from the Highway Capacity Manual 7^th^ edition [@hcm7] for this and future analyses throughout the report.
 Each of the approaches are performing relatively well under the existing conditions.
 Points of concern are approaches with a single lane that service all vehicle movements.
-The approaches include the 900 N and I-15 NB Off-ramp with LOS C. With additional loading, it is likely that the network could see considerable reductions in service capabilities.
+The approaches include the 900 N and I-15 NB off-ramp with LOS C. With additional loading, it is likely that the network could see considerable reductions in service capabilities.
 
 ```{r}
 #| label: tbl-am-los

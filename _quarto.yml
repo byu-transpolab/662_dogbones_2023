@@ -12,14 +12,14 @@ book:
       # orcid: 0000-0002-0815-3488
       affiliations:
         - ref: byucce
-    - name: Adam Hill
-      email: hilla25@byu.edu
-      # orcid:
-      affiliations:
-        - ref: byucce
     - name: Matthew Davis
       # email: gregmacfarlane@byu.edu
       # orcid: 0000-0003-3999-7584
+      affiliations:
+        - ref: byucce
+    - name: Adam Hill
+      email: hilla25@byu.edu
+      # orcid:
       affiliations:
         - ref: byucce
     - name: Sam Runyan

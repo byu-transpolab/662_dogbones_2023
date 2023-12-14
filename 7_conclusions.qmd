@@ -1,11 +1,34 @@
 # Conclusions and Recommendations
 
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+library(scales)
+
+format_los_comp_kbl <- function(los_comp) {
+  los_comp %>%
+  mutate(Intersection = ifelse(
+    Intersection == "SB Interchange",
+    "SB Interchange*",
+    Intersection
+  )) %>% 
+  kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
+  kable_styling(latex_options = "scale_down") %>% 
+  column_spec(column = 4:ncol(final_am_los_comp_formatted), width = "3cm") %>% 
+  collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
+  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
+}
+```
+
 ## Problem Statement
 
 The City of Payson tasked the team with an alternative design for the Payson Main Street I-15 interchange to handle future growth.
-The team modeled existing traffic patterns using VISSIM, and by using MATSim modeling software, a future growth rate of 30% over the next 27 years was predicted.
-The team created Future traffic models using VISSIM, and results were compiled and compared.
-The following section summarizes key results from the analysis.
+The team modeled existing traffic conditions using VISSIM, and by using MATSim modeling software, a future growth rate of 30% over the next 27 years was predicted.
+The team created future traffic models using VISSIM, and results were compiled and compared.
+This section summarizes key results from the analysis.
 
 ## Key Results
 
@@ -13,7 +36,16 @@ Initial conditions provide limited traffic-based justifications for the implemen
 However, due to a large number of intersection-related crashes, the team considered safety improvements.
 Additionally, if growth present exceeding 30%, traffic conditions during the PM peak will be such that they will necessitate some mitigation efforts.
 
-#### Add simplified comp table
+@tbl-final-intersection-comp compares the intersections***........***
+
+```{r}
+#| label: tbl-final-intersection-comp
+#| tbl-cap: Comparison of Intersection Delay and LOS
+
+targets::tar_read(intersection_los_comp) %>% 
+  mutate(time = str_to_upper(time)) %>% 
+  kbl()
+```
 
 The proposed mitigations include a dual roundabout/dogbone interchange.
 This design reduces speeds through the network and allows for safer pedestrian and bicycle access through the interchange.
@@ -22,7 +54,7 @@ However, the existing conditions would also likely perform adequately by adding 
 
 ## Recommendations
 
-The team recommends the following future steps for the Payson Main St. I-15 interchange:
+The team recommends the following future steps for the Payson Main Street. I-15 interchange:
 
 -   Implementing a redesign to increase capacity at the interchange is necessary due to the predicted heavy growth.
 

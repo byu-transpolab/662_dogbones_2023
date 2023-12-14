@@ -59,7 +59,7 @@ Based on information provided for this project, 42% of the total population was 
 
 Mandatory tours consist of a trip to I-15 NB or SB and a possible discretionary activity on the way to the home location.
 Coordinates were selected on the north and southern ends of the model to assign individuals to travel in such direction either going north to Spanish Fork/Provo and beyond, or south to Santaquin/Nephi and beyond.
-A random distribution assigned 95% of all mandatory trips northbound.
+A random distribution assigned 95% of all mandatory trips NB.
 The start times for mandatory activities were assigned randomly between 7 and 9 AM, and the end times between 4 and 6 PM.
 Mandatory tours were given a 50% chance to complete a discretionary trip.
 Discretionary trip destinations were selected from the same distribution described in @tbl-locdist.
@@ -102,10 +102,10 @@ $$ {#eq-growth}
 
 | Intersection   | 2022 24-hour Volume | 2050 24-hour Volume | Growth Rate (2022--2050) |
 |------------------|------------------|------------------|------------------|
-| 900 North      | 5295                | 7354                | 38.9%                    |
+| 900 N      | 5295                | 7354                | 38.9%                    |
 | SB Interchange | 7983                | 11101               | 39.1%                    |
 | NB Interchange | 8883                | 11716               | 31.9%                    |
-| 600 North      | 6806                | 8846                | 30.0%                    |
+| 600 N      | 6806                | 8846                | 30.0%                    |
 
 : Existing and Projected Turning Movement Counts {#tbl-tmc}
 
