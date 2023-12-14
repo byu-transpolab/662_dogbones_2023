@@ -121,7 +121,7 @@ format_los_comp <- function(los_comp, intersection_translation) {
   comp
 }
 
-compare_intersection_los <- function(scenarios = list()){
+compare_intersection_los <- function(scenarios = list(), intersection_translation){
   comp <- scenarios %>% 
     map(
       function(x){
@@ -131,16 +131,15 @@ compare_intersection_los <- function(scenarios = list()){
     ) %>% 
     bind_rows(.id = "scenario") %>% 
     separate_wider_delim(scenario, "_", names = c("scenario", "time")) %>% 
-    mutate(
-      delay = paste0(LOS, " (", signif(avgdelay,3), " s/veh)"),
-      intersection = if_else(
-        intersection == 101,
-        "101*",
-        as.character(intersection)
-      )) %>% 
+    mutate(delay = paste0(LOS, " (", signif(avgdelay,3), " s/veh)")) %>% 
     select(scenario, time, intersection, delay) %>% 
     pivot_wider(names_from = scenario, values_from = delay) %>% 
-    arrange(time, intersection)
+    arrange(time, intersection) %>% 
+    left_join(intersection_translation, join_by(intersection == intersection_num)) %>% 
+    select(-intersection) %>% 
+    rename(intersection = intersection_name) %>% 
+    relocate(time, intersection) %>% 
+    mutate(time = str_to_upper(time))
   
   comp
 }

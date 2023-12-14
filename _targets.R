@@ -166,21 +166,21 @@ no_build_targets <- tar_plan(
 )
 
 build_2050_targets <- tar_plan(
-  tar_file(build_2050_am_results_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Node Results.att"),
+  tar_file(build_2050_am_results_file, "vissim/build_doubleln_2050_AM/build_2050_AMa_Node Results.att"),
   build_2050_am_results = read_att(build_2050_am_results_file, lineskip = 28),
   build_2050_am_los = get_vissim_los(build_2050_am_results, signalized_intersections, ex_graph, hcm_los),
   build_2050_am_los_formatted = format_los(build_2050_am_los, intersection_translation),
   
-  tar_file(build_2050_pm_results_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Node Results.att"),
+  tar_file(build_2050_pm_results_file, "vissim/build_doubleln_2050_PM/build_2050_PMa_Node Results.att"),
   build_2050_pm_results = read_att(build_2050_pm_results_file, lineskip = 28),
   build_2050_pm_los = get_vissim_los(build_2050_pm_results, signalized_intersections, ex_graph, hcm_los),
   build_2050_pm_los_formatted = format_los(build_2050_pm_los, intersection_translation),
   
-  tar_file(build_2050_am_traveltimes_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Vehicle Travel Time Results.att"),
+  tar_file(build_2050_am_traveltimes_file, "vissim/build_doubleln_2050_AM/build_2050_AMa_Vehicle Travel Time Results.att"),
   build_2050_am_traveltimes = read_att(build_2050_am_traveltimes_file, lineskip = 20),
   build_2050_am_traveltimes_formatted = format_traveltimes(build_2050_am_traveltimes),
 
-  tar_file(build_2050_pm_traveltimes_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Vehicle Travel Time Results.att"),
+  tar_file(build_2050_pm_traveltimes_file, "vissim/build_doubleln_2050_PM/build_2050_PMa_Vehicle Travel Time Results.att"),
   build_2050_pm_traveltimes = read_att(build_2050_pm_traveltimes_file, lineskip = 19),
   build_2050_pm_traveltimes_formatted = format_traveltimes(build_2050_pm_traveltimes),
 )
@@ -208,7 +208,8 @@ final_analysis_targets <- tar_plan(
       "No-Build_pm" = nobuild_pm_los,
       "Build_am" = build_2050_am_los,
       "Build_pm" = build_2050_pm_los
-      )
+      ),
+    intersection_translation
     ),
   
 )

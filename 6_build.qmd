@@ -6,8 +6,21 @@
 
 library(tidyverse)
 library(kableExtra)
-library(ggplot2)
 library(scales)
+
+format_los_comp_kbl <- function(los_comp) {
+  los_comp %>%
+  mutate(Intersection = ifelse(
+    Intersection == "SB Interchange",
+    "SB Interchange*",
+    Intersection
+  )) %>% 
+  kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
+  kable_styling(latex_options = "scale_down") %>% 
+  column_spec(column = 4:ncol(ex_build_am_los_comp_formatted), width = "3cm") %>% 
+  collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
+  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
+}
 ```
 
 ## Introduction
@@ -42,9 +55,7 @@ Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results 
 
 targets::tar_load(ex_build_am_los_comp_formatted)
 
-## update for the build and no build
-
-# ex_build_am_los_comp_formatted %>% format_los_comp_kbl()
+ex_build_am_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 ```{r}
@@ -53,7 +64,7 @@ targets::tar_load(ex_build_am_los_comp_formatted)
 
 targets::tar_load(ex_build_pm_los_comp_formatted)
 
-# ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
+ex_build_pm_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
@@ -106,6 +117,19 @@ ggplot(tt) +
         panel.grid.minor.y = element_blank())
 
 ```
+
+
+@tbl-final-intersection-comp compares the intersections***........***
+
+```{r}
+#| label: tbl-final-intersection-comp
+#| tbl-cap: Comparison of Intersection Delay and LOS
+
+targets::tar_read(intersection_los_comp) %>% 
+  mutate(time = str_to_upper(time)) %>% 
+  kbl()
+```
+
 
 ## Conclusion
 
