@@ -115,7 +115,7 @@ memo_targets <- tar_plan(
   tar_file(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att"),
   build_am_traveltimes = read_att(build_am_traveltimes_file, lineskip = 20),
   build_am_traveltimes_formatted = format_traveltimes(build_am_traveltimes),
-
+  
   tar_file(build_pm_traveltimes_file, "vissim/build_doubleln_2023_PM/build_2023_PM_Vehicle Travel Time Results.att"),
   build_pm_traveltimes = read_att(build_pm_traveltimes_file, lineskip = 19),
   build_pm_traveltimes_formatted = format_traveltimes(build_pm_traveltimes),
@@ -143,11 +143,53 @@ memo_targets <- tar_plan(
   #ex_od_routes = get_od_routes(ex_graph),
   new_od_pcts = get_od_pcts(new_turn_pcts, ex_od_routes, "data/vissim_inputs/new_od_pcts.csv"),
   new_approach_vols = get_approach_vols(new_counts, ex_graph, peak, count_bin_length, "data/vissim_inputs/new_vols.csv"),
-  
-  
 )
 
+no_build_targets <- tar_plan(
+  tar_file(nobuild_am_results_file, "vissim/existing_2050_AM/existing2050_AM_Node Results.att"),
+  nobuild_am_results = read_att(nobuild_am_results_file, lineskip = 28),
+  nobuild_am_los = get_vissim_los(nobuild_am_results, signalized_intersections, ex_graph, hcm_los),
+  nobuild_am_los_formatted = format_los(nobuild_am_los, intersection_translation),
   
+  tar_file(nobuild_pm_results_file, "vissim/existing_2050_PM/existing2050_PM_Node Results.att"),
+  nobuild_pm_results = read_att(nobuild_pm_results_file, lineskip = 28),
+  nobuild_pm_los = get_vissim_los(nobuild_pm_results, signalized_intersections, ex_graph, hcm_los),
+  nobuild_pm_los_formatted = format_los(nobuild_pm_los, intersection_translation),
+)
+
+build_2050_targets <- tar_plan(
+  tar_file(build_2050_am_results_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Node Results.att"),
+  build_2050_am_results = read_att(build_2050_am_results_file, lineskip = 28),
+  build_2050_am_los = get_vissim_los(build_2050_am_results, signalized_intersections, ex_graph, hcm_los),
+  build_2050_am_los_formatted = format_los(build_2050_am_los, intersection_translation),
+  
+  tar_file(build_2050_pm_results_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Node Results.att"),
+  build_2050_pm_results = read_att(build_2050_pm_results_file, lineskip = 28),
+  build_2050_pm_los = get_vissim_los(build_2050_pm_results, signalized_intersections, ex_graph, hcm_los),
+  build_2050_pm_los_formatted = format_los(build_2050_pm_los, intersection_translation),
+)
+
+final_analysis_targets <- tar_plan(
+  
+  final_am_los_comp = compare_los(
+    nobuild_am_los,
+    build_2050_am_los,
+    los_names = c("No-Build", "Build")),
+  final_am_los_comp_formatted = format_los_comp(final_am_los_comp, intersection_translation),
+  final_pm_los_comp = compare_los(
+    nobuild_pm_los,
+    build_2050_pm_los,
+    los_names = c("No-Build", "Build")),
+  final_pm_los_comp_formatted = format_los_comp(final_pm_los_comp, intersection_translation),
+
+  tar_file(build_2050_am_traveltimes_file, "vissim/build_doubleln_2050_AM/build_2050_AM_Vehicle Travel Time Results.att"),
+  build_2050_am_traveltimes = read_att(build_2050_am_traveltimes_file, lineskip = 20),
+  build_2050_am_traveltimes_formatted = format_traveltimes(build_2050_am_traveltimes),
+
+  tar_file(build_2050_pm_traveltimes_file, "vissim/build_doubleln_2050_PM/build_2050_PM_Vehicle Travel Time Results.att"),
+  build_2050_pm_traveltimes = read_att(build_2050_pm_traveltimes_file, lineskip = 19),
+  build_2050_pm_traveltimes_formatted = format_traveltimes(build_2050_pm_traveltimes),
+)
 
 #### Run all targets ###########################################################
 
@@ -156,4 +198,7 @@ tar_plan(
   counts_targets,
   network_ex_targets,
   memo_targets,
+  no_build_targets,
+  build_2050_targets,
+  final_analysis_targets,
 )
