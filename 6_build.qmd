@@ -23,7 +23,7 @@ format_los_comp_kbl <- function(los_comp) {
 }
 ```
 
-## Introduction
+## Overview
 
 MATSim modeling software roughly predicted future growth in the Payson area.
 The team used a growth rate of 30% over the next 27 years to predict impacts on the existing and built models.
