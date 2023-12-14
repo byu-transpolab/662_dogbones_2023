@@ -40,6 +40,8 @@ An important aspect in considering the redesign of this interchange is the type 
 From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWare database.
 Of these, none were fatal, and the majority were no injury/property damage only.
 The collisions were primarily angled, front to rear, and sideswipe, with a single head on collision.
+These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
+<!-- This location is an opportunity to reduce crash risk as UDOT strives to reach "Zero Fatalities" [@fatalities]. -->
 
 ![Crash site data for study area.](figures/crash2e.png){#fig-crashes}
 
@@ -73,9 +75,6 @@ The collisions were primarily angled, front to rear, and sideswipe, with a singl
 
 : Crash Movement Type Distribution {#tbl-movement}
 
-These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
-This location is an opportunity to reduce crash risk as UDOT strives to reach "Zero Fatalities" [@fatalities].
-
 This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections would increase crash likelihood.
 Additionally, with growth in volume, these intersections could soon reach capacity resulting in unacceptable levels of delay.
 
@@ -93,8 +92,7 @@ Key elements of the design are listed below:
 
 ##### General
 
--   Speeds in the roundabout were reduced to 15 miles per hour (MPH)
--   Curvature on entering movements were designed to slow down vehicles entering the intersection
+-   Speeds in the roundabout were reduced to 15 miles per hour (MPH).Curvature on entering movements were designed to slow down vehicles entering the intersection
 -   Curvature on the exiting movements were designed to allow for easy flow out of the intersection where practical. Accommodations were made in areas with minimal merge areas and topography constraints
 -   Minimal driver behavior constraints were needed for this model due to the lack of direct vehicle conflict. The only constraints added were priority rules on merges onto the roundabouts
 -   Lane changes were restricted in a few areas to reduce merge conflicts
