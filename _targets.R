@@ -208,7 +208,8 @@ final_analysis_targets <- tar_plan(
       "No-Build_pm" = nobuild_pm_los,
       "Build_am" = build_2050_am_los,
       "Build_pm" = build_2050_pm_los
-      )
+      ),
+    intersection_translation
     ),
   
 )

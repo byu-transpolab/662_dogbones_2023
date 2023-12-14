@@ -118,6 +118,19 @@ ggplot(tt) +
 
 ```
 
+
+@tbl-final-intersection-comp compares the intersections***........***
+
+```{r}
+#| label: tbl-final-intersection-comp
+#| tbl-cap: Comparison of Intersection Delay and LOS
+
+targets::tar_read(intersection_los_comp) %>% 
+  mutate(time = str_to_upper(time)) %>% 
+  kbl()
+```
+
+
 ## Conclusion
 
 Under the No-Build intersection design, the model fails during the PM peak, exhibiting LOS F at all intersections.
