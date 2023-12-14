@@ -35,7 +35,7 @@ To simulate future growth in the region, the team multiplied existing 2023 traff
 VISSIM models then simulated future traffic conditions.
 The team implemented the additional modifications listed below to simulate future situations:
 
--   Signal timings were adjusted using Synchro (source?) to provide optimal cycle lengths and split timings.
+-   Signal timings were adjusted using Synchro [@Synchro] to provide optimal cycle lengths and split timings.
     The team used a 150-second cycle length in all signals and optimized splits under existing signal characteristics.
 
 -   The team modified the build model to allow double lane circulation on the SB interchange between the off and on-ramps.
@@ -47,7 +47,9 @@ The team implemented the additional modifications listed below to simulate futur
 
 ## Results
 
-Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results Build model in the AM and PM peak periods, compared with the No-Build scenario model.
+Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results Build model in the AM and PM peak periods, compared with the No-Build scenario model. 
+The build model experiences decreases in vehicle delay for most traffic movemements for the AM and PM peak, but especially for the PM peak. 
+There are a few movements where delays increase slightly in the Build model, but these are vastly overshadowed by the decreases in vehicle delay.
 
 ```{r}
 #| label: tbl-am-los-comp_build
@@ -69,7 +71,9 @@ final_pm_los_comp_formatted %>% format_los_comp_kbl()
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
 @fig-tt_build compares average travel times from the Build model with the No-Build model for both AM and PM peak periods.
-However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
+Some travel distances are increased due to the roundabout design, and the increases in travel time are likely due to this increase in distance. 
+However, the SBT, SBN, NBT, and NBS movements experienced significant travel time reductions in the Build model in the PM peak. 
+This is due to the large reduction in vehicle delay in the Build model as shown in @tbl-pm-los-comp-build.
 
 
 ```{r}

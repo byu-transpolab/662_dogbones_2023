@@ -92,7 +92,7 @@ Key elements of the design are listed below:
 
 ##### General
 
--   Speeds in the roundabout were reduced to 15 miles per hour (MPH).Curvature on entering movements were designed to slow down vehicles entering the intersection
+-   Speeds in the roundabout were reduced to 15 miles per hour (MPH). Curvature on entering movements were designed to slow down vehicles entering the intersection
 -   Curvature on the exiting movements were designed to allow for easy flow out of the intersection where practical. Accommodations were made in areas with minimal merge areas and topography constraints
 -   Minimal driver behavior constraints were needed for this model due to the lack of direct vehicle conflict. The only constraints added were priority rules on merges onto the roundabouts
 -   Lane changes were restricted in a few areas to reduce merge conflicts
