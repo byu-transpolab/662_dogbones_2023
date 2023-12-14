@@ -11,8 +11,8 @@ This study will provide a second evaluation of the existing conditions and poten
 
 The following report will consist of six sections.
 First, the team will explain the model existing conditions created using traffic counts and signal timing plans.
-Second, future configurations will presented with justifications from existing crash data.
-Third, the team will approximate future growth rates using the Multi-Agent Transport Simulation (MATSim) modeling package.
+Second, future configurations will be presented with justifications from existing crash data.
+Third, the team will approximate future growth rates using the Multi-Agent Transport Simulation (MATSim) modeling package [@MATSim].
 Fourth, resiliency during various car-following model variations will be checked.
 Fifth, results from the no-build and build models will be reviewed.
 The team will then summarize key findings and provide recommendations for future consideration.

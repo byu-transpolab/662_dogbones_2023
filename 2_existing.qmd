@@ -28,7 +28,7 @@ los_kbl <- function(results) {
 
 ## Introduction
 
-To understand traffic needs for the interchange, the team created a existing conditions model.
+To understand traffic needs for the interchange, the team created an existing conditions model.
 @fig-study-area shows imagery of the study area.
 This section will outline the existing interchange model parameters, model setup and results from the  model.
 
@@ -68,15 +68,15 @@ Specifically at 800 N, volumes entering and exiting the approach were quite low,
 
 These turning movement counts were used as inputs for a model built with PTV VISSIM [@VISSIM].
 The VISSIM model also required the roadway geometry to be modeled using links and nodes, which loosely follow the actual geometry of the interchange.
-This construction of this model is outlined in this section.
+The construction of this model is outlined in this section.
 
-The VISSIM model was developed off the UDOT VISSIM template [@template] and is shown in @fig-vissim_existing_all.
+The VISSIM model was developed from the UDOT VISSIM template [@template] and is shown in @fig-vissim_existing_all.
 The template provided speed distributions and driver characteristics approved by the UDOT Traffic group.
 
 ![Existing VISSIM Model](figures/existing/everythinge.png){#fig-vissim_existing_all}
 
-Desired speed decisions were modeled based off posted speed limits and confirmed with the UDOT Speed Limit Map [@SpeedLimits].
-Roadway geometries were based off the most current versions of the Google Roadview imagery [@Google].
+Desired speed decisions were modeled based on posted speed limits and confirmed with the UDOT Speed Limit Map [@SpeedLimits].
+Roadway geometries were based on the most current versions of the Google Roadview imagery [@Google].
 A brief site visit was conducted by a member of the team to confirm key roadway characteristics.
 
 Geometries were loosely designed with the only measurements being the left and right turn bays.
