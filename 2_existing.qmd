@@ -97,7 +97,7 @@ A network graph and turning movement percentages were calculated for each node.
 Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
 Thus, approximate OD movements were created and inputted into the model.
 
-<!-- show the od figure? -->
+#### show od figure
 
 No adjustment factors were used in the creation of input volumes, so the data do not reflect AADT, but are valid for the purposes of this study.
 Based on the collected data, an A.M.
