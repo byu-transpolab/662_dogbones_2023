@@ -24,12 +24,12 @@ format_los_comp_kbl <- function(los_comp) {
 
 ## Introduction
 
-This section will document the consideration of a redesigned interchange at I-15 and Main Street in Payson, Utah.
+After considering current traffic conditions, the team created a possible intersection redesign for the Main St/I-15 interchange.
 This section will outline justification for pursuing a redesign of the intersection, the proposed roadway configuration, results from the build VISSIM model, comparisons to the existing model, and conclusions based on the comparison.
 
 ## Build Justifications
 
-During existing conditions, traffic conditions operate during peak periods at a Level of Service (LOS) C or above with an overall intersection LOS of A or B.
+During existing conditions, traffic conditions operated  at a LOS C or above during peak periods with an overall intersection LOS of A or B.
 Based on performance alone, a redesign is not warranted.
 However, performance is not the only criterion that can warrant a redesign, and safety concerns were evident when conducting the existing study.
 
@@ -37,12 +37,12 @@ Crash data was collected for the I-15/Main St Interchange from @aashto for betwe
 @fig-crashes shows the crash locations as detailed in Tables [-@tbl-kabco]--[-@tbl-movement].
 
 An important aspect in considering the redesign of this interchange is the type and manner of crashes occurring at the site.
-From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWARE database.
-Of these none were fatal, and the majority were no injury/property damage only.
+From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWare database.
+Of these, none were fatal, and the majority were no injury/property damage only.
 The collisions were primarily angled, front to rear, and sideswipe, with a single head on collision.
 
 These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
-This location is an opportunity to reduce crash risk in Utah as the Utah Department of Transportation strives to reach "Zero Fatalities" [@fatalities].
+This location is an opportunity to reduce crash risk as UDOT strives to reach "Zero Fatalities" [@fatalities].
 
 ![Crash site data for study area.](figures/crash2e.png){#fig-crashes}
 
@@ -79,8 +79,8 @@ This location is an opportunity to reduce crash risk in Utah as the Utah Departm
 This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections would increase crash likelihood.
 Additionally, with growth in volume, these intersections could soon reach capacity resulting in unacceptable levels of delay.
 
-In order to address these safety concerns, a modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main St interchange.
-Of the crashes indicated in Tables 1-3, approximately 30% of crashes (angle and head-on) are eliminated with this design, as movements across opposing traffic are not possible.
+To address these safety concerns, a modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main St interchange.
+Of the crashes indicated in [-@tbl-kabco]--[-@tbl-movement], approximately 30% of crashes (angle and head-on) are eliminated with this design, as movements across opposing traffic are not possible.
 Additionally, vehicle speed is significantly reduced with this design, and so could reduce the frequency of sideswipe and rear-end collisions.
 
 The double lane feature of the proposed model also allows for increased capacity to accommodate future growth.
@@ -93,7 +93,7 @@ Key elements of the design are listed below:
 
 ##### General
 
--   Speeds in the roundabout were reduced to 15 MPH
+-   Speeds in the roundabout were reduced to 15 miles per hour (MPH)
 -   Curvature on entering movements were designed to slow down vehicles entering the intersection
 -   Curvature on the exiting movements were designed to allow for easy flow out of the intersection where practical. Accommodations were made in areas with minimal merge areas and topography constraints
 -   Minimal driver behavior constraints were needed for this model due to the lack of direct vehicle conflict. The only constraints added were priority rules on merges onto the roundabouts
@@ -104,11 +104,9 @@ Key elements of the design are listed below:
 -   A channelized right turn from the NB I-15 Off-Ramp was added to reduce conflicts in the roundabout
 -   A double lane SB exit was continued with a 150' merge section with the channelized right turn. The double lane continues to the intersection with 600 N
 -   A double entry was added to the NB approach starting about 150' before the intersection
--   800 N was rerouted to enter the southeastern end of the roundabout, not the northeastern end. However, a channelized right turn to the I-15 NB On-Ramp was added to reduce roundabout conflicts
+-   800 N was rerouted to enter the southeastern end of the roundabout, not the northeastern end. However, a channelized right turn to the I-15 NB On-Ramp was added to reduce roundabout conflicts. This could lead to unsafe driving conditions as drivers will have to look over their shoulder to avoid conflicts, but given the reduction in speeds necessary to complete this u-turn, it is expected that drivers will have enough time to stop if needed to allow for safer gaps.
 -   A double lane exit to the NB I-15 On-Ramp was added to accommodate the double lane roundabout. This removes one lane from the roundabout following the on-ramp to be added with the SB approach
 -   A single lane NB exit was preserved but the NB movement adds a lane shortly after the intersection to allow for easier accommodation of the north double lane roundabout
-
-{{< pagebreak >}}
 
 ##### Main St / SB I-15 Interchange
 
@@ -123,9 +121,8 @@ These changes to the roadway geometry will necessitate an expansion of the Main 
 The earthen slopes on the SB off-ramp and NB on/off-ramps will also need to be reconstructed to allow for space for the new construction.
 
 To allow for future growth, the model was stress tested to 1.25 and 1.75 times the existing volumes for both AM and PM conditions.
-Queues were present one the 1.75 iterations on the off-ramps and the 900 N and 600 N intersections.
-However, the interchange appeared to perform adequately.
-A future memorandum will detail how the model performs under detailed growth.
+Queues were present during the 1.75 iterations on the off-ramps and the 900 N and 600 N intersections.
+However, under preliminary inspection the interchange appeared to perform adequately.
 
 ![Build model at I-15 NB Interchange.](figures/build/102e.png){#fig-102e}
 
@@ -133,13 +130,10 @@ A future memorandum will detail how the model performs under detailed growth.
 
 ![Build model (overview).](figures/build/everythinge.png){#fig-everythinge}
 
-{{< pagebreak >}}
-
 ## Results
 
 Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results of the analysis performed in the VISSIM model for the AM and PM peak periods, compared with the existing scenario model.
-LOS was determined from the Highway Capacity Manual 7th edition [@hcm7].
-Note the existing model delay and LOS differ slightly from the existing conditions memo as minor changes were made in the existing model as minor errors were discovered.
+Note the existing model delay and LOS differ slightly from the existing conditions as changes were made in the existing model as errors were discovered during the redesign.
 
 ```{r}
 #| label: tbl-am-los-comp
@@ -167,7 +161,7 @@ Reasons for this would be as the south bound movement receives more continuous v
 Another reason could be a slight adjustment to the ring barrier diagram that was assumed to be minimal and was not reflected in the existing model.
 Future reports with the existing model will be edited to show this adjustment.
 
-Overall, the build model performs better than the existing model.
+Overall, the build model performed better than the existing model.
 There are a few exceptions but those were previously mentioned and are expected due to the characteristics of a dog-bone interchange.
 
 The VISSIM model also produced travel times by recording the time when a vehicle passed through an origin location and the time it passed through a destination location.
@@ -179,7 +173,7 @@ The travel times for each vehicle and each model run were then averaged and summ
 @fig-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
 However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
 Additionally, the increase in travel time is explained by the reduction in speeds from 30 MPH to 15 MPH.
-Later analysis when comparing these times to future models will have more significant interpretations.
+<!-- Later analysis when comparing these times to future models will have more significant interpretations. -->
 
 ```{r}
 #| label: fig-tt
@@ -191,9 +185,9 @@ targets::tar_load(ex_pm_traveltimes_formatted)
 targets::tar_load(build_pm_traveltimes_formatted)
 
 ex_am_traveltimes_formatted <- ex_am_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (AM)"))
-build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Build (2023)", Label = paste0(Movement," (AM)"))
+build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (AM)"))
 ex_pm_traveltimes_formatted <- ex_pm_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (PM)"))
-build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Build (2023)", Label = paste0(Movement," (PM)"))
+build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (PM)"))
 
 tt <- rbind(ex_am_traveltimes_formatted, build_am_traveltimes_formatted, ex_pm_traveltimes_formatted, build_pm_traveltimes_formatted) %>%
   select(Model, Movement, Label, TT = `Average Travel Time (sec)`, Distance = `Average Distance Traveled (ft)`) %>%
@@ -216,18 +210,16 @@ ggplot(tt) +
   geom_line(data = tt %>% filter(cont_y == 17), aes(x = TT, y = cont_y), color = "red") +
   geom_point(aes(x = TT, y = cont_y, color = Model), size = 2.5) +
   theme_bw() +
-  labs(x = "Average Travel Time per Vehicle (seconds)",
+  labs(x = "Travel Time (Seconds)",
        y = "Movement (Time of Day)") +
    scale_y_continuous(breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17), 
                       labels = unique(tt$Label)) +
-  scale_color_manual(values = c("Build (2023)" = "slateblue", "Existing" = "red")) +
+  scale_color_manual(values = c("Build" = "slateblue", "Existing" = "red")) +
   scale_x_continuous(breaks = seq(10,100,10), limits = c(0,NA), expand = expansion(mult = c(0,0.05))) +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank())
 
 ```
-
-{{< pagebreak >}}
 
 ## Conclusions
 
@@ -237,4 +229,4 @@ Not visible in the model, however, are the dramatic changes in safety with the r
 This model allows for safer and more controlled travel through the interchange on all approaches.
 
 This redesign of the interchange is recommended for consideration with future volumes.
-Additional consideration should be given to pedestrian and bicycle user access in future design plans.
+Additional consideration should be given to pedestrian and bicycle user access in future design plans to ensure safe travel opportunities and operation efficiency.

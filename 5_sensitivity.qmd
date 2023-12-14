@@ -12,11 +12,11 @@ library(kableExtra)
 ## Introduction
 
 The team conducted a sensitivity analysis to evaluate if the design model resists changes in driver parameters.
-This section will outline information for sensitivity analysis methdology, results and conlcusion.
+This section will outline information for sensitivity analysis methodology, results and conclusion.
 
 ## Methodology
 
-The Utah Department of Transportation (UDOT) requires consultants to use the Wiedemann 74 model for urban roadways and provides "reasonable values" for the additive and multiplicative parts of the safety distance calculations.
+UDOT requires consultants to use the Wiedemann 74 model for urban roadways and provides "reasonable values" for the additive and multiplicative parts of the safety distance calculations.
 @tbl-udot-values illustrates these values.
 The Wiedemann 74 car-following model also includes an "average standstill distance" parameter, but UDOT does not permit changing this value.
 We will leave this value at its default of 6.56 feet.

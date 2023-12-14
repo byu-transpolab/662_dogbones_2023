@@ -13,6 +13,8 @@ Initial conditions provide limited traffic-based justifications for the implemen
 However, due to a large number of intersection-related crashes, the team considered safety improvements.
 Additionally, if growth present exceeding 30%, traffic conditions during the PM peak will be such that they will necessitate some mitigation efforts.
 
+#### Add simplified comp table
+
 The proposed mitigations include a dual roundabout/dogbone interchange.
 This design reduces speeds through the network and allows for safer pedestrian and bicycle access through the interchange.
 Additionally, the design provides satisfactory traffic flow conditions within the reason for the heavy traffic volumes.
