@@ -104,12 +104,12 @@ memo_targets <- tar_plan(
   ex_build_am_los_comp = compare_los(
     ex_am_los,
     build_am_los,
-    los_names = c("Existing", "Build (2023)")),
+    los_names = c("Existing", "Build 2023")),
   ex_build_am_los_comp_formatted = format_los_comp(ex_build_am_los_comp, intersection_translation),
   ex_build_pm_los_comp = compare_los(
     ex_pm_los,
     build_pm_los,
-    los_names = c("Existing", "Build (2023)")),
+    los_names = c("Existing", "Build 2023")),
   ex_build_pm_los_comp_formatted = format_los_comp(ex_build_pm_los_comp, intersection_translation),
   
   tar_file(build_am_traveltimes_file, "vissim/build_doubleln_2023_AM/build_2023_AM_Vehicle Travel Time Results.att"),

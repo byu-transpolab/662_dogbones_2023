@@ -19,7 +19,7 @@ format_los_comp_kbl <- function(los_comp) {
   kable_styling(latex_options = "scale_down") %>% 
   column_spec(column = 4:ncol(final_am_los_comp_formatted), width = "3cm") %>% 
   collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
-  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
+  footnote(symbol = "This intersection is signalized in the no-build model, but is unsignalized in the build model.")
 }
 ```
 

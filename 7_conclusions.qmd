@@ -7,20 +7,6 @@
 library(tidyverse)
 library(kableExtra)
 library(scales)
-
-format_los_comp_kbl <- function(los_comp) {
-  los_comp %>%
-  mutate(Intersection = ifelse(
-    Intersection == "SB Interchange",
-    "SB Interchange*",
-    Intersection
-  )) %>% 
-  kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
-  kable_styling(latex_options = "scale_down") %>% 
-  column_spec(column = 4:ncol(final_am_los_comp_formatted), width = "3cm") %>% 
-  collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
-  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
-}
 ```
 
 ## Problem Statement
@@ -43,8 +29,19 @@ Additionally, if growth present exceeding 30%, traffic conditions during the PM 
 #| tbl-cap: Comparison of Intersection Delay and LOS
 
 targets::tar_read(intersection_los_comp) %>% 
-  mutate(time = str_to_upper(time)) %>% 
-  kbl()
+  mutate(
+    time = str_to_upper(time),
+    intersection = if_else(
+      intersection == "SB Interchange",
+      "SB Interchange*",
+      intersection
+    )
+    ) %>% 
+  kbl(align = "c", booktabs = TRUE, linesep = "",
+      col.names = c(" ", "Intersection", "Existing", "No-Build", "Build")) %>% 
+  kable_styling(latex_options = "scale_down") %>% 
+  collapse_rows(columns = 1, valign = "middle") %>% 
+  footnote(symbol = "This intersection is signalized in the existing and no-build models, but is unsignalized in the build model.")
 ```
 
 The proposed mitigations include a dual roundabout/dogbone interchange.
