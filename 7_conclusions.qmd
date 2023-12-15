@@ -12,7 +12,7 @@ library(scales)
 ## Problem Statement
 
 The City of Payson tasked the team to find an alternative design for the Payson Main Street I-15 interchange to handle future growth.
-The team modeled existing traffic conditions using VISSIM, and by using MATSim modeling software, a future growth rate of 30% over the next 27 years was predicted.
+The team modeled existing traffic conditions using VISSIM, and by using MATSim modeling software, future growth rates over the next 27 years was predicted.
 The team created future traffic models using VISSIM, and results were compiled and compared.
 This section summarizes key results from the analysis.
 
@@ -22,7 +22,7 @@ Initial conditions provide limited traffic-based justifications for a redesign o
 However, due to a large number of intersection-related crashes, the team considered safety improvements as further justification for a redesign.
 Additionally, if growth exceeds 30%, traffic conditions during the PM peak will be such that they will necessitate some traffic congestion mitigation efforts.
 
-@tbl-final-intersection-comp compares the intersections from the existing, future No-Build, and future Build conditions.
+@tbl-final-intersection-comp compares the intersections from the Existing, 2050 No-Build, and 2050 Build conditions.
 
 ```{r}
 #| label: tbl-final-intersection-comp
@@ -41,7 +41,7 @@ targets::tar_read(intersection_los_comp) %>%
       col.names = c(" ", "Intersection", "Existing", "No-Build", "Build")) %>% 
   kable_styling(latex_options = "scale_down") %>% 
   collapse_rows(columns = 1, valign = "middle") %>% 
-  footnote(symbol = "This intersection is signalized in the existing and no-build models, but is unsignalized in the build model.")
+  footnote(symbol = "This intersection is signalized in the Existing and No-Build models, but is unsignalized in the Build model.")
 ```
 
 The proposed redesign includes a dual roundabout/dogbone interchange.

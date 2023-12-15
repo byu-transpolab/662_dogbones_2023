@@ -19,21 +19,19 @@ format_los_comp_kbl <- function(los_comp) {
   kable_styling(latex_options = "scale_down") %>% 
   column_spec(column = 4:ncol(final_am_los_comp_formatted), width = "3cm") %>% 
   collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
-  footnote(symbol = "This intersection is signalized in the no-build model, but is unsignalized in the build model.")
+  footnote(symbol = "This intersection is signalized in the No-Build model, but is unsignalized in the Build model.")
 }
 ```
 
 ## Overview
 
 MATSim modeling software roughly predicted future growth in the Payson area.
-The team used a growth rate of 30% over the next 27 years to predict impacts on the existing and built models.
+The team used growth rates for each intersection as given in @tbl-vissim-growth over the next 27 years to predict impacts on the existing and built models.
 This section outlines the process used to run and compare the models and reviews the results of the models.
 
 ## Methodology
 
-To simulate future growth in the region, the team multiplied existing 2023 traffic volumes by a factor of 1.30.
-VISSIM models then simulated future traffic conditions.
-The team implemented the additional modifications listed below to simulate future situations:
+In addition to population growth, the team implemented the additional modifications listed below to simulate future situations:
 
 -   Signal timings were adjusted using Synchro [@Synchro] to provide optimal cycle lengths and split timings.
     The team used a 150-second cycle length in all signals and optimized splits under existing signal characteristics.
@@ -43,16 +41,17 @@ The team implemented the additional modifications listed below to simulate futur
 
 -   Priority rules were added to the PM no-build model to prevent vehicles from blocking the intersections to allow for cross-movement travel.
     The team collected travel time and nodal results like in previous chapters.
-    This analysis will not include a model with current volumes and the build model.
+
+<!-- This analysis will not include a model with current volumes and the build model. -->
 
 ## Results
 
-Tables [-@tbl-am-los-comp_build] and [-@tbl-pm-los-comp_build] show the results Build model in the AM and PM peak periods, compared with the No-Build scenario model. 
-The build model experiences decreases in vehicle delay for most traffic movemements for the AM and PM peak, but especially for the PM peak. 
-There are a few movements where delays increase slightly in the Build model, but these are vastly overshadowed by the decreases in vehicle delay.
+Tables [-@tbl-am-los-comp-build] and [-@tbl-pm-los-comp-build] show the results Build model in the AM and PM peak periods, compared with the No-Build scenario model. 
+The build model experiences decreases in vehicle delay for most traffic movements for the AM and PM peak, but especially for the PM peak. 
+There are a few movements where delays increase in the Build model, but these are vastly overshadowed by the decreases in vehicle delay.
 
 ```{r}
-#| label: tbl-am-los-comp_build
+#| label: tbl-am-los-comp-build
 #| tbl-cap: Comparison of LOS Results (AM)
 
 targets::tar_load(final_am_los_comp_formatted)
@@ -61,7 +60,7 @@ final_am_los_comp_formatted %>% format_los_comp_kbl()
 ```
 
 ```{r}
-#| label: tbl-pm-los-comp_build
+#| label: tbl-pm-los-comp-build
 #| tbl-cap: Comparison of LOS Results (PM)
 
 targets::tar_load(final_pm_los_comp_formatted)
@@ -78,7 +77,7 @@ This is due to the large reduction in vehicle delay in the Build model as shown 
 
 ```{r}
 #| label: fig-tt_build
-#| fig-cap: Travel time comparison between existing and build models.
+#| fig-cap: Travel time comparison between No-Build and Build models.
 
 targets::tar_load(nobuild_am_traveltimes_formatted)
 targets::tar_load(build_2050_am_traveltimes_formatted)
@@ -128,6 +127,5 @@ ggplot(tt) +
 Under the No-Build intersection design, the model fails during the PM peak, exhibiting LOS F at all intersections.
 These failing conditions are primarily due to the lack of designated turning lanes and severe overloading of the various intersections.
 The build model performs to a high level of traffic management, with the highest LOS being exhibited at the I-15 SB interchange, performing at an LOS E. However, users should expect such delays due to the high traffic volume levels.
-Providing for LOS C or better under such conditions would create a massive intersection, such as damage to safety or local ecology.
 
 If such growth continues, additional highway interchanges would be necessary to provide additional capacity.

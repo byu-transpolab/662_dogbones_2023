@@ -1,4 +1,4 @@
-# Build Model Creation
+# Redesigned Interchange
 
 ```{r}
 #| label: setup
@@ -18,14 +18,14 @@ format_los_comp_kbl <- function(los_comp) {
   kable_styling(latex_options = "scale_down") %>% 
   column_spec(column = 4:ncol(ex_build_am_los_comp_formatted), width = "3cm") %>% 
   collapse_rows(columns = c(1,2), valign = "middle", target = 1) %>% 
-  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the build model.")
+  footnote(symbol = "This intersection was signalized in the existing model, but is unsignalized in the redesign.")
 }
 ```
 
 ## Overview
 
 After considering current traffic conditions, the team created a possible intersection redesign for the Main Street/I-15 interchange.
-This section will outline justification for pursuing a redesign of the intersection, the proposed roadway configuration, results from the build VISSIM model, comparisons to the existing model, and conclusions based on the comparison.
+This section outlines justification for pursuing a redesign of the intersection, the proposed roadway configuration, results from the build VISSIM model, comparisons to the existing model, and conclusions based on the comparison.
 
 ## Build Justifications
 
@@ -38,9 +38,9 @@ Crash data was collected for the I-15/Main Street Interchange from @aashto for b
 
 An important aspect in considering the redesign of this interchange is the type and manner of crashes occurring at the site.
 From 2018 to 2022, 52 crashes were observed and recorded in the AASHTOWare database.
-Of these, none were fatal, and the majority were no injury/property damage only.
+Of these, none were fatal, and the majority were no injury/property damage only (PDO).
 The collisions were primarily angled, front to rear, and sideswipe, with a single head on collision.
-These intersections have unprotected left turn movements and it is unsurprising that there was a detailed crash history.
+These intersections have unprotected left turn movements and it is unsurprising that there is a detailed crash history.
 <!-- This location is an opportunity to reduce crash risk as UDOT strives to reach "Zero Fatalities" [@fatalities]. -->
 
 ![Crash site data for study area.](figures/crash2e.png){#fig-crashes}
@@ -75,16 +75,16 @@ These intersections have unprotected left turn movements and it is unsurprising 
 
 : Crash Movement Type Distribution {#tbl-movement}
 
-This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections would increase crash likelihood.
+This area is expected to grow aggressively [@payson_city_payson_2020] and additional volume in these intersections will increase crash likelihood.
 Additionally, with growth in volume, these intersections could soon reach capacity resulting in unacceptable levels of delay.
 
-To address these safety concerns, a modified double lane "dog-bone" or double roundabout intersection is proposed for the I-15/ Main Street interchange.
+To address these safety concerns, a modified double lane "dog-bone" or double-roundabout intersection is proposed for the I-15/ Main Street interchange.
 Of the crashes indicated in [-@tbl-kabco]--[-@tbl-movement], approximately 30% of crashes (angle and head-on) are eliminated with this design, as movements across opposing traffic are not possible.
 Additionally, vehicle speed is significantly reduced with this design, and so could reduce the frequency of sideswipe and rear-end collisions.
 
 The double lane feature of the proposed model also allows for increased capacity to accommodate future growth.
 
-## Model Description
+## Redesigned Model Description
 
 Both the signalized SB I-15 interchange and the two-way stop-controlled NB I-15 interchange were eliminated and replaced with double lane roundabouts.
 This configuration was modified from the existing model in VISSIM.
@@ -122,15 +122,15 @@ To allow for future growth, the model was stress tested to 1.25 and 1.75 times t
 Queues were present during the 1.75 iterations on the off-ramps and the 900 N and 600 N intersections.
 However, under preliminary inspection the interchange appeared to perform adequately.
 
-![Build model at I-15 NB Interchange.](figures/build/102e.png){#fig-102e}
+![Redesigned model at I-15 NB Interchange.](figures/build/102e.png){#fig-102e}
 
-![Build model at I-15 SB Interchange.](figures/build/northe.png){#fig-northe}
+![Redesigned model at I-15 SB Interchange.](figures/build/northe.png){#fig-northe}
 
-![Build model (overview).](figures/build/everythinge.png){#fig-everythinge}
+![Redesigned model (overview).](figures/build/everythinge.png){#fig-everythinge}
 
 ## Results
 
-Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results of the analysis performed in the VISSIM model for the AM and PM peak periods, compared with the existing scenario model.
+Tables [-@tbl-am-los-comp] and [-@tbl-pm-los-comp] show the results of the analysis performed in the redisigned VISSIM model for the AM and PM peak periods, compared with the existing scenario model.
 Note the existing model delay and LOS differ slightly from the existing conditions as changes were made in the existing model as errors were discovered during the redesign.
 
 ```{r}
@@ -158,9 +158,8 @@ Of particular interest are the WB movements from 600 N/Main Street with the left
 Reasons for this would be as the SB movement receives more continuous vehicle actuations from the improved interchange design, the WB movement is not actuated as frequently as in the existing model.
 Another reason could be a slight adjustment to the ring barrier diagram that was assumed to be minimal and was not reflected in the existing model.
 Future reports with the existing model will be edited to show this adjustment.
-
-Overall, the build model performed better than the existing model.
-There are a few exceptions but those were previously mentioned and are expected due to the characteristics of a dog-bone interchange.
+Overall, however, the redesigned interchange performed better than the existing model.
+<!-- There are a few exceptions but those were previously mentioned and are expected due to the characteristics of a dog-bone interchange. -->
 
 The VISSIM model also produced travel times by recording the time when a vehicle passed through an origin location and the time it passed through a destination location.
 This resulted in six possible movements which are shown in @fig-tt-movements.
@@ -168,14 +167,14 @@ This resulted in six possible movements which are shown in @fig-tt-movements.
 ![Movement designations for travel time comparison.](figures/traveltime.png){#fig-tt-movements}
 
 The travel times for each vehicle and each model run were then averaged and summarized by movement.
-@fig-tt compares average travel times from the build model with the existing model for both AM and PM peak periods.
+@fig-tt compares average travel times from the redesign with the existing model for both AM and PM peak periods.
 However, travel distances are also increased due to the roundabout design, and the increase in travel times is roughly proportional to this increase in distance.
 Additionally, the increase in travel time is explained by the reduction in speeds from 30 MPH to 15 MPH.
 <!-- Later analysis when comparing these times to future models will have more significant interpretations. -->
 
 ```{r}
 #| label: fig-tt
-#| fig-cap: Travel time comparison between existing and build models.
+#| fig-cap: Travel time comparison between existing and build 2023 models.
 
 targets::tar_load(ex_am_traveltimes_formatted)
 targets::tar_load(build_am_traveltimes_formatted)
@@ -183,9 +182,9 @@ targets::tar_load(ex_pm_traveltimes_formatted)
 targets::tar_load(build_pm_traveltimes_formatted)
 
 ex_am_traveltimes_formatted <- ex_am_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (AM)"))
-build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (AM)"))
+build_am_traveltimes_formatted <- build_am_traveltimes_formatted %>% mutate(Model = "Build 2023", Label = paste0(Movement," (AM)"))
 ex_pm_traveltimes_formatted <- ex_pm_traveltimes_formatted %>% mutate(Model = "Existing", Label = paste0(Movement," (PM)"))
-build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Build", Label = paste0(Movement," (PM)"))
+build_pm_traveltimes_formatted <- build_pm_traveltimes_formatted %>% mutate(Model = "Build 2023", Label = paste0(Movement," (PM)"))
 
 tt <- rbind(ex_am_traveltimes_formatted, build_am_traveltimes_formatted, ex_pm_traveltimes_formatted, build_pm_traveltimes_formatted) %>%
   select(Model, Movement, Label, TT = `Average Travel Time (sec)`, Distance = `Average Distance Traveled (ft)`) %>%
@@ -212,7 +211,7 @@ ggplot(tt) +
        y = "Movement (Time of Day)") +
    scale_y_continuous(breaks = c(1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17), 
                       labels = unique(tt$Label)) +
-  scale_color_manual(values = c("Build" = "slateblue", "Existing" = "red")) +
+  scale_color_manual(values = c("Build 2023" = "slateblue", "Existing" = "red")) +
   scale_x_continuous(breaks = seq(10,100,10), limits = c(0,NA), expand = expansion(mult = c(0,0.05))) +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank())

@@ -11,10 +11,10 @@ library(kableExtra)
 
 ## Overview
 
-This section will document the evaluation of projected 2050 volumes in \"build\" and \"no-build\" scenarios for the proposed redesign of the I-15 interchange at Main Street in Payson, Utah.
+This section documents the evaluation of projected 2050 volumes in "build" and "no-build" scenarios for the proposed redesign of the I-15 interchange at Main Street in Payson, Utah.
 The projected volumes were created using MATSim [@MATSim].
-MATSim simulates individual travelers in a transportation network and \"trains\" them to find the optimal path during their tour by running the simulation through multiple iterations.
-This section will outline information for the population creation model, the MATSim network, forecasted volumes, the resulting turning counts from the MATSim model, and forecasted turning movement counts.
+MATSim simulates individual travelers in a transportation network and "trains" them to find the optimal path during their tour by running the simulation through multiple iterations.
+This section outlines information for the population creation model, the MATSim network, forecasted volumes, the resulting turning counts from the MATSim model, and forecasted turning movement counts.
 
 ## Population Creation
 
@@ -31,7 +31,7 @@ This model is not a good fit to estimate household and trip destination location
 
 : Location Distributions {#tbl-locdist}
 
-![MATSim Loaded Payson network](matsim/Home.jpg){#fig-loaded-network}
+![Distribution of the Payson population. This is a sample to showcase the distribution, the actual population is much larger.](matsim/Home.jpg){#fig-loaded-network}
 
 @quickfacts_payson gives a 2022 population of 22,516 for Payson.
 The population for Payson in 2050 was projected using a growth rate based on the Utah County growth over the same time period.
@@ -49,7 +49,7 @@ Note that the tour type assigned to an individual is dependent on their employme
 Based on information provided for this project, 42% of the total population was designated as a worker.
 
 | Person Type | Home  | Mandatory | Discretionary |
-|-------------|-------|-----------|---------------|
+|:-----------:|:-----:|:---------:|:-------------:|
 | Non-Worker  | 0.229 | 0.165     | 0.605         |
 | Worker      | 0.083 | 0.632     | 0.285         |
 
@@ -79,8 +79,7 @@ Once all trips or the day ended, whichever came first, the discretionary tour wa
 
 ## MATSim Network
 
-The team was provided with a network for the Payson MATSim model that roughly modeled the actual roadway network in and around Payson.
-Using this network means that the paths that agents take should be close to available paths in Payson.
+The team was provided with a network for the Payson MATSim model that models the actual roadway network in and around Payson.
 Attributes included in each roadway link were speed, number of lanes, and capacity.
 Originally, there were some critical errors in the network that led to the failure of MATSim, and so the network was run through the MATSim "NetworkCleaner".
 No other efforts were made to verify the accuracy of the network.
@@ -101,7 +100,7 @@ Growth(\%)=\frac{2050 - 2022 \; \text{Volumes}}{2022 \; \text{Volumes}} \times 1
 $$ {#eq-growth}
 
 | Intersection   | 2022 24-hour Volume | 2050 24-hour Volume | Growth Rate (2022--2050) |
-|------------------|------------------|------------------|------------------|
+|:----------------:|:----------------:|:----------------:|:----------------:|
 | 900 N      | 5295                | 7354                | 38.9%                    |
 | SB Interchange | 7983                | 11101               | 39.1%                    |
 | NB Interchange | 8883                | 11716               | 31.9%                    |
@@ -163,7 +162,7 @@ targets::tar_read(pretty_vissim_growth) %>%
   collapse_rows(columns = c(1, 6), valign = "middle", target = 1)
 ```
 
-## Conclusions
+<!-- ## Conclusions -->
 
-MATSim provides a method for creating turning counts even with limited prediction models.
-As an academic exercise, these results and growth rates will be used to forecast growth in VISSIM to provide limited recommendations for future growth at the I-15 interchange at Main Street in Payson, Utah.
+<!-- MATSim provides a method for creating turning counts even with limited prediction models. -->
+<!-- As an academic exercise, these results and growth rates will be used to forecast growth in VISSIM to provide limited recommendations for future growth at the I-15 interchange at Main Street in Payson, Utah. -->

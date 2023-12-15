@@ -30,8 +30,7 @@ los_kbl <- function(results) {
 
 To understand traffic needs for the interchange, the team created an existing conditions model.
 @fig-study-area shows imagery of the study area.
-This section will outline the existing interchange model parameters, model setup and results from the  model.
-
+This section outlines the existing interchange model parameters, model setup, and results from the model.
 
 ![I-15 interchange at Main Street in Payson, Utah.](figures/study_area.png){#fig-study-area}
 
@@ -39,7 +38,7 @@ This section will outline the existing interchange model parameters, model setup
 
 To model the interchange accurately, turning movement counts were collected for the intersections in the study area.
 Traffic cameras were set up on September 26, 2023 at the I-15 Northbound (NB) Interchange, I-15 Southbound (SB) Interchange, and Main Street/900 North (900 N) to capture volumes.
-Volumes were then counted hand counted from the footage using CountPRO software [@CountPro].
+Volumes were then hand-counted from the footage using CountPRO software [@CountPro].
 Automated Traffic Signal Performance Measure data [@ATSPM] were used for the volumes for Main Street/600 N. The turning movement counts are shown in Tables [-@tbl-am-tmc] and [-@tbl-pm-tmc].
 It should be noted that the NB interchange was modeled as a five-leg intersection.
 These tables reference 800 N as the auxiliary fifth leg of this intersection because it is somewhat separated from the other approaches of the intersection, but still interacts with it.
@@ -62,7 +61,7 @@ targets::tar_load(pm_counts_formatted)
 pm_counts_formatted %>% counts_kbl()
 ```
 
-Data were collected at Main Street and 600 N and 900 N due to interactions with the existing interchange.
+Data were collected at the 600 N and 900 N intersections due to interactions with the existing interchange.
 Additionally, the junction of the I-15 NB Interchange was modeled with the 800 N junction to evaluate interactions.
 Specifically at 800 N, volumes entering and exiting the approach were quite low, but it was decided to keep that intersection for the completeness of the model.
 
@@ -73,7 +72,7 @@ The construction of this model is outlined in this section.
 The VISSIM model was developed from the UDOT VISSIM template [@template] and is shown in @fig-vissim_existing_all.
 The template provided speed distributions and driver characteristics approved by the UDOT Traffic group.
 
-![Existing VISSIM Model](figures/existing/everythinge.png){#fig-vissim_existing_all}
+![Existing conditions VISSIM model.](figures/existing/everythinge.png){#fig-vissim_existing_all}
 
 Desired speed decisions were modeled based on posted speed limits and confirmed with the UDOT Speed Limit Map [@SpeedLimits].
 Roadway geometries were based on the most current versions of the Google Roadview imagery [@Google].
@@ -93,17 +92,17 @@ Behavior leading to vehicle conflict was minimized to the best ability of the mo
 Due to the lack of related traffic, bicycles and pedestrians were not modeled.
 However, future models should provide for bicycle and pedestrian facilities.
 It was only due to the lack of data that these users were not modeled.
-
 The collected data did indicate a higher percentage of high grossing vehicles, and such percentages were modeled in the vehicle inputs.
-Due to the limited collected data, over calibration was avoided by preventing elevated levels of detail in the model.
+<!-- Due to the limited collected data, over calibration was avoided by preventing elevated levels of detail in the model. -->
 
 Vehicle movements were created by developing an origin-destination (OD) matrix for the network using RStudio with the DiagrammeR [@DiagrammeR] and gtools [@gtools] packages.
 A network graph and turning movement percentages were calculated for each node.
-Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
-Thus, approximate OD movements were created and inputted into the model.
 See @fig-od-network for a representation of the OD network used.
 Each cluster of nodes represents an intersection, with each node being an approach of that intersection.
 The edges of the graph are directed, showing which movements are allowable.
+Routes between nodes were developed with the network graph, and route distributions were calculated based on the turning movement percentages.
+Thus, approximate OD movements were created and inputted into the model.
+
 
 ```{r}
 #| label: fig-od-network
@@ -116,7 +115,7 @@ ex_graph %>%
 ```
 
 No adjustment factors were used in the creation of input volumes, so the data do not reflect AADT, but are valid for the purposes of this study.
-Based on the collected data, an AM peak of 7:15--8:15 AM, and a PM peak of 4:30--5:30 PM were estimated and corresponding values were used in the calculation of the input volumes and OD distribution.
+Based on the collected data, an AM peak of 7:15--8:15 AM and a PM peak of 4:30--5:30 PM were estimated and corresponding values were used in the calculation of the input volumes and OD distribution.
 
 An initial loading period was implemented by duplicating "0--15" volumes.
 Following the loading period, a simulation run of 60 minutes (15-minute bins) was conducted.

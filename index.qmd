@@ -9,10 +9,10 @@ The Utah Department of Transportation (UDOT) prepared an Environmental Impact St
 This study will provide a second evaluation of the existing conditions and potential redesign options for the interchange.
 
 
-The following report will consist of six sections.
-First, the team will explain the model existing conditions created using traffic counts and signal timing plans.
-Second, future configurations will be presented with justifications from existing crash data.
-Third, the team will approximate future growth rates using the Multi-Agent Transport Simulation (MATSim) modeling package [@MATSim].
-Fourth, resiliency during various car-following model variations will be checked.
-Fifth, results from the no-build and build models will be reviewed.
-The team will then summarize key findings and provide recommendations for future consideration.
+The report consists of six sections.
+First, there is discussion of the existing conditions model created using traffic counts and signal timing plans.
+Second, there is a proposed redesign with justifications from existing crash data.
+Third, growth rates are approximated using the Multi-Agent Transport Simulation (MATSim) modeling package [@MATSim] for future-year scenarios.
+Fourth, the models are checked for resiliency under various car-following model parameters.
+Fifth, analysis of the future No-Build and Build models is presented.
+Finally, there is a summary of key findings and recommendations for future consideration.
