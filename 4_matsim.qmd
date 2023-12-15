@@ -156,9 +156,8 @@ OD pairs will be calculated from this data and used in the "No-Build 2050" and "
 targets::tar_read(pretty_vissim_growth) %>% 
   mutate(across(6, \(x) scales::label_percent(0.1)(x))) %>% 
   kbl(align = "c", booktabs = TRUE, linesep = "") %>% 
-  kable_styling(latex_options = "scale_down") %>% 
-  column_spec(column = c(4,5,7,8), width = "2.5cm") %>% 
-  column_spec(column = 6, width = "2.5cm") %>% 
+  kable_styling(latex_options = "scale_down") %>%
+  column_spec(column = 4:8, width = "2.5cm") %>%
   collapse_rows(columns = c(1, 6), valign = "middle", target = 1)
 ```
 

@@ -37,14 +37,18 @@ targets::tar_read(intersection_los_comp) %>%
       intersection
     )
     ) %>% 
-  kbl(align = "c", booktabs = TRUE, linesep = "",
+  kbl(align = "clccc", booktabs = TRUE, linesep = "",
       col.names = c(" ", "Intersection", "Existing", "No-Build", "Build")) %>% 
-  kable_styling(latex_options = "scale_down") %>% 
+  # kable_styling(latex_options = "scale_down") %>%
+  kable_styling() %>%
+  column_spec(1, "1in") %>%
+  column_spec(2, "1.5in") %>%
+  # column_spec(3:5, "1in") %>%
   collapse_rows(columns = 1, valign = "middle") %>% 
-  footnote(symbol = "This intersection is signalized in the Existing and No-Build models, but is unsignalized in the Build model.")
+  footnote(symbol = "This intersection is signalized in the Existing and No-Build models, but is unsignalized in the Build model.", threeparttable = TRUE)
 ```
 
-The proposed redesign includes a dual roundabout/dogbone interchange.
+The proposed redesign includes a dual-roundabout/dogbone interchange.
 This design reduces speeds through the network and allows for safer pedestrian and bicycle access through the interchange.
 Additionally, the design provides satisfactory traffic flow conditions compared to the heavy traffic volumes predicted in the No-Build scenario.
 However, the existing conditions would also likely perform adequately by adding exclusive turning lanes and implementing a signal at the NB I-15 interchange.
